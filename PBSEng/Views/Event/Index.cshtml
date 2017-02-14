@@ -10,7 +10,7 @@
                 <div class="box-header with-border">
                     <h3 class="box-title">Event List</h3>
                     <div class="box-tools pull-right">
-                        <a href="@Url.Action("CreateEvent", "Home")" class="btn btn-success"><i class="fa fa-plus-circle" aria-hidden="true"> Add Event </i></a>
+                        <a href="@Url.Action("CreateEvent", "Event")" class="btn btn-success"><i class="fa fa-plus-circle" aria-hidden="true"> Add Event </i></a>
                     </div>
                 </div><!-- /.box-header -->                
                 <div class="box-body">
@@ -67,8 +67,8 @@
                                         @Html.DisplayFor(modelItem => item.Arabic_Location)
                                     </td>                                    
                                     <td>
-                                        <a href="@Url.Action("EditEvent", "Home", new { id = item.ID })" class="btn btn-info"><i class="fa fa-pencil" aria-hidden="true"></i> Edit</a>
-                                        <a href="@Url.Action("DeleteEvent", "Home", new { id = item.ID })" class="btn btn-danger"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</a>                                                                                
+                                        <a href="@Url.Action("EditEvent", "Event", new { id = item.ID })" class="btn btn-info"><i class="fa fa-pencil" aria-hidden="true"></i> Edit</a>
+                                        <a href="@Url.Action("DeleteEvent", "Event", new { id = item.ID })" class="btn btn-danger"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</a>                                                                                
                                     </td>
                                 </tr>
                             }

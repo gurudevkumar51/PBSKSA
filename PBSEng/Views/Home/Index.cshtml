@@ -1,4 +1,4 @@
-﻿
+﻿@using PBSDAL.Entity
 @{
     Layout = null;
 }
@@ -28,9 +28,7 @@
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="~/WebResources/~/WebResources/images/ico/apple-touch-icon-114-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="~/WebResources/~/WebResources/images/ico/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="~/WebResources/~/WebResources/images/ico/apple-touch-icon-57-precomposed.png">
-
     
-
 </head>
 
 <body class="homepage">
@@ -91,31 +89,37 @@
     <div id="home">
         <section id="main-slider" class="no-margin">
             <div class="carousel slide">
-                <ol class="carousel-indicators">
+                @*<ol class="carousel-indicators">
                     <li data-target="#main-slider" data-slide-to="0" class="active"></li>
                     <li data-target="#main-slider" data-slide-to="1"></li>
                     <li data-target="#main-slider" data-slide-to="2"></li>
-                </ol>
+                </ol>*@
+                
                 <div class="carousel-inner">
-                    <div class="item active" style="background-image: url(../WebResources/images/slider/bg1.jpg)">
-                        <div class="container">
-                            <div class="row slide-margin">
-                                <div class="col-sm-12">
-                                    <div class="carousel-content">
-                                        <h1 class="animation animated-item-1 right">
-                                            If you ask me what I came to do in<br />
-                                            this world, I, an artist, will answer <br />
-                                            you: "I am here to live out loud".<br />
-                                        </h1>
-                                        <h2 class="animation animated-item-2 right"><strong><em>Emile Zola</em></strong></h2>
+                    @foreach (var item in ViewData["Quotes"] as List<Quotes>)
+                    {
+                        <div class="item active" style="background-image: url(../WebResources/images/slider/bg1.jpg)">
+                            <div class="container">
+                                <div class="row slide-margin">
+                                    <div class="col-sm-12">
+                                        <div class="carousel-content">
+                                            <h1 class="animation animated-item-1 right">
+                                                @item.Quote
+                                                @*If you ask me what I came to do in<br />
+                                                this world, I, an artist, will answer <br />
+                                                you: "I am here to live out loud".<br />*@
+                                            </h1>
+                                            <h2 class="animation animated-item-2 right"><strong><em>@item.Author</em></strong></h2>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    }
+                  
                     <!--/.item-->
 
-                    <div class="item" style="background-image: url(../WebResources/images/slider/bg2.jpg)">
+                    @*<div class="item" style="background-image: url(../WebResources/images/slider/bg2.jpg)">
                         <div class="container">
                             <div class="row slide-margin">
                                 <div class="col-sm-12">
@@ -131,10 +135,10 @@
                                 <div class="col-sm-6 hidden-xs animation animated-item-4"> </div>
                             </div>
                         </div>
-                    </div>
+                    </div>*@
                     <!--/.item-->
 
-                    <div class="item" style="background-image: url(../WebResources/images/slider/bg3.jpg)">
+                    @*<div class="item" style="background-image: url(../WebResources/images/slider/bg3.jpg)">
                         <div class="container">
                             <div class="row slide-margin">
                                 <div class="col-sm-12">
@@ -150,7 +154,7 @@
                                 <div class="col-sm-6 hidden-xs animation animated-item-4"> </div>
                             </div>
                         </div>
-                    </div>
+                    </div>*@
                     <!--/.item-->
                 </div>
                 <!--/.carousel-inner-->
@@ -455,45 +459,46 @@
                 <h2 class="hfont"> <em>Event</em> Calander <span class="head-blk" style="color:#656565;">Check our upcoming big events</span></h2>
             </div>
             <ul class="timeline">
-                <li class=" wow fadeInUp">
-                    <div class="timeline-badge"></div>
-                    <div class="timeline-panel">
-                        <div class="timeline-heading">
-                            <h4 class="timeline-title">Mussum ipsum cacilds</h4>
-                            <p><small class="text-muted"> 20/ 12 / 2015</small></p>
-                        </div>
-                        <div class="timeline-body">
-                            <p>Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo. </p>
-                            <h4><span>Address</span> <small>KSA Judda</small></h4>
-                        </div>
-                    </div>
-                </li>
-                <li class="timeline-inverted wow fadeInUp">
-                    <div class="timeline-badge"></div>
-                    <div class="timeline-panel">
-                        <div class="timeline-heading">
-                            <h4 class="timeline-title">Mussum ipsum cacilds</h4>
-                            <p><small class="text-muted"> 25/ 12 / 2016</small></p>
-                        </div>
-                        <div class="timeline-body">
-                            <p>Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo. </p>
-                            <h4><span>Address</span> <small>KSA Judda</small></h4>
-                        </div>
-                    </div>
-                </li>
-                <li class=" wow fadeInUp">
-                    <div class="timeline-badge"></div>
-                    <div class="timeline-panel">
-                        <div class="timeline-heading">
-                            <h4 class="timeline-title">Mussum ipsum cacilds</h4>
-                            <p><small class="text-muted"> 10/ 01 / 2017</small></p>
-                        </div>
-                        <div class="timeline-body">
-                            <p>Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo. </p>
-                            <h4><span>Address</span> <small>KSA Judda</small></h4>
-                        </div>
-                    </div>
-                </li>
+                @{
+                    int c = 0;
+                    foreach (var item in ViewData["Events"] as List<Event>)
+                    {
+                        c++;
+                        if (c % 2 == 0)
+                        {
+                            <li class="timeline-inverted wow fadeInUp">
+                                <div class="timeline-badge"></div>
+                                <div class="timeline-panel">
+                                    <div class="timeline-heading">
+                                        <h4 class="timeline-title">@item.Title</h4>
+                                        <p><small class="text-muted"> @item._Date</small></p>
+                                    </div>
+                                    <div class="timeline-body">
+                                        <p>@item.Description</p>
+                                        <a target ="_blank" href="@item.Location_URL"><span>Address</span> <small>@item.Location</small></a>
+                                    </div>
+                                </div>
+                            </li>
+                        }
+                        else
+                        {
+                            <li class=" wow fadeInUp">
+                                <div class="timeline-badge"></div>
+                                <div class="timeline-panel">
+                                    <div class="timeline-heading">
+                                        <h4 class="timeline-title">@item.Title</h4>
+                                        <p><small class="text-muted"> @item._Date</small></p>
+                                    </div>
+                                    <div class="timeline-body">
+                                        <p>@item.Description</p>
+                                        <a target="_blank" href="@Html.Raw(Html.AttributeEncode(@item.Location_URL))"><span>Address</span> <small>@item.Location</small></a>
+                                    </div>
+                                </div>
+                            </li>
+                        }
+                    }
+
+                    }       
             </ul>
         </div>
     </section>
@@ -609,64 +614,24 @@
 
     </section>
 
+    <!-- PortFolio -->
     <section id="recent-works">
-        <div class="col-xs-12 col-sm-4 col-md-3 works-part wow zoomIn">
-            <div class="recent-work-wrap">
-                <img class="img-responsive" src="~/WebResources/images/works1.jpg" alt="">
-                <div class="overlay">
-                    <div class="recent-work-inner">
-                        <h3><a href="javascript:;">KSA Confrience </a> </h3>
-                        <p>25/09/2016</p>
+        @foreach (var item in ViewData["Portfolio"] as List<Portfolio>)
+        {
+            <div class="col-xs-12 col-sm-4 col-md-3 works-part wow zoomIn">
+                <div class="recent-work-wrap">
+                    <img class="img-responsive" src="~/imagesMVC/Portfolio/@item.Image_Path" alt="">
+                    <div class="overlay">
+                        <div class="recent-work-inner">
+                            <h3><a href="javascript:;">@item.Title </a> </h3>
+                            <p>@item._Date</p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="col-xs-12 col-sm-4 col-md-3 works-part wow zoomIn">
-            <div class="recent-work-wrap">
-                <img class="img-responsive" src="~/WebResources/images/works2.jpg" alt="">
-                <div class="overlay">
-                    <div class="recent-work-inner">
-                        <h3><a href="javascript:;">KSA Confrience </a> </h3>
-                        <p>25/09/2016</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-xs-12 col-sm-4 col-md-3 works-part wow zoomIn">
-            <div class="recent-work-wrap">
-                <img class="img-responsive" src="~/WebResources/images/works1.jpg" alt="">
-                <div class="overlay">
-                    <div class="recent-work-inner">
-                        <h3><a href="javascript:;">KSA Confrience </a> </h3>
-                        <p>25/09/2016</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-xs-12 col-sm-4 col-md-3 works-part wow zoomIn">
-            <div class="recent-work-wrap">
-                <img class="img-responsive" src="~/WebResources/images/works4.jpg" alt="">
-                <div class="overlay">
-                    <div class="recent-work-inner">
-                        <h3><a href="#">KSA Confrience </a> </h3>
-                        <p>25/09/2016</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-xs-12 col-sm-4 col-md-3 works-part wow zoomIn">
-            <div class="recent-work-wrap">
-                <img class="img-responsive" src="~/WebResources/images/works1.jpg" alt="">
-                <div class="overlay">
-                    <div class="recent-work-inner">
-                        <h3><a href="javascript:;">KSA Confrience </a> </h3>
-                        <p>25/09/2016</p>
-                    </div>
-                </div>
-            </div>
-        </div>
+        }        
     </section>
-    <!--/#recent-works-->
+    <!--/PortFolio-->
 
     <section id="work-with">
         <!-- Expert Group -->
@@ -759,27 +724,24 @@
             <div class="row">
                 <h1>Testimonails</h1>
                 <div class="testimonial-part wow fadeInUp">
+                @foreach (var item in ViewData["Testimonial"] as List<Testimonial>)
+                {
                     <div class="testimonial">
-                        <div class="testi-ppl"><img src="~/WebResources/images/man.jpg" alt=""></div>
+                        <div class="testi-ppl"><img src="~/imagesMVC/TestimonialThumbnail/@item.thumbnailPath" style="border-radius: 50%;" alt=""></div>
                         <div class="testimonial-text">
-                            <div class="title"><span>JOHN DOE</span> / Director of Something Importer</div>
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer.</p>
+                            <div class="title"><span>@item.Author</span></div>
+                            <p>@item.Description</p>
                         </div>
                     </div>
-                    <div class="testimonial">
-                        <div class="testi-ppl"><img src="~/WebResources/images/man.jpg" alt=""></div>
-                        <div class="testimonial-text">
-                            <div class="title"><span>JOHN DOE</span> / Director of Something Importer</div>
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer.</p>
-                        </div>
-                    </div>
-                    <div class="testimonial">
-                        <div class="testi-ppl"><img src="~/WebResources/images/man.jpg" alt=""></div>
-                        <div class="testimonial-text">
-                            <div class="title"><span>JOHN DOE</span> / Director of Something Importer</div>
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer.</p>
-                        </div>
-                    </div>
+                }                    
+                   
+                    @*<div class="testimonial">
+        <div class="testi-ppl"><img src="~/WebResources/images/man.jpg" alt=""></div>
+        <div class="testimonial-text">
+            <div class="title"><span>JOHN DOE</span> / Director of Something Importer</div>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer.</p>
+        </div>
+    </div>*@
                 </div>
 
             </div>

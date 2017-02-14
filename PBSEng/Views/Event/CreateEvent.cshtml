@@ -11,7 +11,7 @@
         <div class="box-header with-border">
             <h3 class="box-title">Add New Event</h3>
             <div class="box-tools pull-right">
-                <a href="@Url.Action("Index", "Home")" class="btn btn-success"><i class="fa fa-list-alt" aria-hidden="true"> Event List </i></a>
+                <a href="@Url.Action("Index", "Event")" class="btn btn-success"><i class="fa fa-list-alt" aria-hidden="true"> Event List </i></a>
                 @*<button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>*@
                 @*<button class="btn btn-box-tool" data-widget="remove"><i class="fa fa-remove"></i></button>*@
             </div>
@@ -68,7 +68,7 @@
                 </div><!-- /.form-group -->                
                 <div class="form-group" style="direction:ltr">
                     @Html.LabelFor(model => model.Location_URL)
-                    @Html.EditorFor(model => model.Location_URL, new { htmlAttributes = new { @class = "form-control select2", placeholder = "eg. www.google.com" } })
+                    @Html.EditorFor(model => model.Location_URL, new { htmlAttributes = new { @class = "form-control select2", placeholder = "eg. http://www.google.com" } })
                     @Html.ValidationMessageFor(model => model.Location_URL, "", new { @class = "text-danger" })
                 </div><!-- /.form-group -->
             </div><!-- /.col -->
@@ -91,16 +91,5 @@
             $(function () {
                 $('#datetimepicker1').datetimepicker();
             });
-            
-          //tinymce.init({
-          //    selector: '#Description',
-          //    directionality: 'ltr',
-          //    language: 'en',              
-          //});
-          //tinymce.init({
-          //    selector: '#Arabic_Description',
-          //    directionality: 'rtl',
-          //    language: 'ar'
-          //});
 </script>
    

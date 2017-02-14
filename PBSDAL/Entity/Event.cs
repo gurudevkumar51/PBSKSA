@@ -45,6 +45,7 @@ namespace PBSDAL.Entity
 
         [Required(ErrorMessage = "Enter GoogleMap URL Location = ادخل رابط لموقع الحدث على خرائط قوقل")]
         [DisplayName("Map URL")]
+        [Url(ErrorMessage = "URL format is wrong!")]
         public string Location_URL { get; set; }
 
         [DisplayName("موعد الدخول(Added Date)")]
