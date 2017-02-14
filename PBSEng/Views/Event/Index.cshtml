@@ -1,0 +1,97 @@
+﻿@model IEnumerable<PBSDAL.Entity.Event>
+
+@{
+    ViewBag.Title = "Index";
+}
+<section class="content">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="box">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Event List</h3>
+                    <div class="box-tools pull-right">
+                        <a href="@Url.Action("CreateEvent", "Home")" class="btn btn-success"><i class="fa fa-plus-circle" aria-hidden="true"> Add Event </i></a>
+                    </div>
+                </div><!-- /.box-header -->                
+                <div class="box-body">
+                    <table id="EvntTable" class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Title)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Arabic_Title)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model._Date)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Description)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Arabic_Description)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Location)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Arabic_Location)
+                                </th>                                
+                                <th>عمل(Action)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Title)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Arabic_Title)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item._Date)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Description)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Arabic_Description)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Location)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Arabic_Location)
+                                    </td>                                    
+                                    <td>
+                                        <a href="@Url.Action("EditEvent", "Home", new { id = item.ID })" class="btn btn-info"><i class="fa fa-pencil" aria-hidden="true"></i> Edit</a>
+                                        <a href="@Url.Action("DeleteEvent", "Home", new { id = item.ID })" class="btn btn-danger"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</a>                                                                                
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>                  
+                </div><!-- /.box-body -->
+            </div><!-- /.box -->
+        </div>
+    </div>
+</section>        
+
+<script>
+    $(function () {
+        $('#EvntTable').DataTable({
+            "paging": true,
+            "lengthChange": false,
+            "searching": false,
+            "ordering": true,
+            "info": true,
+            "autoWidth": false
+        });
+    });
+   
+</script>
+
+           

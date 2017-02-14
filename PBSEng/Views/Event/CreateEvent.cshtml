@@ -1,0 +1,106 @@
+﻿@model PBSDAL.Entity.Event
+
+@{
+    ViewBag.Title = "CreateEvent";
+}
+
+<!-- Main content -->
+<section class="content">
+    <!-- SELECT2 EXAMPLE -->
+    <div class="box box-default">
+        <div class="box-header with-border">
+            <h3 class="box-title">Add New Event</h3>
+            <div class="box-tools pull-right">
+                <a href="@Url.Action("Index", "Home")" class="btn btn-success"><i class="fa fa-list-alt" aria-hidden="true"> Event List </i></a>
+                @*<button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>*@
+                @*<button class="btn btn-box-tool" data-widget="remove"><i class="fa fa-remove"></i></button>*@
+            </div>
+        </div><!-- /.box-header -->
+        <div class="box-body">
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        <div class="row">
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="col-md-6" style="direction:ltr">                
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Title)
+                    @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control select2", placeholder="Enter event title" } })
+                    @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
+                </div><!-- /.form-group -->
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Description)
+                    @Html.TextAreaFor(model => model.Description, new { @class = "form-control select2", rows = "3", placeholder = "Enter the event description" })                    
+                    @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+                </div>   
+           
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Location)
+                    @Html.EditorFor(model => model.Location, new { htmlAttributes = new { @class = "form-control select2", placeholder = "Enter event Location" } })
+                    @Html.ValidationMessageFor(model => model.Location, "", new { @class = "text-danger" })
+                </div><!-- /.form-group -->
+                <div class="form-group">
+                    @Html.LabelFor(model => model._Date)
+                    <div class='input-group date' id='datetimepicker1'>
+                        @Html.EditorFor(model => model._Date, new { htmlAttributes = new { @class = "form-control select2", placeholder="Select event Date from DatePicker"  } })
+                        <span class="input-group-addon">
+                            <span class="glyphicon glyphicon-calendar"></span>
+                        </span>
+                    </div>
+                    @Html.ValidationMessageFor(model => model._Date, "", new { @class = "text-danger" })
+                </div><!-- /.form-group -->
+            </div><!-- /.col -->
+            <div class="col-md-6" style="direction:rtl;">
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Arabic_Title)
+                    @Html.EditorFor(model => model.Arabic_Title, new { htmlAttributes = new { @class = "form-control select2", placeholder = "ادخل عنوان الحدث" } })
+                    @Html.ValidationMessageFor(model => model.Arabic_Title, "", new { @class = "text-danger" })
+                </div><!-- /.form-group -->
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Arabic_Description)
+                    @Html.TextAreaFor(model => model.Arabic_Description, new { @class = "form-control select2", rows = "3", placeholder = "ادخل وصف الحدث" })                    
+                    @Html.ValidationMessageFor(model => model.Arabic_Description, "", new { @class = "text-danger" })
+                </div><!-- /.form-group -->
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Arabic_Location)
+                    @Html.EditorFor(model => model.Arabic_Location, new { htmlAttributes = new { @class = "form-control select2", placeholder = "ادخل موقع الحدث" } })
+                    @Html.ValidationMessageFor(model => model.Arabic_Location, "", new { @class = "text-danger" })
+                </div><!-- /.form-group -->                
+                <div class="form-group" style="direction:ltr">
+                    @Html.LabelFor(model => model.Location_URL)
+                    @Html.EditorFor(model => model.Location_URL, new { htmlAttributes = new { @class = "form-control select2", placeholder = "eg. www.google.com" } })
+                    @Html.ValidationMessageFor(model => model.Location_URL, "", new { @class = "text-danger" })
+                </div><!-- /.form-group -->
+            </div><!-- /.col -->
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="إضافة حدث (Add)" class="btn btn-info" />
+                </div>
+            </div>
+            </div><!-- /.row -->
+     }
+        </div><!-- /.box-body -->
+        @*<div class="box-footer">
+            @Html.ActionLink("Back to Event List", "Index")Visit <a href="https://www.webphonix.com/">Webphonix</a>.
+        </div>*@
+    </div><!-- /.box -->
+    </section>
+
+
+<script type="text/javascript">
+            $(function () {
+                $('#datetimepicker1').datetimepicker();
+            });
+            
+          //tinymce.init({
+          //    selector: '#Description',
+          //    directionality: 'ltr',
+          //    language: 'en',              
+          //});
+          //tinymce.init({
+          //    selector: '#Arabic_Description',
+          //    directionality: 'rtl',
+          //    language: 'ar'
+          //});
+</script>
+   

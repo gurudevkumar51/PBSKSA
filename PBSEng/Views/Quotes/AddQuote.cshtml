@@ -1,0 +1,59 @@
+﻿@model PBSDAL.Entity.Quotes
+
+@{
+    ViewBag.Title = "AddQuote";
+}
+
+<section class="content">
+    <!-- SELECT2 EXAMPLE -->
+    <div class="box box-default">
+        <div class="box-header with-border">
+            <h3 class="box-title">Add New Quote</h3>
+            <div class="box-tools pull-right">
+                <a href="@Url.Action("Index", "Quotes")" class="btn btn-success"><i class="fa fa-list-alt" aria-hidden="true"> Quote List </i></a>                
+            </div>
+        </div><!-- /.box-header -->
+        <div class="box-body">
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+                <div class="row">
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    <div class="col-md-6" style="direction:ltr">
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Quote)
+                            @Html.TextAreaFor(model => model.Quote, new { @class = "form-control select2", rows = "3", placeholder = "Enter your quote here" } )
+                            @Html.ValidationMessageFor(model => model.Quote, "", new { @class = "text-danger" })
+                        </div><!-- /.form-group -->
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Author)
+                            @Html.EditorFor(model => model.Author, new { htmlAttributes = new { @class = "form-control select2", placeholder = "Enter the Author Name" } })
+                            @Html.ValidationMessageFor(model => model.Author, "", new { @class = "text-danger" })
+                        </div>
+                   
+                    </div><!-- /.col -->
+                    <div class="col-md-6" style="direction:rtl;">
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.AR_Quote)
+                            @Html.TextAreaFor(model => model.AR_Quote, new { @class = "form-control select2", rows = "3", placeholder = "اقتبس" })
+                            @Html.ValidationMessageFor(model => model.AR_Quote, "", new { @class = "text-danger" })
+                        </div><!-- /.form-group -->
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.AR_Author)
+                            @Html.EditorFor(model => model.AR_Author, new { htmlAttributes = new { @class = "form-control select2", placeholder = "مؤلف" }})
+                            @Html.ValidationMessageFor(model => model.AR_Author, "", new { @class = "text-danger" })
+                        </div><!-- /.form-group -->                        
+                    </div><!-- /.col -->
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <input type="submit" value="إضافة حدث (Add)" class="btn btn-info" />
+                        </div>
+                    </div>
+                </div><!-- /.row -->
+            }
+        </div><!-- /.box-body -->
+        @*<div class="box-footer">
+                @Html.ActionLink("Back to Event List", "Index")Visit <a href="https://www.webphonix.com/">Webphonix</a>.
+            </div>*@
+    </div><!-- /.box -->
+</section>

@@ -1,0 +1,83 @@
+﻿@model IEnumerable<PBSDAL.Entity.Quotes>
+
+@{
+    ViewBag.Title = "Index";
+}
+<section class="content">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="box">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Quote List</h3>
+                    <div class="box-tools pull-right">
+                        <a href="@Url.Action("AddQuote", "Quotes")" class="btn btn-success"><i class="fa fa-plus-circle" aria-hidden="true"> Add Quote </i></a>
+                    </div>
+                </div><!-- /.box-header -->
+                <div class="box-body">
+                    <table id="QuoteTable" class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Quote)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Author)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.AR_Quote)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.AR_Author)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Added_Date)
+                                </th>                                
+                                <th>عمل(Action)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Quote)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Author)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.AR_Quote)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.AR_Author)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Added_Date)
+                                    </td>                                    
+                                    <td>
+                                        <a href="@Url.Action("EditQuote", "Quotes", new { id = item.ID })" class="btn btn-info"><i class="fa fa-pencil" aria-hidden="true"></i> Edit</a>
+                                        <a href="@Url.Action("DeleteQuote", "Quotes", new { id = item.ID })" class="btn btn-danger"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</a>
+                                    </td>                                    
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div><!-- /.box-body -->
+            </div><!-- /.box -->
+        </div>
+    </div>
+</section>
+
+<script>
+    $(function () {
+        $('#QuoteTable').DataTable({
+            "paging": true,
+            "lengthChange": false,
+            "searching": false,
+            "ordering": true,
+            "info": true,
+            "autoWidth": false
+        });
+    });
+
+</script>

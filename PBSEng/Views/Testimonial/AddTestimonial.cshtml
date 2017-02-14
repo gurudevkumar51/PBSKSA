@@ -1,0 +1,108 @@
+﻿@model PBSDAL.Entity.Testimonial
+
+@{
+    ViewBag.Title = "AddTestimonial";
+}
+
+<section class="content">
+    <!-- SELECT2 EXAMPLE -->
+    <div class="box box-default">
+        <div class="box-header with-border">
+            <h3 class="box-title">Add New Testimonial</h3>
+            <div class="box-tools pull-right">
+                <a href="@Url.Action("Index", "Testimonial")" class="btn btn-success"><i class="fa fa-list-alt" aria-hidden="true"> Testimonial List </i></a>
+            </div>
+        </div><!-- /.box-header -->
+        <div class="box-body">
+            @using (Html.BeginForm("AddTestimonial", "Testimonial", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            {
+                @Html.AntiForgeryToken()
+                <div class="row">
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    <div class="col-md-6" style="direction:ltr">
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Author)
+                            @Html.EditorFor(model => model.Author, new { htmlAttributes = new { @class = "form-control select2", placeholder = "Enter your quote here" } })
+                            @Html.ValidationMessageFor(model => model.Author, "", new { @class = "text-danger" })
+                        </div><!-- /.form-group -->
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Description)
+                            @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control select2", placeholder = "Enter the Author Name" } })
+                            @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Author_Date)
+                            <div class='input-group date' id='AutherDatepicker'>
+                                @Html.EditorFor(model => model.Author_Date, new { htmlAttributes = new { @class = "form-control select2", placeholder = "Select event Date from DatePicker" } })
+                                <span class="input-group-addon">
+                                    <span class="glyphicon glyphicon-calendar"></span>
+                                </span>
+                            </div>
+                            @Html.ValidationMessageFor(model => model.Author_Date, "", new { @class = "text-danger" })
+                        </div><!-- /.form-group -->
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.File)                            
+                            <input id="File" name="file" class="form-control select2" type="file" onchange="show(this)" placeholder="" />
+                            @*@Html.EditorFor(model => model.Image_Path, new { @class = "form-control select2",name="file", type="file", placeholder = "" } )*@
+                            @Html.ValidationMessageFor(model => model.File, "", new { @class = "text-danger" })
+                        </div>
+                    </div><!-- /.col -->
+                    <div class="col-md-6" style="direction:rtl;">
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Ar_Author)
+                            @Html.EditorFor(model => model.Ar_Author, new { htmlAttributes = new { @class = "form-control select2", rows = "3", placeholder = "" } })
+                            @Html.ValidationMessageFor(model => model.Ar_Author, "", new { @class = "text-danger" })
+                        </div><!-- /.form-group -->
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Ar_Description)
+                            @Html.EditorFor(model => model.Ar_Description, new { htmlAttributes = new { @class = "form-control select2", placeholder = "" } })
+                            @Html.ValidationMessageFor(model => model.Ar_Description, "", new { @class = "text-danger" })
+                        </div><!-- /.form-group -->
+                        <div class="form-group" style="direction:ltr">
+                            @Html.LabelFor(model => model.Resource_Link)
+                            @Html.EditorFor(model => model.Resource_Link, new { htmlAttributes = new { @class = "form-control select2", placeholder = "Enter the Author Name" } })
+                            @Html.ValidationMessageFor(model => model.Resource_Link, "", new { @class = "text-danger" })
+                        </div>   
+                        <div class="form-group" style="direction:ltr">
+                            <img src="~/imagesMVC/profile.jpg" width="70" height="70" id="TstmnlImg" />
+                        </div>                     
+
+                    </div><!-- /.col -->
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <input type="submit" value="إضافة حدث (Add)" class="btn btn-info" />
+                        </div>
+                    </div>
+                </div><!-- /.row -->
+            }
+        </div><!-- /.box-body -->
+    </div><!-- /.box -->
+</section>
+
+<script type="text/javascript">
+            $(function () {
+                $('#AutherDatepicker').datetimepicker();
+            });
+
+            function show(input) {
+                if (input.files && input.files[0]) {
+                    var filerdr = new FileReader();
+                    filerdr.onload = function (e) {
+                        var ext = input.value.match(/\.(.+)$/)[1].toLowerCase();
+                        switch (ext) {
+                            case 'jpg':
+                            case 'jpeg':
+                            case 'png':
+                            case 'gif':
+                                $('#TstmnlImg').attr('src', e.target.result);
+                                //$('#DefaultImagePath').show();
+                                break;
+                            default:
+                                swal("Invalid Image Format !!!", "Please upload an Image of Jpeg/Jpg/Png/Gif Format", "error");
+                                $("#File").val('');
+                        }
+                    }
+                    filerdr.readAsDataURL(input.files[0]);
+                }
+            }
+</script>
