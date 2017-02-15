@@ -10,10 +10,12 @@ using System.Dynamic;
 
 namespace PBSEng.Controllers
 {
+    [AllowAnonymous]
     public class HomeController : Controller
     {
         private PBSManager mng = new PBSManager();
         
+        [AllowAnonymous]
         public ActionResult Index()
         {
             ViewData["Portfolio"] = mng.AllPortfolio();

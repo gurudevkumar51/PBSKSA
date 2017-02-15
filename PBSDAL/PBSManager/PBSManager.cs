@@ -14,6 +14,7 @@ namespace PBSDAL.PBSManager
         private QuoteRepository quoteRepo = new QuoteRepository();
         private PortfolioRepository portRepo = new PortfolioRepository();
         private TestimonialRepository tstmnlRepo = new TestimonialRepository();
+        private UserRepository usrRepo = new UserRepository();
         
         //Events operations
         public List<Event> AllEvents()
@@ -97,6 +98,11 @@ namespace PBSDAL.PBSManager
         public int UpdateTestimonial(Testimonial tstmnl)
         {
             return tstmnlRepo.UpdateTestimonial(tstmnl);
+        }
+
+        public List<User> AllUsers()
+        {
+            return usrRepo.GetUsers();
         }
     }
 }

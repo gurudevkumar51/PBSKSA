@@ -8,9 +8,11 @@ using System.Web.Mvc;
 
 namespace PBSEng.Controllers
 {
+    [Authorize]
     public class EventController : Controller
     {
-        private PBSManager mng = new PBSManager();
+        private PBSManager mng = new PBSManager();        
+        
         public ActionResult Index()
         {
             return View(mng.AllEvents());

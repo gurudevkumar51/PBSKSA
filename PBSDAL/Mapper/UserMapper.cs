@@ -16,14 +16,13 @@ namespace PBSDAL.Mapper
             while (reader.Read())
             {
                 User user = new User();
-                user.ID = Convert.ToInt32(reader["ID"].ToString());
-                
+                user.ID = Convert.ToInt32(reader["ID"].ToString());                
                 user.Name = reader["Name"].ToString();
                 user.Username = reader["UserName"].ToString();
                 user.Email = reader["Email"].ToString();
                 user.Password = reader["Password"].ToString();
-                user.Image_Path = reader["Description"].ToString();
-                user.Phone = reader["ImagePath"].ToString();
+                user.Image_Path = reader["ImagePath"].ToString();
+                user.Phone = reader["Phone_No"].ToString();
                 users.Add(user);
             }
             return users;

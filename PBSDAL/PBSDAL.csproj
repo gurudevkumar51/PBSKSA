@@ -109,6 +109,7 @@
     <Compile Include="DataAccess\PortfolioRepository.cs" />
     <Compile Include="DataAccess\QuoteRepository.cs" />
     <Compile Include="DataAccess\TestimonialRepository.cs" />
+    <Compile Include="DataAccess\UserRepository.cs" />
     <Compile Include="Entity\Event.cs" />
     <Compile Include="Entity\Portfolio.cs" />
     <Compile Include="Entity\Quotes.cs" />

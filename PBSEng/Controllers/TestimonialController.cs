@@ -9,6 +9,7 @@ using System.IO;
 
 namespace PBSEng.Controllers
 {
+    [Authorize]
     public class TestimonialController : Controller
     {
         private PBSManager mng = new PBSManager();

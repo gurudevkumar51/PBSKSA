@@ -8,6 +8,7 @@ using PBSDAL.PBSManager;
 
 namespace PBSEng.Controllers
 {
+    [Authorize]
     public class QuotesController : Controller
     {
         private PBSManager mng = new PBSManager();
