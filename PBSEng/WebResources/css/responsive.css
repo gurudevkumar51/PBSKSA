@@ -320,7 +320,7 @@ nav.nav-bar-slide {width: 200px; padding:25px 0 20px 30px;}
 #main-slider .carousel-indicators li, #main-slider .carousel-indicators .active, #main-slider .carousel-indicators .active:after {width: 14px !important;height: 14px !important;}
 #main-slider .carousel-indicators .active:after {top:0;left:0;}
 #main-slider .carousel-indicators li:after {top:0;left:0;}
-#main-slider .carousel .slide-margin {display:none;}
+#main-slider .carousel .slide-margin, #main-slider1 .carousel .carousel-content {display:none;}
 .carousel-indicators {bottom:25px;}
 .header .nav-bar-main .brand-main img {width: 95px;}
 .header .nav-bar-main ul {padding-top: 20px;padding-left: 28px;}
@@ -389,6 +389,7 @@ input[type=checkbox]:checked, input[type=radio]:checked {width: 17px;height: 17p
 .testi-ppl {margin:0;}
 .testi-ppl img {width:100px;}
 #main-slider .carousel .carousel-content {margin-top: 30px;}
+#main-slider1 .carousel .carousel-content h1 {width:100%;}
 .services .services-tabs .tab-content .content-serv {padding: 5px;margin-bottom:0;}
 .team-member-responsive{display:block;}
 .our-team {margin-bottom:0px;padding: 20px 0 30px 0;}
@@ -545,6 +546,7 @@ section#team {padding:20px 0 35px 0;}
 
 .slick-initialized .slick-slide {text-align:center;}
 .slick-slide img {display: inline-block;}
+#main-slider1 .carousel-content h1{ width:100%;}
 }
 @media (min-width: 768px) and (max-width: 1023px) {
 	#totop {

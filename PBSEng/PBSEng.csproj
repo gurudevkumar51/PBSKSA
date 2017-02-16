@@ -357,10 +357,6 @@
     <Content Include="WebResources\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="WebResources\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="WebResources\images\404.xcf" />
-    <Content Include="WebResources\images\portfolio\full\Thumbs.db" />
-    <Content Include="WebResources\images\portfolio\recent\Thumbs.db" />
-    <Content Include="WebResources\images\slider\Thumbs.db" />
-    <Content Include="WebResources\images\Thumbs.db" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
@@ -373,6 +369,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Career.cs" />
     <Compile Include="Models\Login.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
