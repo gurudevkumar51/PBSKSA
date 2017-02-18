@@ -1,4 +1,5 @@
-﻿@using PBSDAL.Entity
+﻿@model PBSDAL.Entity.Career
+@using PBSDAL.Entity
 @{
     Layout = null;
 }
@@ -11,7 +12,6 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <title>PBSKSA</title>
-
     <!-- core CSS -->
     <link href="~/WebResources/css/bootstrap.min.css" rel="stylesheet" />
     <link href="~/WebResources/css/font-awesome.min.css" rel="stylesheet" />
@@ -517,41 +517,47 @@
     <div id="carers">
         <section class="careers wow fadeIn same-head blue-heading" id="careers">
             <div class="container">
-                <form method="post" class="form-ajax">
+                @*<form method="post" id="careerResume" class="form-ajax" enctype="multipart/form-data">*@
+                    @using (Html.BeginForm("CareerPost", "Home", FormMethod.Post, new { @class = "form-ajax", enctype = "multipart/form-data" }))
+            {
                     <h1>Talented?</h1>
                     <div class="col-md-4 col-sm-4">
                         <div class="select-tal">
                             <p>Select one of the below</p>
                             <label>
-                                <input type="radio" name="talente" value="Analyst">
+                                @Html.RadioButtonFor(e => e.Designation, "Analyst")
+                                @*<input type="radio" name="talente" value="Analyst">*@
                                 Analyst
                             </label>
                             <label>
-                                <input type="radio" name="talente" value="Copywriter">
+                                @Html.RadioButtonFor(e => e.Designation, "Copywriter")
+                                @*<input type="radio" name="talente" value="Copywriter">*@
                                 Copywriter
                             </label>
                             <label>
-                                <input type="radio" name="talente" value="Designer">
+                                @Html.RadioButtonFor(e => e.Designation, "Designer")
+                                @*<input type="radio" name="talente" value="Designer">*@
                                 Designer
                             </label>
                             <label>
-                                <input type="radio" name="talente" value="Social Media Officer">
+                                @Html.RadioButtonFor(e => e.Designation, "Social Media Officer")
+                                @*<input type="radio" name="talente" value="Social Media Officer">*@
                                 Social Media Officer
                             </label>
                         </div>
                     </div>
                     <div class="col-md-4 col-sm-4">
                         <div class="form-et">
-                            <input type="text" id="careername" placeholder="Your Full Name" name="full_name">
-                            <input type="text" id="careerPhone" placeholder="Mobile Number" name="phone">
-                            <input type="text" id="careerMail" placeholder="Your Email" name="email">
+                            <input type="text" id="FullName" placeholder="Your Full Name" name="FullName">
+                            <input type="text" id="PhoneNo" placeholder="Mobile Number" name="PhoneNo">
+                            <input type="text" id="EmailID" placeholder="Your Email" name="EmailID">
                         </div>
                     </div>
                     <div class="col-md-4 col-sm-4">
                         <div class="send-cv">
                             <label class="up-cv">
                                 <span class="file_name"> Upload your CV </span> <i class="fa fa-arrow-up" aria-hidden="true"></i>
-                                <input type="file" name="filecv" id="filecv">
+                                <input type="file" name="File" id="File">
                             </label>
                             <label class="no-robot">
                                 <input type="checkbox" name="cabtcha" value="121212">
@@ -561,7 +567,8 @@
                             <div class="loading"></div>
                         </div>
                     </div>
-                </form>
+                    }
+                @*</form>*@
             </div>
         </section>
     </div>
@@ -603,17 +610,17 @@
                 <div class="col-xs-12 col-sm-5 wow fadeInDown reachus">
                     <h1><span>Reach</span> <small>to us</small> </h1>
                     <div class="form-et">
-                        <input placeholder="Your  Name" name="full_name" class="inpsetynn" type="text">
-                        <input placeholder="Mobile Number" name="phone" class="inpsetynn" type="text">
-                        <input placeholder="Email" name="email" class="inpsetynn" type="text">
-                        <input placeholder="Subject" name="email" class="inpsetynn" type="text">
-                        <textarea placeholder="Your Massage" name="email" class="inpsetynn" type="text"></textarea>
+                        <input placeholder="Your  Name" name="full_name" id="cName" class="inpsetynn" type="text">
+                        <input placeholder="Mobile Number" name="phone" id="cPhone" class="inpsetynn" type="text">
+                        <input placeholder="Email" name="email" id="cEmail" class="inpsetynn" type="text">
+                        <input placeholder="Subject" name="Subject" id="cSubject" class="inpsetynn" type="text">
+                        <textarea placeholder="Your Massage" name="email" id="cMessage" class="inpsetynn" type="text"></textarea>
                         <div class="captcha-btn">
                             <label class="no-robot">
                                 <input name="cabtcha" value="121212" type="checkbox">
                                 I'm not a robot
                             </label>
-                            <button type="submit" class="submit-ajax bton">Send</button>
+                            <button type="submit" id="contactForm" class="submit-ajax bton">Send</button>
                         </div>
                     </div>
                 </div>
@@ -739,7 +746,7 @@
                         <div class="testimonial">
                             <div class="testi-ppl"><img src="~/imagesMVC/TestimonialThumbnail/@item.thumbnailPath" style="border-radius: 50%;" alt=""></div>
                             <div class="testimonial-text">
-                                <div class="title"><span>@item.Author</span></div>
+                                <div class="title"><span>@item.Author</span> on<small> @item.Author_Date.ToString("dd-MM-yyyy")</small></div>
                                 <p>@item.Description</p>
                             </div>
                         </div>
@@ -825,7 +832,8 @@
 
                     <div class="col-md-4 col-sm-4 location">
                         <div class="widget">
-                            <img src="~/WebResources/images/new-map.jpg" width="319" height="200">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3621.9062691321815!2d46.59318371500162!3d24.798662884083054!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2ee40eefcb6a9d%3A0xbc4308498520f827!2sAnas+Ibn+Malik+Rd%2C+Al+Malqa%2C+Riyadh+Saudi+Arabia!5e0!3m2!1sen!2sin!4v1487400669187" width="319" height="200" frameborder="0" style="border:0" allowfullscreen></iframe>
+                            @*<img src="~/WebResources/images/new-map.jpg" width="319" height="200">*@
                         </div>
                     </div>
                     <!--/.col-md-3-->
@@ -833,6 +841,7 @@
             </div>
         </section>
     </div>
+    
     <!--/#bottom-->
     <!--/#footer-->
     <script src="~/WebResources/js/jquery.js"></script>
@@ -849,75 +858,72 @@
     <script src="~/WebResources/js/jquery.browser.min.js"></script>
     <script src="~/WebResources/js/jquery.carousel.min.js"></script>
     <script src="~/WebResources/js/jquery.mousewheel.js"></script>
+    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
 </body>
 </html>
 
 <script>
-    $('#careerBtn').click(function () {
+    $('#contactForm').click(function () {
         careerBtn_validation();
     });
 
     function careerBtn_validation() {
         debugger;
         var err = 0;
-        if ($('#careername').val() == 0) {
-            alert("Insert value");
+        if ($('#cName').val() == 0) {
+            alert("Insert Name");
             err++;
         }
-        if ($('#careerPhone').val() == 0) {
-            alert("Insert value");
+        if ($('#cPhone').val() == 0) {
+            alert("Insert Phone");
             err++;
         }
-        if ($('#careerMail').val() == 0) {
-            alert("Insert value");
+        if ($('#cEmail').val() == 0) {
+            alert("Insert Email");
             err++;
         }
-
-        //if (($('input[name="chkNew"]').length > 0) && ($('input[name="chkNew"]:checked').val() == undefined || $('input[name="chkNew"]:checked').val() == "")) {
-        //    $("#tblError").html("Please select at least one supplier.").css('display', 'inline-block');
-        //    err++;
-        //}
+        if ($('#cSubject').val() == 0) {
+            alert("Insert Subject");
+            err++;
+        }
+        if ($('#cMessage').val() == 0) {
+            alert("Enter your message");
+            err++;
+        }
 
         if (err == 0) {
-            SubmitResume();
-            alert('Your resume added succesfully........');
+            SubmitContactForm();
+            //alert('Your resume added succesfully........');
         }
         else {
             alert('Problem adding the comments...');
         }
     }
 
-    function SubmitResume() {
-        debugger;
-        var Career = {
-            Designation: $("input[name=talente]:checked").val(),
-            FullName: $('#careername').val(),
-            PhoneNo: $('#careerPhone').val(),
-            EmailID: $('#careerMail').val(),
+    function SubmitContactForm() {
+        debugger;        
+        var Contact = {
+            FullName: $('#cName').val(),
+            PhoneNo: $('#cPhone').val(),
+            EmailID: $('#cEmail').val(),
+            Subject: $('#cSubject').val(),
+            Message: $('#cMessage').val(),
         };
-        var file_data = $("#filecv").prop("files")[0];   // Getting the properties of file from file field
-        var form_data = new FormData();                  // Creating object of FormData class
-        form_data.append("file", file_data)              // Appending parameter named file with properties of file_field to form_data
-        form_data.append("Designation", Career.Designation)
-        form_data.append("FullName", Career.FullName)
-        form_data.append("PhoneNo", Career.PhoneNo)
-        form_data.append("EmailID", Career.EmailID)
-        
 
         $.ajax({
-            url: '@Url.Action("CareerPost", "Home")',
+            url: '@Url.Action("ContactForm", "Home")',
             type: "POST",
             dataType: 'json',
-            data: form_data.serialize(),
+            data: JSON.stringify(Contact),
             async: false,
             cache: false,
             traditional: true,
             contentType: 'application/json',
             success: function (data) {
-                window.location.href = '@Url.Action("Index", "Home")';
+                alert('Your Message sent succesfully........');
             },
             error: function () {
-                alert("Sorry");
+                alert("Sorry")
             }
         });
     };

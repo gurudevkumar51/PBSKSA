@@ -369,7 +369,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Career.cs" />
     <Compile Include="Models\Login.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -408,6 +407,7 @@
     <Folder Include="imagesMVC\Portfolio\" />
     <Folder Include="imagesMVC\TestimonialThumbnail\" />
     <Folder Include="imagesMVC\Testimonial\" />
+    <Folder Include="Resume\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\PBSDAL\PBSDAL.csproj">

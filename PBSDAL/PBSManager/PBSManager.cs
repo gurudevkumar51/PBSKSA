@@ -15,6 +15,8 @@ namespace PBSDAL.PBSManager
         private PortfolioRepository portRepo = new PortfolioRepository();
         private TestimonialRepository tstmnlRepo = new TestimonialRepository();
         private UserRepository usrRepo = new UserRepository();
+        private CareerRepository crrRepo = new CareerRepository();
+        private ContactRepository cntctRepo = new ContactRepository();
         
         //Events operations
         public List<Event> AllEvents()
@@ -100,9 +102,22 @@ namespace PBSDAL.PBSManager
             return tstmnlRepo.UpdateTestimonial(tstmnl);
         }
 
+        //User Operations
         public List<User> AllUsers()
         {
             return usrRepo.GetUsers();
+        }
+        
+        //Career Operations
+        public int AddResume(Career carr)
+        {
+            return crrRepo.AddCareer(carr);
+        }
+
+        //Contact Operations
+        public int AddContact(ContactForm cntct)
+        {
+            return cntctRepo.AddContact(cntct);
         }
     }
 }

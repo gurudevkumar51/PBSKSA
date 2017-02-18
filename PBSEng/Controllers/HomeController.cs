@@ -30,11 +30,30 @@ namespace PBSEng.Controllers
         [HttpPost]
         public ActionResult CareerPost(Career crr)
         {
-            return null;
+           var flag= mng.AddResume(crr);
+           if (flag > 0)
+           {
+               TempData["msg"] = "Our HR will get back to you very soon";
+               return RedirectToAction("Index");
+           }
+           else
+           {
+               return Json(false, JsonRequestBehavior.AllowGet);
+           }
         }
-        //public ActionResult Team()
-        //{
-        //    return View();
-        //}
+
+        [HttpPost]
+        public ActionResult ContactForm(ContactForm cntct)
+        {
+            var flag = mng.AddContact(cntct);
+            if (flag > 0)
+            {
+                return Json(true, JsonRequestBehavior.AllowGet);
+            }
+            else
+            {
+                return Json(false, JsonRequestBehavior.AllowGet);
+            }
+        }        
     }
 }

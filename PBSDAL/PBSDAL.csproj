@@ -105,17 +105,23 @@
   <ItemGroup>
     <Compile Include="Common\GenericClass.cs" />
     <Compile Include="DataAccess\BaseRepository.cs" />
+    <Compile Include="DataAccess\CareerRepository.cs" />
+    <Compile Include="DataAccess\ContactRepository.cs" />
     <Compile Include="DataAccess\EventRepository.cs" />
     <Compile Include="DataAccess\PortfolioRepository.cs" />
     <Compile Include="DataAccess\QuoteRepository.cs" />
     <Compile Include="DataAccess\TestimonialRepository.cs" />
     <Compile Include="DataAccess\UserRepository.cs" />
+    <Compile Include="Entity\Career.cs" />
+    <Compile Include="Entity\ContactForm.cs" />
     <Compile Include="Entity\Event.cs" />
     <Compile Include="Entity\Portfolio.cs" />
     <Compile Include="Entity\Quotes.cs" />
     <Compile Include="Entity\Testimonial.cs" />
     <Compile Include="Entity\User.cs" />
     <Compile Include="Entity\ViewModel.cs" />
+    <Compile Include="Mapper\CareerMapper.cs" />
+    <Compile Include="Mapper\ContactMapper.cs" />
     <Compile Include="Mapper\EventMapper.cs" />
     <Compile Include="Mapper\Mapper.cs" />
     <Compile Include="Mapper\PortfolioMapper.cs" />
