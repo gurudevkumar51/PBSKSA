@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Web;
 
-namespace PBSEng.Models
+namespace PBSDAL.Entity
 {
     public class Career
     {
@@ -13,5 +15,6 @@ namespace PBSEng.Models
         public string PhoneNo { get; set; }
         public string EmailID { get; set; }
         public HttpPostedFileBase File { get; set; }
+        public string ResumePath { get; set; }
     }
 }
