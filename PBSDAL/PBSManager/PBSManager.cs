@@ -17,6 +17,7 @@ namespace PBSDAL.PBSManager
         private UserRepository usrRepo = new UserRepository();
         private CareerRepository crrRepo = new CareerRepository();
         private ContactRepository cntctRepo = new ContactRepository();
+        private TeamRepository TmRepo = new TeamRepository();
         
         //Events operations
         public List<Event> AllEvents()
@@ -118,6 +119,26 @@ namespace PBSDAL.PBSManager
         public int AddContact(ContactForm cntct)
         {
             return cntctRepo.AddContact(cntct);
+        }
+
+        //Team Operations
+        public int AddTeam(Team Tm)
+        {
+            return TmRepo.AddTeam(Tm);
+        }
+
+        public List<Team> AllTeamMembers()
+        {
+            return TmRepo.GetTeams();
+        }
+
+        public int ChangeTeamStatus(int id, Boolean IsActive)
+        {
+            return TmRepo.ChangeStatus(id, IsActive);
+        }
+        public int UpdateTeam(Team Tm)
+        {
+            return TmRepo.UpdateTeam(Tm);
         }
     }
 }

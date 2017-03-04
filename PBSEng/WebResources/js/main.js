@@ -21,7 +21,8 @@ jQuery(function($) {'use strict',
 	new WOW().init();
 
 	// portfolio filter
-	$(window).load(function(){'use strict';
+	    $(window).on('load', function () {
+	    'use strict';
 		var $portfolio_selectors = $('.portfolio-filter >li>a');
 		var $portfolio = $('.portfolio-items');
 		$portfolio.isotope({

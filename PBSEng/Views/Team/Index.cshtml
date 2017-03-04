@@ -1,0 +1,102 @@
+﻿@model IEnumerable<PBSDAL.Entity.Team>
+
+@{
+    ViewBag.Title = "Index";
+}
+<section class="content">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="box">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Team Members</h3>
+                    <div class="box-tools pull-right">
+                        <a href="@Url.Action("AddTeam", "Team")" class="btn btn-success"><i class="fa fa-plus-circle" aria-hidden="true"> Add Team Member </i></a>
+                    </div>
+                </div><!-- /.box-header -->
+                <div class="box-body">
+                    <table id="TeamTable" class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Name)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Ar_Name)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Designation)
+                                </th>
+                                
+                                <th>
+                                    @Html.DisplayNameFor(model => model.ImagePath)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Skills)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Ar_Skills)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Expertise)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Ar_Expertise)
+                                </th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Name)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Ar_Name)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Designation)
+                                    </td>                                    
+                                    <td>
+                                        <img src="~/imagesMVC/TeamImages/@item.ImagePath" width="50" height="50" />
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Skills)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Ar_Skills)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Expertise)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Ar_Expertise)
+                                    </td>
+                                    <td>
+                                        <a href="@Url.Action("EditTeam", "Team", new { id = item.ID })" class="btn btn-info"><i class="fa fa-pencil" aria-hidden="true"></i> Edit</a>
+                                        <a href="@Url.Action("DeleteTeam", "Team", new { id = item.ID })" class="btn btn-danger"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div><!-- /.box-body -->
+            </div><!-- /.box -->
+        </div>
+    </div>
+</section>
+
+<script>
+    $(function () {
+        $('#TeamTable').DataTable({
+            "paging": true,
+            "lengthChange": false,
+            "searching": false,
+            "ordering": true,
+            "info": true,
+            "autoWidth": false
+        });
+    });
+
+</script>

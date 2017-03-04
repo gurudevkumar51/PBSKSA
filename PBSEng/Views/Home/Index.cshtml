@@ -17,20 +17,20 @@
     <link href="~/WebResources/css/font-awesome.min.css" rel="stylesheet" />
     <link href="~/WebResources/css/animate.min.css" rel="stylesheet" />
     <link href="~/WebResources/css/prettyPhoto.css" rel="stylesheet" />
-    <link href="~/WebResources/css/main.css" rel="stylesheet" />
+    <link href="~/WebResources/css/main.css" rel="stylesheet" />    
     <link href="~/WebResources/css/slick.css" rel="stylesheet" />
     <link href="~/WebResources/css/carousel.css" rel="stylesheet" />
     <link href="~/WebResources/css/responsive.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css" rel="stylesheet" />    
 
     <link rel="shortcut icon" href="~/WebResources/images/favicon.ico">
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="~/WebResources/images/ico/apple-touch-icon-144-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="~/WebResources/images/ico/apple-touch-icon-114-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="~/WebResources/images/ico/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="~/WebResources/images/ico/apple-touch-icon-57-precomposed.png">
-
+    <script src="~/WebResources/js/jquery.js"></script>
 </head>
 <!--/head-->
-
 <body class="homepage">
     <header class="header">
         <button class="bars"><i class="fa fa-bars" aria-hidden="true"></i></button>
@@ -47,8 +47,8 @@
             </ul>
             <div class="langauge">
                 <ul>
-                    <li><a href="javascript:;">En</a></li>
-                    <li><a href="javascript:;">Ar</a></li>
+                    <li><a href="@Url.Action("Index", "Home")">En</a></li>
+                    <li><a href="@Url.Action("ArIndex", "Home")">Sa</a></li>
                 </ul>
             </div>
         </nav>
@@ -65,8 +65,8 @@
             </ul>
             <div class="langauge">
                 <ul>
-                    <li><a href="javascript:;">En</a></li>
-                    <li><a href="javascript:;">Ar</a></li>
+                    <li><a href="@Url.Action("Index", "Home")">En</a></li>
+                    <li><a href="@Url.Action("ArIndex", "Home")">Sa</a></li>
                 </ul>
             </div>
         </div>
@@ -251,6 +251,7 @@
         </section>
     </div>
 
+    <!--Our Team-->
     <section id="team" class="our-team">
         <div class="container">
             <div class="center wow fadeInDown">
@@ -258,106 +259,53 @@
             </div>
             <div class="content-se team-member wow fadeInUp" id="wide-wrapper">
                 <ul id="carousel" class="carousel">
-                    <li>
-                        <img src="~/WebResources/images/1.png" alt="Nisha" />
-                        <div class="tooltip">Nisha </div>
-                    </li>
-                    <li>
-                        <img src="~/WebResources/images/2.png" alt="Guru" />
-                        <div class="tooltip">Guru </div>
-                    </li>
-                    <li>
-                        <img src="~/WebResources/images/3.png" alt="Dev" />
-                        <div class="tooltip">Dev </div>
-                    </li>
-                    <li>
-                        <img src="~/WebResources/images/3.png" alt="Rahul" />
-                        <div class="tooltip">Rahul </div>
-                    </li>
-                    <li>
-                        <img src="~/WebResources/images/4.png" alt="Suman" />
-                        <div class="tooltip">Suman </div>
-                    </li>
-                    <li>
-                        <img src="~/WebResources/images/5.png" alt="Dheeraj" />
-                        <div class="tooltip">Dheeraj </div>
-                    </li>
-                    <li>
-                        <img src="~/WebResources/images/1.png" alt="Nisha" />
-                        <div class="tooltip">Nisha </div>
-                    </li>
-                    <li>
-                        <img src="~/WebResources/images/2.png" alt="Guru" />
-                        <div class="tooltip">Guru </div>
-                    </li>
-                    <li>
-                        <img src="~/WebResources/images/3.png" alt="Dev" />
-                        <div class="tooltip">Dev </div>
-                    </li>
-                    <li>
-                        <img src="~/WebResources/images/3.png" alt="Rahul" />
-                        <div class="tooltip">Rahul </div>
-                    </li>
-                    <li>
-                        <img src="~/WebResources/images/4.png" alt="Suman" />
-                        <div class="tooltip">Suman </div>
-                    </li>
-                    <li>
-                        <img src="~/WebResources/images/5.png" alt="Dheeraj" />
-                        <div class="tooltip">Dheeraj </div>
-                    </li>
+                    @{
+                        foreach (var item in ViewData["Team"] as List<Team>)
+                        {
+                            <li>
+                                <img src="~/imagesMVC/TeamImages/@item.ImagePath?id=@item.ID" alt="@item.Name" />
+                                <div class="tooltip">@item.Name</div>
+                            </li>
+                        }
+                    }                    
                 </ul>
             </div>
+            <div class="Team-modal">
+                <div class="modal fade bs-example-modal-lg" id="team-modal" tabindex="-1" role="dialog">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            <div class="Team-modal-loading"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <script type="text/javascript">
+                $(document).on('click', '.carousel-item', function () {
+                    debugger;
+                    var id = $(this).attr('src');
+                    id = id.split("=");
+        $('#team-modal').modal('show');
+        $(".Team-modal-loading").html('<div class="cssload-container"><div class="cssload-whirlpool"></div></div>');
+        $(".Team-modal-loading").load('@Url.Action("Team", "Home")' + "?id=" + id[1]);
+
+        return false;
+    });
+
+    $('#team-modal').on('hidden.bs.modal', function () {
+        $(".Team-modal-loading").html('');
+    });
+            </script>
             <div class="team-member-responsive">
                 <ul class="teammembers">
-                    <li>
-                        <img src="~/WebResources/images/1.png" alt="Nisha" />
-                        <div class="tooltip">Nisha </div>
-                    </li>
-                    <li>
-                        <img src="~/WebResources/images/2.png" alt="Guru" />
-                        <div class="tooltip">Guru </div>
-                    </li>
-                    <li>
-                        <img src="~/WebResources/images/3.png" alt="Dev" />
-                        <div class="tooltip">Dev </div>
-                    </li>
-                    <li>
-                        <img src="~/WebResources/images/3.png" alt="Rahul" />
-                        <div class="tooltip">Rahul </div>
-                    </li>
-                    <li>
-                        <img src="~/WebResources/images/4.png" alt="Suman" />
-                        <div class="tooltip">Suman </div>
-                    </li>
-                    <li>
-                        <img src="~/WebResources/images/5.png" alt="Dheeraj" />
-                        <div class="tooltip">Dheeraj </div>
-                    </li>
-                    <li>
-                        <img src="~/WebResources/images/1.png" alt="Nisha" />
-                        <div class="tooltip">Nisha </div>
-                    </li>
-                    <li>
-                        <img src="~/WebResources/images/2.png" alt="Guru" />
-                        <div class="tooltip">Guru </div>
-                    </li>
-                    <li>
-                        <img src="~/WebResources/images/3.png" alt="Dev" />
-                        <div class="tooltip">Dev </div>
-                    </li>
-                    <li>
-                        <img src="~/WebResources/images/3.png" alt="Rahul" />
-                        <div class="tooltip">Rahul </div>
-                    </li>
-                    <li>
-                        <img src="~/WebResources/images/4.png" alt="Suman" />
-                        <div class="tooltip">Suman </div>
-                    </li>
-                    <li>
-                        <img src="~/WebResources/images/5.png" alt="Dheeraj" />
-                        <div class="tooltip">Dheeraj </div>
-                    </li>
+                    @{
+                        foreach (var item in ViewData["Team"] as List<Team>)
+                        {
+                            <li>
+                                <img src="~/imagesMVC/TeamImages/@item.ImagePath?id=@item.ID" alt="@item.Name" />
+                                <div class="tooltip">@item.Name</div>
+                            </li>
+                        }
+                    }                         
                 </ul>
             </div>
         </div>
@@ -507,7 +455,6 @@
                             </li>
                         }
                     }
-
                 }
             </ul>
         </div>
@@ -517,7 +464,7 @@
     <div id="carers">
         <section class="careers wow fadeIn same-head blue-heading" id="careers">
             <div class="container">
-                @*<form method="post" id="careerResume" class="form-ajax" enctype="multipart/form-data">*@
+                
                     @using (Html.BeginForm("CareerPost", "Home", FormMethod.Post, new { @class = "form-ajax", enctype = "multipart/form-data" }))
             {
                     <h1>Talented?</h1>
@@ -526,22 +473,18 @@
                             <p>Select one of the below</p>
                             <label>
                                 @Html.RadioButtonFor(e => e.Designation, "Analyst")
-                                @*<input type="radio" name="talente" value="Analyst">*@
                                 Analyst
                             </label>
                             <label>
                                 @Html.RadioButtonFor(e => e.Designation, "Copywriter")
-                                @*<input type="radio" name="talente" value="Copywriter">*@
                                 Copywriter
                             </label>
                             <label>
                                 @Html.RadioButtonFor(e => e.Designation, "Designer")
-                                @*<input type="radio" name="talente" value="Designer">*@
                                 Designer
                             </label>
                             <label>
                                 @Html.RadioButtonFor(e => e.Designation, "Social Media Officer")
-                                @*<input type="radio" name="talente" value="Social Media Officer">*@
                                 Social Media Officer
                             </label>
                         </div>
@@ -568,7 +511,6 @@
                         </div>
                     </div>
                     }
-                @*</form>*@
             </div>
         </section>
     </div>
@@ -628,7 +570,6 @@
             <!--/.row-->
         </div>
         <!--/.container-->
-
     </section>
 
     <!--/#Portfolio-->
@@ -825,15 +766,13 @@
                             </ul>
                         </div>
 
-                        <div class="develop-site">Developed by: <a href="http://www.webphonix.com/">Webphonix</a></div>
+                        <div class="develop-site">Developed by: <a target="_blank" href="http://www.webphonix.com/">Webphonix</a></div>
                     </div>
                     <!--/.col-md-3-->
 
-
                     <div class="col-md-4 col-sm-4 location">
                         <div class="widget">
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3621.9062691321815!2d46.59318371500162!3d24.798662884083054!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2ee40eefcb6a9d%3A0xbc4308498520f827!2sAnas+Ibn+Malik+Rd%2C+Al+Malqa%2C+Riyadh+Saudi+Arabia!5e0!3m2!1sen!2sin!4v1487400669187" width="319" height="200" frameborder="0" style="border:0" allowfullscreen></iframe>
-                            @*<img src="~/WebResources/images/new-map.jpg" width="319" height="200">*@
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3621.9062691321815!2d46.59318371500162!3d24.798662884083054!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2ee40eefcb6a9d%3A0xbc4308498520f827!2sAnas+Ibn+Malik+Rd%2C+Al+Malqa%2C+Riyadh+Saudi+Arabia!5e0!3m2!1sen!2sin!4v1487400669187" width="319" height="200" frameborder="0" style="border:0" allowfullscreen></iframe>                            
                         </div>
                     </div>
                     <!--/.col-md-3-->
@@ -843,32 +782,35 @@
     </div>
     
     <!--/#bottom-->
-    <!--/#footer-->
-    <script src="~/WebResources/js/jquery.js"></script>
-    <script src="~/WebResources/js/bootstrap.min.js"></script>
-    <script src="~/WebResources/js/jquery.prettyPhoto.js"></script>
-    <script src="~/WebResources/js/jquery.isotope.min.js"></script>
-    <script src="~/WebResources/js/main.js"></script>
-    <script src="~/WebResources/js/wow.min.js"></script>
-    <script src="~/WebResources/js/owl.carousel.min.js"></script>
-    <script>
-        $('.carousel').carousel({ interval: 9000 })
-    </script>
-    <script src="~/WebResources/js/slick.js"></script>
-    <script src="~/WebResources/js/jquery.browser.min.js"></script>
-    <script src="~/WebResources/js/jquery.carousel.min.js"></script>
-    <script src="~/WebResources/js/jquery.mousewheel.js"></script>
-    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+    
 </body>
 </html>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js"></script>
+<script src="~/WebResources/js/bootstrap.min.js"></script>
+<script src="~/WebResources/js/jquery.prettyPhoto.js"></script>
+<script src="~/WebResources/js/jquery.isotope.min.js"></script>
+
+<script src="~/WebResources/js/main.js"></script>
+<script src="~/WebResources/js/wow.min.js"></script>
+<script src="~/WebResources/js/owl.carousel.min.js"></script>
+<script>
+    $('.carousel').carousel({ interval: 9000 });
+</script>
+<script src="~/WebResources/js/slick.js"></script>
+<script src="~/WebResources/js/jquery.browser.min.js"></script>
+<script src="~/WebResources/js/jquery.carousel.min.js"></script>
+<script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert-dev.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
 
 <script>
-    $('#contactForm').click(function () {
-        careerBtn_validation();
-    });
-
-    function careerBtn_validation() {
-        debugger;
+    $(document).ready(function () {        
+        $('#contactForm').click(function () {
+            cntctBtn_validation();
+        });
+    });    
+    
+    function cntctBtn_validation() {
         var err = 0;
         if ($('#cName').val() == 0) {
             alert("Insert Name");
@@ -893,7 +835,6 @@
 
         if (err == 0) {
             SubmitContactForm();
-            //alert('Your resume added succesfully........');
         }
         else {
             alert('Problem adding the comments...');
@@ -901,7 +842,6 @@
     }
 
     function SubmitContactForm() {
-        debugger;        
         var Contact = {
             FullName: $('#cName').val(),
             PhoneNo: $('#cPhone').val(),
@@ -920,10 +860,15 @@
             traditional: true,
             contentType: 'application/json',
             success: function (data) {
-                alert('Your Message sent succesfully........');
+                $('#cName').val("");
+                $('#cPhone').val(""),
+                $('#cEmail').val(""),
+                $('#cSubject').val(""),
+                $('#cMessage').val(""),
+                swal("Your Message sent succesfully........", "We'll get back to you very soon!");
             },
             error: function () {
-                alert("Sorry")
+                swal("Unable to send message", "Please try again later!");
             }
         });
     };

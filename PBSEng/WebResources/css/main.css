@@ -3464,7 +3464,22 @@ p {color:#b5b5b5;line-height:26px;font-size:15px;}
 .head-blk {font-size:33px;font-weight:400;}
 .blue-heading h1 {color:#008fc3;}
 
-.partner-slide .slick-arrow {font-size:0;background:none;border:none;cursor:pointer;position:absolute;top:50%;transform:translate(0,-50%);-webkit-transform:translate(0,-50%);-moz-transform:translate(0,-50%);-ms-transform:translate(0,-50%);-o-transform:translate(0,-50%);z-index:99;outline:none;width:22px;height:34px;}
+.partner-slide .slick-arrow {
+    font-size:0;
+    background:none;
+    border:none;
+    cursor:pointer;
+    position:absolute;
+    top:50%;
+    transform:translate(0,-50%);
+    -webkit-transform:translate(0,-50%);
+    -moz-transform:translate(0,-50%);
+    -ms-transform:translate(0,-50%);
+    -o-transform:translate(0,-50%);
+    z-index:99;
+    outline:none;
+    width:22px;
+    height:34px;}
 .partner-slide .slick-prev.slick-arrow {background:url(../images/previous.png) no-repeat;background-size:100%;left:-60px;}
 .partner-slide .slick-next.slick-arrow {background:url(../images/next.png) no-repeat;background-size:100%;right:-40px;}
 .grey-bg {background:#f3f3f3;}

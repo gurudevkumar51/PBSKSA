@@ -1,0 +1,66 @@
+﻿@model PBSDAL.Entity.Team
+
+<a class="close" data-dismiss="modal" aria-label="Close"><span>X</span></a>
+<h1 class="title-section">PBS</h1>
+<div class="row cont">
+
+    <div class="col-md-3 col-sm-3">
+        <div class="my-img">
+            <img src="~/imagesMVC/TeamImages/@Model.ImagePath" alt="@Model.Name" />
+        </div>
+    </div>
+
+    <div class="col-md-9 col-sm-9">
+
+        <div class="my-info">
+            <h1 class="title-section in-line">@Model.Name </h1>
+            <span class="my-job">@Model.Designation</span>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+
+                <div class="about-me">
+                    <h3 class="question">@Model.Ar_Designation</h3>
+                    <h4 class="answer">@Model.Expertise</h4>
+                </div>
+
+                <div class="about-me">
+                    <h3 class="question">My skills:</h3>
+                    <h4 class="answer">@Model.Skills</h4>
+                </div>
+
+            </div>
+
+            <div class="col-md-6">
+
+                <div class="about-me">
+                    <h3 class="question">One Secret About me:</h3>
+                    <h4 class="answer">@Model.Ar_Name</h4>
+                </div>
+
+                <div class="about-me">
+                    <h3 class="question">In another life I would be:</h3>
+                    <h4 class="answer">@Model.Ar_Expertise</h4>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="about-me">
+            <h3 class="question">Quote:</h3>
+            <h4 class="answer">"@Model.ImagePath"</h4>
+        </div>
+
+    </div>
+
+
+</div>
+
+<div class="my-link">
+</div>
+<div class="clearfix"></div>
+
+    
+
+   

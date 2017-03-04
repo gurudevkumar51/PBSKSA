@@ -1,0 +1,107 @@
+﻿@model PBSDAL.Entity.Team
+
+@{
+    ViewBag.Title = "AddTeam";
+}
+<section class="content">
+    <!-- SELECT2 EXAMPLE -->
+    <div class="box box-default">
+        <div class="box-header with-border">
+            <h3 class="box-title">Add New Team member</h3>
+            <div class="box-tools pull-right">
+                <a href="@Url.Action("Index", "Team")" class="btn btn-success"><i class="fa fa-list-alt" aria-hidden="true"> Team member List </i></a>
+            </div>
+        </div><!-- /.box-header -->
+        <div class="box-body">
+            @using (Html.BeginForm("AddTeam", "Team", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            {
+                @Html.AntiForgeryToken()
+                <div class="row">
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    <div class="col-md-6" style="direction:ltr">
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Name)
+                            @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control select2", placeholder = "Enter your quote here" } })
+                            @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                        </div><!-- /.form-group -->
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Designation)
+                            @Html.EditorFor(model => model.Designation, new { htmlAttributes = new { @class = "form-control select2", placeholder = "Enter the Author Name" } })
+                            @Html.ValidationMessageFor(model => model.Designation, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Skills)
+                            @Html.EditorFor(model => model.Skills, new { htmlAttributes = new { @class = "form-control select2", placeholder = "Enter the Author Name" } })
+                            @Html.ValidationMessageFor(model => model.Skills, "", new { @class = "text-danger" })
+                        </div>       
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Expertise)
+                            @Html.EditorFor(model => model.Expertise, new { htmlAttributes = new { @class = "form-control select2", placeholder = "Enter the Author Name" } })
+                            @Html.ValidationMessageFor(model => model.Expertise, "", new { @class = "text-danger" })
+                        </div>                 
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.File)
+                            <input id="File" name="file" class="form-control select2" type="file" onchange="show(this)" placeholder="" />                            
+                            @Html.ValidationMessageFor(model => model.File, "", new { @class = "text-danger" })
+                        </div>
+                    </div><!-- /.col -->
+                    <div class="col-md-6" style="direction:rtl;">
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Ar_Name)
+                            @Html.EditorFor(model => model.Ar_Name, new { htmlAttributes = new { @class = "form-control select2", rows = "3", placeholder = "" } })
+                            @Html.ValidationMessageFor(model => model.Ar_Name, "", new { @class = "text-danger" })
+                        </div><!-- /.form-group -->
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Ar_Designation)
+                            @Html.EditorFor(model => model.Ar_Designation, new { htmlAttributes = new { @class = "form-control select2", placeholder = "" } })
+                            @Html.ValidationMessageFor(model => model.Ar_Designation, "", new { @class = "text-danger" })
+                        </div><!-- /.form-group -->
+                        <div class="form-group" style="direction:ltr">
+                            @Html.LabelFor(model => model.Ar_Skills)
+                            @Html.EditorFor(model => model.Ar_Skills, new { htmlAttributes = new { @class = "form-control select2", placeholder = "Enter the Author Name" } })
+                            @Html.ValidationMessageFor(model => model.Ar_Skills, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="form-group" style="direction:ltr">
+                            @Html.LabelFor(model => model.Ar_Expertise)
+                            @Html.EditorFor(model => model.Ar_Expertise, new { htmlAttributes = new { @class = "form-control select2", placeholder = "Enter the Author Name" } })
+                            @Html.ValidationMessageFor(model => model.Ar_Expertise, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="form-group" style="direction:ltr">
+                            <img src="~/imagesMVC/profile.jpg" width="70" height="70" id="TmImg" />
+                        </div>
+
+                    </div><!-- /.col -->
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <input type="submit" value="إضافة حدث (Add)" class="btn btn-info" />
+                        </div>
+                    </div>
+                </div><!-- /.row -->
+            }
+        </div><!-- /.box-body -->
+    </div><!-- /.box -->
+</section>
+
+<script type="text/javascript">
+    function show(input) {
+        if (input.files && input.files[0]) {
+            var filerdr = new FileReader();
+            filerdr.onload = function (e) {
+                var ext = input.value.match(/\.(.+)$/)[1].toLowerCase();
+                switch (ext) {
+                    case 'jpg':
+                    case 'jpeg':
+                    case 'png':
+                    case 'gif':
+                        $('#TmImg').attr('src', e.target.result);
+                        //$('#DefaultImagePath').show();
+                        break;
+                    default:
+                        swal("Invalid Image Format !!!", "Please upload an Image of Jpeg/Jpg/Png/Gif Format", "error");
+                        $("#File").val('');
+                }
+            }
+            filerdr.readAsDataURL(input.files[0]);
+        }
+    }
+</script>

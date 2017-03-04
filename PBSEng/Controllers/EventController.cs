@@ -75,5 +75,9 @@ namespace PBSEng.Controllers
             }
         }
 
+        public ActionResult Team()
+        {
+            return View();
+        }
     }
 }

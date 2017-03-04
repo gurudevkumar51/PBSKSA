@@ -9,14 +9,15 @@
     
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" />    
     <link href="~/Content/font-awesome.min.css" rel="stylesheet" />    
-    <link href="~/Content/carousel.css" rel="stylesheet" media="screen" />
-    <link href="~/Content/style.css" rel="stylesheet" />
+    <link href="~/WebResources/css/carousel.css" rel="stylesheet" media="screen" />
+    <link href="~/WebResources/css/main.css" rel="stylesheet" />
     
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    <script src="~/Scripts/jquery.browser.min.js"></script>
-    <script src="~/Scripts/bootstrap.min.js"></script>
-    <script src="~/Scripts/jquery.carousel.min.js"></script>
-    <script src="~/Scripts/jquery.mousewheel.js"></script>    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>    
+    <script src="~/WebResources/js/jquery.browser.min.js"></script>
+    <script src="~/WebResources/js/bootstrap.min.js"></script>
+    <script src="~/WebResources/js/jquery.carousel.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js"></script>
+    @*<script src="~/ArWebResources/js/jquery.mousewheel.js"></script>*@
 </head>
 <body>
     <section class="our-team">
@@ -25,47 +26,57 @@
             <div class="content-se wow fadeInUp" id="wide-wrapper">
                 <ul id="carousel" class="carousel">
                     <li>
-                        <img src="~/images/profile3.jpg" alt="Nisha" />
+                        <img src="~/imagesMVC/profile3.jpg" alt="Nisha" />
                         <div class="tooltip">Nisha </div>
                     </li>
                     <li>
-                        <img src="~/images/profile3.jpg" alt="Guru" />
+                        <img src="~/imagesMVC/profile3.jpg" alt="Guru" />
                         <div class="tooltip">Guru </div>
                     </li>
                     <li>
-                        <img src="~/images/profile3.jpg" alt="Dev" />
+                        <img src="~/imagesMVC/profile3.jpg" alt="Dev" />
                         <div class="tooltip">Dev </div>
                     </li>
                     <li>
-                        <img src="~/images/profile3.jpg" alt="Rahul" />
+                        <img src="~/imagesMVC/profile3.jpg" alt="Rahul" />
                         <div class="tooltip">Rahul </div>
                     </li>
                     <li>
-                        <img src="~/images/profile3.jpg" alt="Suman" />
+                        <img src="~/imagesMVC/profile3.jpg" alt="Suman" />
                         <div class="tooltip">Suman </div>
                     </li>
                     <li>
-                        <img src="~/images/profile3.jpg" alt="Dheeraj" />
+                        <img src="~/imagesMVC/profile3.jpg" alt="Dheeraj" />
                         <div class="tooltip">Dheeraj </div>
                     </li>                   
                 </ul>
             </div>
         </div>
+        <div class="Team-modal">
+            <div class="modal fade bs-example-modal-lg" id="team-modal" tabindex="-1" role="dialog">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="Team-modal-loading"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <script type="text/javascript">
-            //$(document).on('click', '.carousel-item', function () {
-            //    var id = $(this).attr('src');
-            //    id = id.split("=");
-            //    $('#team-modal').modal('show');
-            //    $(".Team-modal-loading").html('<div class="cssload-container"><div class="cssload-whirlpool"></div></div>');
+            $(document).on('click', '.carousel-item', function () {
+                //debugger;
+                var id = $(this).attr('src');
+                //id = id.split("=");
+                $('#team-modal').modal('show');
+                $(".Team-modal-loading").html('<div class="cssload-container"><div class="cssload-whirlpool"></div></div>');
 
-            //    //Below commented line to open popup for particular team members
-            //    $(".Team-modal-loading").load('http://webphonix.com/?action=loaduserdata&id=' + id[1]);
-            //    return false;
-            //});
+                //Below commented line to open popup for particular team members
+                $(".Team-modal-loading").load('@Url.Action("Team", "Home")');
+                return false;
+            });
 
-            //$('#team-modal').on('hidden.bs.modal', function () {
-            //    $(".Team-modal-loading").html('');
-            //});
+            $('#team-modal').on('hidden.bs.modal', function () {
+                $(".Team-modal-loading").html('');
+            });
 
 
         </script>
