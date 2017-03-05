@@ -30,14 +30,32 @@
                             @Html.ValidationMessageFor(model => model.Designation, "", new { @class = "text-danger" })
                         </div>
                         <div class="form-group">
-                            @Html.LabelFor(model => model.Skills)
-                            @Html.EditorFor(model => model.Skills, new { htmlAttributes = new { @class = "form-control select2", placeholder = "Enter the Author Name" } })
-                            @Html.ValidationMessageFor(model => model.Skills, "", new { @class = "text-danger" })
-                        </div>       
+                            @Html.LabelFor(model => model.facts)
+                            @Html.EditorFor(model => model.facts, new { htmlAttributes = new { @class = "form-control select2", placeholder = "Enter the Author Name" } })
+                            @Html.ValidationMessageFor(model => model.facts, "", new { @class = "text-danger" })
+                        </div>  
                         <div class="form-group">
-                            @Html.LabelFor(model => model.Expertise)
-                            @Html.EditorFor(model => model.Expertise, new { htmlAttributes = new { @class = "form-control select2", placeholder = "Enter the Author Name" } })
-                            @Html.ValidationMessageFor(model => model.Expertise, "", new { @class = "text-danger" })
+                            @Html.LabelFor(model => model.Secret)
+                            @Html.EditorFor(model => model.Secret, new { htmlAttributes = new { @class = "form-control select2", placeholder = "Enter the Author Name" } })
+                            @Html.ValidationMessageFor(model => model.Secret, "", new { @class = "text-danger" })
+                        </div>       
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.MyJob)
+                            @Html.EditorFor(model => model.MyJob, new { htmlAttributes = new { @class = "form-control select2", placeholder = "Enter the Author Name" } })
+                            @Html.ValidationMessageFor(model => model.MyJob, "", new { @class = "text-danger" })
+                        </div>  
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.AnotherLife)
+                            @Html.EditorFor(model => model.AnotherLife, new { htmlAttributes = new { @class = "form-control select2", placeholder = "Enter the Author Name" } })
+                            @Html.ValidationMessageFor(model => model.AnotherLife, "", new { @class = "text-danger" })
+                        </div>  
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Quote)
+                            @Html.EditorFor(model => model.Quote, new { htmlAttributes = new { @class = "form-control select2", placeholder = "Enter the Author Name" } })
+                            @Html.ValidationMessageFor(model => model.Quote, "", new { @class = "text-danger" })
                         </div>                 
                         <div class="form-group">
                             @Html.LabelFor(model => model.File)
@@ -56,15 +74,33 @@
                             @Html.EditorFor(model => model.Ar_Designation, new { htmlAttributes = new { @class = "form-control select2", placeholder = "" } })
                             @Html.ValidationMessageFor(model => model.Ar_Designation, "", new { @class = "text-danger" })
                         </div><!-- /.form-group -->
-                        <div class="form-group" style="direction:ltr">
-                            @Html.LabelFor(model => model.Ar_Skills)
-                            @Html.EditorFor(model => model.Ar_Skills, new { htmlAttributes = new { @class = "form-control select2", placeholder = "Enter the Author Name" } })
-                            @Html.ValidationMessageFor(model => model.Ar_Skills, "", new { @class = "text-danger" })
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Arfacts)
+                            @Html.EditorFor(model => model.Arfacts, new { htmlAttributes = new { @class = "form-control select2", placeholder = "Enter the Author Name" } })
+                            @Html.ValidationMessageFor(model => model.Arfacts, "", new { @class = "text-danger" })
                         </div>
-                        <div class="form-group" style="direction:ltr">
-                            @Html.LabelFor(model => model.Ar_Expertise)
-                            @Html.EditorFor(model => model.Ar_Expertise, new { htmlAttributes = new { @class = "form-control select2", placeholder = "Enter the Author Name" } })
-                            @Html.ValidationMessageFor(model => model.Ar_Expertise, "", new { @class = "text-danger" })
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.ArSecret)
+                            @Html.EditorFor(model => model.ArSecret, new { htmlAttributes = new { @class = "form-control select2", placeholder = "Enter the Author Name" } })
+                            @Html.ValidationMessageFor(model => model.ArSecret, "", new { @class = "text-danger" })
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.ArMyJob)
+                            @Html.EditorFor(model => model.ArMyJob, new { htmlAttributes = new { @class = "form-control select2", placeholder = "Enter the Author Name" } })
+                            @Html.ValidationMessageFor(model => model.ArMyJob, "", new { @class = "text-danger" })
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.ArAnotherLife)
+                            @Html.EditorFor(model => model.ArAnotherLife, new { htmlAttributes = new { @class = "form-control select2", placeholder = "Enter the Author Name" } })
+                            @Html.ValidationMessageFor(model => model.ArAnotherLife, "", new { @class = "text-danger" })
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.ArQuote)
+                            @Html.EditorFor(model => model.ArQuote, new { htmlAttributes = new { @class = "form-control select2", placeholder = "Enter the Author Name" } })
+                            @Html.ValidationMessageFor(model => model.ArQuote, "", new { @class = "text-danger" })
                         </div>
                         <div class="form-group" style="direction:ltr">
                             <img src="~/imagesMVC/profile.jpg" width="70" height="70" id="TmImg" />

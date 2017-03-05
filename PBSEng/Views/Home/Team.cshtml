@@ -1,7 +1,7 @@
 ﻿@model PBSDAL.Entity.Team
 
 <a class="close" data-dismiss="modal" aria-label="Close"><span>X</span></a>
-<h1 class="title-section">PBS</h1>
+<h1 class="title-section">Our Team</h1>
 <div class="row cont">
 
     <div class="col-md-3 col-sm-3">
@@ -21,13 +21,13 @@
             <div class="col-md-6">
 
                 <div class="about-me">
-                    <h3 class="question">@Model.Ar_Designation</h3>
-                    <h4 class="answer">@Model.Expertise</h4>
+                    <h3 class="question">@Html.DisplayNameFor(model => model.MyJob):</h3>
+                    <h4 class="answer">@Model.MyJob</h4>
                 </div>
 
                 <div class="about-me">
-                    <h3 class="question">My skills:</h3>
-                    <h4 class="answer">@Model.Skills</h4>
+                    <h3 class="question">@Html.DisplayNameFor(model => model.facts):</h3>
+                    <h4 class="answer">@Model.facts</h4>
                 </div>
 
             </div>
@@ -35,21 +35,21 @@
             <div class="col-md-6">
 
                 <div class="about-me">
-                    <h3 class="question">One Secret About me:</h3>
-                    <h4 class="answer">@Model.Ar_Name</h4>
+                    <h3 class="question">@Html.DisplayNameFor(model => model.Secret):</h3>
+                    <h4 class="answer">@Model.Secret</h4>
                 </div>
 
                 <div class="about-me">
-                    <h3 class="question">In another life I would be:</h3>
-                    <h4 class="answer">@Model.Ar_Expertise</h4>
+                    <h3 class="question"@Html.DisplayNameFor(model => model.AnotherLife):</h3>
+                    <h4 class="answer">@Model.AnotherLife</h4>
                 </div>
 
             </div>
         </div>
 
         <div class="about-me">
-            <h3 class="question">Quote:</h3>
-            <h4 class="answer">"@Model.ImagePath"</h4>
+            <h3 class="question">@Html.DisplayNameFor(model => model.Quote):</h3>
+            <h4 class="answer">"@Model.Quote"</h4>
         </div>
 
     </div>

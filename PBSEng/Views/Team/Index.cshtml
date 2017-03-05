@@ -31,16 +31,16 @@
                                     @Html.DisplayNameFor(model => model.ImagePath)
                                 </th>
                                 <th>
-                                    @Html.DisplayNameFor(model => model.Skills)
+                                    @Html.DisplayNameFor(model => model.facts)
                                 </th>
                                 <th>
-                                    @Html.DisplayNameFor(model => model.Ar_Skills)
+                                    @Html.DisplayNameFor(model => model.Secret)
                                 </th>
                                 <th>
-                                    @Html.DisplayNameFor(model => model.Expertise)
+                                    @Html.DisplayNameFor(model => model.MyJob)
                                 </th>
                                 <th>
-                                    @Html.DisplayNameFor(model => model.Ar_Expertise)
+                                    @Html.DisplayNameFor(model => model.AnotherLife)
                                 </th>
                                 <th>Action</th>
                             </tr>
@@ -62,16 +62,16 @@
                                         <img src="~/imagesMVC/TeamImages/@item.ImagePath" width="50" height="50" />
                                     </td>
                                     <td>
-                                        @Html.DisplayFor(modelItem => item.Skills)
+                                        @Html.DisplayFor(modelItem => item.facts)
                                     </td>
                                     <td>
-                                        @Html.DisplayFor(modelItem => item.Ar_Skills)
+                                        @Html.DisplayFor(modelItem => item.Secret)
                                     </td>
                                     <td>
-                                        @Html.DisplayFor(modelItem => item.Expertise)
+                                        @Html.DisplayFor(modelItem => item.MyJob)
                                     </td>
                                     <td>
-                                        @Html.DisplayFor(modelItem => item.Ar_Expertise)
+                                        @Html.DisplayFor(modelItem => item.AnotherLife)
                                     </td>
                                     <td>
                                         <a href="@Url.Action("EditTeam", "Team", new { id = item.ID })" class="btn btn-info"><i class="fa fa-pencil" aria-hidden="true"></i> Edit</a>

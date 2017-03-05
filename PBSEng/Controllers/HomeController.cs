@@ -74,5 +74,11 @@ namespace PBSEng.Controllers
             var pp = mng.AllTeamMembers().Where(p => p.ID == id).FirstOrDefault();
             return PartialView(pp);
         }
+
+        public ActionResult ArTeam(int id)
+        {
+            var pp = mng.AllTeamMembers().Where(p => p.ID == id).FirstOrDefault();
+            return PartialView(pp);
+        }
     }
 }

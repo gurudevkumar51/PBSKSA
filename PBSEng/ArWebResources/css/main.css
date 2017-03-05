@@ -3951,3 +3951,236 @@ float:right;}
 @media (min-width: 641px) and (max-width: 767px) {
 	#main-slider1 .carousel-content h1{ width:100%;}
 	}
+@media (min-width: 992px){
+.modal-lg { width: 900px;}
+}
+.title-section {
+    color: #0090c5;
+    font-size: 40px;
+    margin: 0 0 50px; font-weight:300;
+}
+.modal.fade .modal-dialog {
+-webkit-transition:-webkit-transform .3s ease-out;
+-o-transition:-o-transform .3s ease-out;
+transition:transform .3s ease-out;
+	-webkit-transform:translate(0, 0);
+	-ms-transform:translate(0, -25%);
+	-o-transform:translate(0, -25%);
+	transform:translate(0, 0)
+}
+.Team-modal .modal-content {
+	position:relative;
+	background-position:83% 70%;
+	background-size:50%
+}
+.Team-modal-loading .cont:after, .Team-modal-loading .cont:before {
+	position:absolute;
+	width:117px;
+	height:104px;
+	content:''
+}
+.Team-modal-loading {
+	padding-top:15px;
+	padding-bottom:15px
+}
+.Team-modal-loading .cont:before {
+	right:50px;
+	top:80px;
+	background-size:50%
+}
+.Team-modal-loading .cont:after {
+	background:url(images/pat15.png) center center no-repeat;
+	left:0;
+	bottom:0;
+	transform:rotate(180deg);
+	background-size:50%
+}
+.Team-modal .my-img img {
+	width:100%;
+	position:relative;
+	z-index:99
+}
+.Team-modal .my-info {
+	position:relative
+}
+.Team-modal .my-info:before {
+	content:'';
+	position:absolute;
+	background:url(images/pat16.png) center center no-repeat;
+	left:-120px;
+	top:-10px;
+	width:700px;
+	height:62px;
+	background-size:90%
+}
+.Team-modal .my-info .my-job {
+	color:#8E9090;
+	font-size:30px
+}
+.in-line {
+	display:inline-block
+}
+.Team-modal .about-me {
+	margin-bottom:30px
+}
+.Team-modal .about-me .question {
+	margin:0 0 5px;
+	color:#82BC00;
+	font-size:24px
+}
+.Team-modal .about-me .answer {
+	margin:0;
+	color:#8E9090;
+	font-size:20px
+}
+.Team-modal .my-link {
+	text-align:right
+}
+.Team-modal .my-link a {
+	display:inline-block;
+	width:30px;
+	height:30px;
+	background:#8c9192;
+	text-align:center;
+	line-height:25px;
+	color:#fff;
+	font-size:18px;
+	border-radius:2px;
+transition:.3s
+}
+.Team-modal .my-link a:hover {
+	background:#82BC00
+}
+.modal-open .modal {
+	background:rgba(255, 255, 255, .83)
+}
+.modal-content {
+	border:0;
+	-webkit-box-shadow:0 5px 15px rgba(68, 68, 68, .26);
+	box-shadow:0 5px 15px rgba(68, 68, 68, .26);
+	padding:25px;
+	border-radius:0
+}
+.modal-content .close {
+	color:#fff;
+	opacity:1;
+	background:#8E9090;
+	width:30px;
+	height:30px;
+	border-radius:50%;
+	text-align:center;
+	line-height:28px;
+	display:block;
+	font-weight:inherit;
+transition:.3s;
+	position:relative;
+	z-index:999;
+    font-family:'Open Sans', sans-serif;
+}
+.modal-content .close:hover {
+	background:#82BC00
+}
+.title-modal h3 {
+	font-size:22px;
+	margin:0 0 10px
+}
+.Team-modal .modal-content {
+	position:relative;
+	background-position:83% 70%;
+	background-size:50%
+}
+.Team-modal-loading .cont:after, .Team-modal-loading .cont:before {
+	position:absolute;
+	width:117px;
+	height:104px;
+	content:''
+}
+.Team-modal-loading {
+	padding-top:15px;
+	padding-bottom:15px
+}
+.Team-modal-loading .cont:before {
+	right:50px;
+	top:80px;
+	background-size:50%
+}
+.Team-modal-loading .cont:after {
+	background:url(images/pat15.png) center center no-repeat;
+	left:0;
+	bottom:0;
+	transform:rotate(180deg);
+	background-size:50%
+}
+.Team-modal .my-img img {
+	width:100%;
+	position:relative;
+	z-index:99
+}
+.Team-modal .my-info {
+	position:relative
+}
+.Team-modal .my-info:before {
+	content:'';
+	position:absolute;
+	background:url(images/pat16.png) center center no-repeat;
+	left:-120px;
+	top:-10px;
+	width:700px;
+	height:62px;
+	background-size:90%
+}
+.Team-modal .my-info .my-job {
+	color:#8E9090;
+	font-size:25px
+}
+.in-line {
+	display:inline-block
+}
+.Team-modal .about-me {
+	margin-bottom:30px
+}
+.Team-modal .about-me .question {
+	margin:0 0 5px;
+	color:#0090c5;
+	font-size:20px;
+    font-weight:300;
+}
+.Team-modal .about-me .answer {
+	margin:0;
+	color:#8E9090;
+	font-size:17px;
+    font-weight:300;
+}
+.Team-modal .my-link {
+	text-align:right
+}
+.Team-modal .my-link a {
+	display:inline-block;
+	width:30px;
+	height:30px;
+	background:#8c9192;
+	text-align:center;
+	line-height:25px;
+	color:#fff;
+	font-size:18px;
+	border-radius:2px;
+transition:.3s
+}
+.Team-modal .my-link a:hover {
+	background:#82BC00
+}
+.Team-modal .my-info h1 {
+line-height:75px; font-size:35px;}
+
+.arab-laguage .Team-modal-loading .cont:before { right:0;
+}
+.arab-laguage .Team-modal .my-info:before {
+ background:url(images/ar-pat16.png) center center no-repeat; left:70px;}
+.arab-laguage .Team-modal .my-info {
+text-align:right;}
+.arab-laguage .Team-modal-loading {
+text-align:right;}
+.arab-laguage .Team-modal-loading .cont:after {
+left:50px;    }
+.arab-laguage .modal-content .close {
+float:left;}

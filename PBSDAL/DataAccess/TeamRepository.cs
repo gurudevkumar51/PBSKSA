@@ -32,17 +32,23 @@ namespace PBSDAL.DataAccess
                 Tm.File.SaveAs(path);
             }
             try
-            {
+            {               
                 SqlParameter[] parameters = {      
                         new SqlParameter("@Name", Tm.Name),
                         new SqlParameter("@Ar_Name", Tm.Ar_Name),
                         new SqlParameter("@Designation", Tm.Designation),                        
                         new SqlParameter("@Ar_Designation", Tm.Ar_Designation),
                         new SqlParameter("@ImagePath",  Tm.ImagePath),    
-                        new SqlParameter("@Skills", Tm.Skills),
-                        new SqlParameter("@Ar_Skills", Tm.Ar_Skills),
-                        new SqlParameter("@Expertise", Tm.Expertise),                        
-                        new SqlParameter("@Ar_Expertise", Tm.Ar_Expertise),
+                        new SqlParameter("@MyJob", Tm.MyJob),
+                        new SqlParameter("@ArMyJob", Tm.ArMyJob),
+                        new SqlParameter("@Secret", Tm.Secret),                        
+                        new SqlParameter("@ArSecret", Tm.ArSecret),                        
+                        new SqlParameter("@facts", Tm.facts),                        
+                        new SqlParameter("@Arfacts", Tm.Arfacts),
+                        new SqlParameter("@AnotherLife", Tm.AnotherLife),                        
+                        new SqlParameter("@ArAnotherLife", Tm.ArAnotherLife),
+                        new SqlParameter("@Quote", Tm.Quote),                        
+                        new SqlParameter("@ArQuote", Tm.ArQuote),
                         new SqlParameter("@Type","B"),
                         };
                 flag = ExecuteNonQuery("Manage_Team", parameters);
@@ -112,10 +118,16 @@ namespace PBSDAL.DataAccess
                         new SqlParameter("@Designation", Tm.Designation),                        
                         new SqlParameter("@Ar_Designation", Tm.Ar_Designation),
                         new SqlParameter("@ImagePath",  Tm.ImagePath),    
-                        new SqlParameter("@Skills", Tm.Skills),
-                        new SqlParameter("@Ar_Skills", Tm.Ar_Skills),
-                        new SqlParameter("@Expertise", Tm.Expertise),                        
-                        new SqlParameter("@Ar_Expertise", Tm.Ar_Expertise),
+                        new SqlParameter("@MyJob", Tm.MyJob),
+                        new SqlParameter("@ArMyJob", Tm.ArMyJob),
+                        new SqlParameter("@Secret", Tm.Secret),                        
+                        new SqlParameter("@ArSecret", Tm.ArSecret),                        
+                        new SqlParameter("@facts", Tm.facts),                        
+                        new SqlParameter("@Arfacts", Tm.Arfacts),
+                        new SqlParameter("@AnotherLife", Tm.AnotherLife),                        
+                        new SqlParameter("@ArAnotherLife", Tm.ArAnotherLife),
+                        new SqlParameter("@Quote", Tm.Quote),                        
+                        new SqlParameter("@ArQuote", Tm.ArQuote),
                         new SqlParameter("@Type","C"),
                         };
                 flag = ExecuteNonQuery("Manage_Team", parameters);
