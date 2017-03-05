@@ -2612,7 +2612,7 @@ shortcodes page css
 	 background:url(../images/firtimg.jpg) no-repeat;}
 	 
 	 .peoplesay{
-		 padding: 0;position:absolute;top:47%;transform:translate(0,-50%);-webkit-transform:translate(0,-50%);-moz-transform:translate(0,-50%);-ms-transform:translate(0,-50%);-o-transform:translate(0,-50%);left:0;right:0;margin:0 auto;
+		 padding: 0;position:absolute;top:41%;transform:translate(0,-50%);-webkit-transform:translate(0,-50%);-moz-transform:translate(0,-50%);-ms-transform:translate(0,-50%);-o-transform:translate(0,-50%);left:0;right:0;margin:0 auto;
     width: 66%;}
 	
 	
@@ -3158,9 +3158,9 @@ nav.nav-bar-slide {background: rgba(255,255,255,0.7);width:272px;padding:25px 0 
 nav.nav-bar-slide ul li {padding-bottom:11px;}
 nav.nav-bar-slide ul li:last-child {padding-bottom:0;}
 #main-slider .carousel-content h1, #main-slider1 .carousel-content h1 {font-size:27px;font-weight:300;font-family: 'Open Sans', sans-serif;}
-#main-slider1 .carousel-content h1{ width:710px; float:right;}
+#main-slider1 .carousel-content h1{ width:710px; float:right; padding-right:55px;}
 #main-slider .carousel-content h2, #main-slider1 .carousel-content h2 {font-family: 'Open Sans', sans-serif;font-weight:400;} 
-#main-slider1 .carousel-content h2{ float:right; clear:both;}
+#main-slider1 .carousel-content h2{ float:right; clear:both; padding-right:62px;}
 .intoduction-img {position:absolute;right:0;}
 .skill span {font-weight:900;}
 p {color:#b5b5b5;line-height:26px;font-size:15px;}
@@ -3849,10 +3849,10 @@ ul.tog li.resp-logo img {width:80px;}
     font-family: DINNextLTW23-Light;
 }
 
-.slick-initialized .slick-slide {text-align:center;}
+.slick-initialized .slick-slide {text-align:center; font-size:13px;}
 .slick-slide img {display: inline-block;}
 .langauge {float:left;}
-.langauge ul {margin:0 0;}
+.langauge ul {margin:0 0; padding-left:140px;}
 .langauge ul li {padding:0 0px;display:inline-block;margin-right:10px;}
 .langauge ul li:last-child {padding-right:0;margin-right:0;}
 .responsive-menu {    overflow: hidden;
@@ -3883,8 +3883,6 @@ ul.tog li.resp-logo img {width:80px;}
 .develop-site a{color:#00acec;}
 
 
-
-
 /*Arab language style start here*/
 .arab-laguage .header .brand{ left:auto; right:0;}
 .arab-laguage .main-logo{ padding:18px 60px 18px 30px;}
@@ -3895,8 +3893,8 @@ ul.tog li.resp-logo img {width:80px;}
 .arab-laguage .header .brand .nav-bar-slide ul li a::before{ left:auto; right:-30px;}
 .arab-laguage nav.nav-bar-slide ul li{ text-align:right;}
 .arab-laguage .header .brand .nav-bar-slide ul li a:hover, .arab-laguage .header .brand .nav-bar-slide ul li a.active{ margin-left:0; margin-right:9px;}
-.arab-laguage #main-slider1 .carousel-content h1{ float:left; text-align:left;}
-.arab-laguage #main-slider1 .carousel-content h2{ float:left; text-align:left;}
+.arab-laguage #main-slider1 .carousel-content h1{ float:left; text-align:left; padding-left:20px; padding-right:0;}
+.arab-laguage #main-slider1 .carousel-content h2{ float:left; text-align:left; padding-left:20px; padding-right:0;}
 
 .arab-laguage .header .nav-bar-main .brand-main{ float:right; margin-left:0; margin-right:108px;}
 .arab-laguage .header .nav-bar-main ul{ float:right !important;}
@@ -3923,7 +3921,7 @@ ul.tog li.resp-logo img {width:80px;}
 .arab-laguage .careers .form-et input{ text-align:right;}
 .arab-laguage .careers .send-cv .up-cv i{ float:left;}
 .arab-laguage .careers .send-cv .no-robot{ display:block;}
-.arab-laguage .careers .send-cv .no-robot{ float:right; margin-left:10px; margin-right:0px;}
+.arab-laguage .careers .send-cv .no-robot{   margin-right:0px;}
 .arab-laguage ul#tabs li{ float:right;}
 .arab-laguage .inpsetynn{ text-align:right;}
 .arab-laguage .people-thought .heading h1{ text-align:right;}
@@ -3939,8 +3937,16 @@ ul.tog li.resp-logo img {width:80px;}
 .arab-laguage .footer-block h3{ text-align:right;}
 .arab-laguage .footer-block ul{ text-align:right;}
 .arab-laguage .address-office{ text-align:right;}
-
-
+.arab-laguage .careers:before {left:40px; right:auto;
+}
+.arab-laguage .careers:after { right:50px; left:auto;
+}
+.arab-laguage section.social-reach-block h1 { text-align:right;
+}
+.arab-laguage .tvbg {
+float:right;}
+.arab-laguage .langauge ul { padding-left:0; padding-right:140px;
+}
 
 @media (min-width: 641px) and (max-width: 767px) {
 	#main-slider1 .carousel-content h1{ width:100%;}

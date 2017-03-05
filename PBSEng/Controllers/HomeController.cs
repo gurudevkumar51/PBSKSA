@@ -36,6 +36,7 @@ namespace PBSEng.Controllers
             ViewData["Events"] = pp;
             ViewData["Testimonial"] = mng.AllTestimonial();
             ViewData["Quotes"] = mng.AllQuotes();
+            ViewData["Team"] = mng.AllTeamMembers();
             return View();
         }
 
