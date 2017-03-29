@@ -14,11 +14,12 @@
     <RootNamespace>PBSEng</RootNamespace>
     <AssemblyName>PBSEng</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
-    <UseIISExpress>true</UseIISExpress>
+    <UseIISExpress>false</UseIISExpress>
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -332,7 +333,6 @@
     <Content Include="ArWebResources\images\404.xcf" />
     <Content Include="ArWebResources\images\portfolio\full\Thumbs.db" />
     <Content Include="ArWebResources\images\portfolio\recent\Thumbs.db" />
-    <Content Include="ArWebResources\images\slider\Thumbs.db" />
     <None Include="Properties\PublishProfiles\PBSKSA.pubxml" />
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
     <Content Include="imagesMVC\pat15.png" />
@@ -449,7 +449,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>54697</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:54697/</IISUrl>
+          <IISUrl>http://localhost/PBSEng</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

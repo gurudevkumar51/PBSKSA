@@ -1,0 +1,895 @@
+﻿@model PBSDAL.Entity.Career
+@using PBSDAL.Entity
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>PBSKSA</title>
+
+    <!-- core CSS -->
+
+    <link href="~/ArWebResources/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/ArWebResources/css/font-awesome.css" rel="stylesheet" />
+    <link href="~/ArWebResources/css/animate.min.css" rel="stylesheet" />
+    <link href="~/ArWebResources/css/prettyPhoto.css" rel="stylesheet" />
+    
+    <link href="~/ArWebResources/css/slick.css" rel="stylesheet" />
+    <link href="~/ArWebResources/css/carousel.css" rel="stylesheet" />
+    <link href="~/ArWebResources/css/responsive.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css" rel="stylesheet" /> 
+    <link href="~/ArWebResources/css/main.css" rel="stylesheet" />
+    <link rel="shortcut icon" href="~/ArWebResources/images/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="~/ArWebResources/images/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="~/ArWebResources/images/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="~/ArWebResources/images/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="~/ArWebResources/images/ico/apple-touch-icon-57-precomposed.png">
+
+    <script src="~/ArWebResources/js/jquery.js"></script>
+    @*<script src="~/WebResources/js/jquery.js"></script>*@
+    <script src="~/ArWebResources/js/bootstrap.min.js"></script>
+    <script src="~/ArWebResources/js/jquery.prettyPhoto.js"></script>
+    <script src="~/ArWebResources/js/jquery.isotope.min.js"></script>
+    <script src="~/ArWebResources/js/main.js"></script>
+    <script src="~/ArWebResources/js/wow.min.js"></script>
+    <script src="~/ArWebResources/js/owl.carousel.min.js"></script>
+    <script>
+        $('.carousel').carousel({ interval: 9000 });
+    </script>
+    <script src="~/ArWebResources/js/slick.js"></script>
+    <script src="~/ArWebResources/js/jquery.browser.min.js"></script>
+    <script src="~/ArWebResources/js/jquery.carousel.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert-dev.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+</head>
+<!--/head-->
+
+<body class="homepage arab-laguage">
+    <header class="header">
+        <button class="bars"><i class="fa fa-bars" aria-hidden="true"></i></button>
+        <nav class="nav-bar-main">
+            <a class="brand-main" href="index.html"><img src="~/ArWebResources/images/logo-2.png" alt="PBSKSA logo"></a>
+            <ul class="pull-left">
+                <li><a class="active" href="#home">Home</a></li>
+                <li><a href="#about">About PBS</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a class="m-careers" href="#team">Team</a></li>
+                <li><a href="#clients">Clients</a></li>
+                <li><a href="#carers">Careers</a></li>
+                <li><a class="m-contact" href="#contactus">Contact Us</a></li>
+            </ul>
+            <div class="langauge">
+                <ul>
+                    <li><a href="@Url.Action("Index", "Home")">En</a></li>
+                    <li><a href="@Url.Action("ArIndex", "Home")">Sa</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="responsive-menu">
+            <ul class="tog">
+                <li class="resp-logo"><a href="index.html"><img src="~/ArWebResources/images/logo-2.png" alt="PBSKSA logo"></a></li>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About PBS</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a class="m-careers" href="#team">Team</a></li>
+                <li><a href="#clients">Clients</a></li>
+                <li><a href="#carers">Careers</a></li>
+                <li><a class="m-contact" href="#contactus">Contact Us</a></li>
+            </ul>
+            <div class="langauge">
+                <ul>
+                    <li><a href="@Url.Action("Index", "Home")">En</a></li>
+                    <li><a href="@Url.Action("ArIndex", "Home")">Sa</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="brand">
+            <div class="main-logo"><a class="pbsksa-logo" href="index.html"><img src="~/ArWebResources/images/logo-2.png" alt="PBSKSA logo"></a></div>
+            <nav class="nav-bar-slide">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About PBS</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a class="m-careers" href="#team">Team</a></li>
+                    <li><a href="#clients">Clients</a></li>
+                    <li><a href="#carers">Careers</a></li>
+                    <li><a class="m-contact" href="#contactus">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <!--/header-->
+    <div id="home">
+        <section id="main-slider" class="no-margin">
+            <div class="carousel slide">
+                @*<ol class="carousel-indicators">
+                    <li data-target="#main-slider" data-slide-to="0" class="active"></li>
+                    <li data-target="#main-slider" data-slide-to="1"></li>
+                    <li data-target="#main-slider" data-slide-to="2"></li>
+                </ol>*@
+                <div class="carousel-inner">
+                    <div class="carousel-item item active" style="background-image: url(../ArWebResources/images/slider/bg1.jpg)">
+
+                    </div>
+                    <!--/.item-->
+
+                    <div class="carousel-item item" style="background-image: url(../ArWebResources/images/slider/bg2.jpg)">
+                        <div class="container">
+
+                        </div>
+                    </div>
+                    <!--/.item-->
+
+                    <div class="carousel-item item" style="background-image: url(../ArWebResources/images/slider/bg3.jpg)">
+                        <div class="container">
+
+                        </div>
+                    </div>
+                    <!--/.item-->
+                </div>
+                <!--/.carousel-inner-->
+            </div>
+            <!--/.carousel-->
+
+        </section>
+        <section id="main-slider1" class="no-margin">
+            <div class="carousel slide">
+
+                <div class="carousel-inner">
+                    @{
+                        var p = 0;
+                        foreach (var item in ViewData["Quotes"] as List<Quotes>)
+                        {
+                            p++;
+                            if (p <= 1)
+                            {
+                                <div class="item active">
+                                    <div class="container">
+                                        <div class="row slide-margin">
+                                            <div class="col-sm-12">
+                                                <div class="carousel-content">
+                                                    <h1 class="animation animated-item-1 right">
+                                                        "@item.AR_Quote"
+                                                    </h1>
+                                                    <h2 class="animation animated-item-2 right"><strong><em>@item.AR_Author</em></strong></h2>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                            else
+                            {
+                                <div class="item">
+                                    <div class="container">
+                                        <div class="row slide-margin">
+                                            <div class="col-sm-12">
+                                                <div class="carousel-content">
+                                                    <h1 class="animation animated-item-1 right">
+                                                        "@item.AR_Quote"
+                                                    </h1>
+                                                    <h2 class="animation animated-item-2 right"><strong><em>@item.AR_Author</em></strong></h2>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6 hidden-xs animation animated-item-4"> </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                        }
+                    }      
+                </div>
+                <!--/.carousel-inner-->
+            </div>
+            <!--/.carousel-->
+
+        </section>
+    </div>
+    <!--/#main-slider-->
+    <div id="about">
+        <section id="feature" class="our-intro-block">
+            <div class="wow fadeInDown intoduction-img">
+                <div class="accordion">
+                    <div class="panel-group tvbgfis"> <img src="~/ArWebResources/images/firtimg.jpg" width="642" height="385"> </div>
+                    <!--/#accordion1-->
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6 wow fadeInDown intoduction-text">
+                        <div class="skill">
+                            <h2 class="boximgg"><span>Our</span> Introduction? </h2>
+                            <p>We are consulting and marketing company which provides strategic solutions to organizations, we work with a network of local and international experts in management, marketing and strategic partners, and offer our services to diverse clients private, public and non-profit organization. </p>
+                            <br />
+                            <p>@*<a class="view-btn" href="#" role="button">View Detail</a>*@</p>
+                        </div>
+                    </div>
+                    <!--/.col-sm-6-->
+
+                </div>
+                <!--/.row-->
+            </div>
+            <!--/.container-->
+        </section>
+        <!--/#feature-->
+
+        <section id="middle" class="pbs-profile-block">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-sm-12 wow fadeInDown pbs-profile-text">
+                        <div class="skill">
+                            <h2 class="hfont"><span>PBS</span> Profile...</h2>
+                            <p>
+                                Professional business solution is With Limited Liability W.L.L, was established in 2012.
+                                The company strategy is focusing on providing management & marketing solutions with certain activities PBS its work with experts networks and global strategic partners to provide the company services for SMEs in GCC countries
+                            </p>
+                            <p> We are highly professional & experts in increasing productivity - volume - profitability for moderate and small businesses. We design programs specific to each institution according to their need, and employ all our energies and expertise to improve the productivity of our customers, and our work will not end, but our service includes providing. </p>
+                        </div>
+                    </div>
+                    <!--/.col-sm-6-->
+
+                    <div class="col-md-6 col-sm-12">
+                        <div class="accordion">
+                            <!-- <h2 class="hfont">Why People like us?</h2>-->
+                            <div class="panel-group tvbg wow fadeInRight">
+                                <div class="peoplesay">
+                                    <div class="tcspat">
+                                        We are uniquely positioned in
+                                        Saudi Arabia with success stories and
+                                        recognitions vouching for us, both nationally
+                                        and internationally.
+                                    </div>
+                                    <div class="tcspat">
+                                        We are uniquely positioned in
+                                        Saudi Arabia with success stories and
+                                        recognitions vouching for us, both nationally
+                                        and internationally.
+                                    </div>
+                                    <div class="tcspat">
+                                        We are uniquely positioned in
+                                        Saudi Arabia with success stories and
+                                        recognitions vouching for us, both nationally
+                                        and internationally.
+                                    </div>
+                                </div>
+                            </div>
+                            <!--/#accordion1-->
+                        </div>
+                    </div>
+                </div>
+                <!--/.row-->
+            </div>
+            <!--/.container-->
+        </section>
+    </div>
+
+    <section id="team" class="our-team">
+        <div class="container">
+            <div class="center wow fadeInDown">
+                <h2 class="hfont"><span>Directors</span> and team work...</h2>
+            </div>
+            <div class="content-se team-member wow fadeInUp" id="wide-wrapper">
+                <ul id="carousel" class="carousel">
+                    @{
+                        foreach (var item in ViewData["Team"] as List<Team>)
+                        {
+                            <li>
+                                <img src="~/imagesMVC/TeamImages/@item.ImagePath?id=@item.ID" alt="@item.Ar_Name" />
+                                <div class="tooltip">@item.Ar_Name</div>
+                            </li>
+                        }
+                    }
+                </ul>
+            </div>
+            <div class="Team-modal">
+                <div class="modal fade bs-example-modal-lg" id="team-modal" tabindex="-1" role="dialog">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            <div class="Team-modal-loading"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <script type="text/javascript">
+                $(document).on('click', '.carousel-item', function () {
+                    var id = $(this).attr('src');
+                    id = id.split("=");
+                    $('#team-modal').modal('show');
+                    $(".Team-modal-loading").html('<div class="cssload-container"><div class="cssload-whirlpool"></div></div>');
+                    $(".Team-modal-loading").load('@Url.Action("ArTeam", "Home")' + "?id=" + id[1]);
+
+                    return false;
+                });
+
+                $('#team-modal').on('hidden.bs.modal', function () {
+                    $(".Team-modal-loading").html('');
+                });
+            </script>
+            <div class="team-member-responsive">
+                <ul class="teammembers">
+                    @{
+                        foreach (var item in ViewData["Team"] as List<Team>)
+                        {
+                            <li>
+                                <img src="~/imagesMVC/TeamImages/@item.ImagePath?id=@item.ID" alt="@item.Ar_Name" />
+                                <div class="tooltip">@item.Ar_Name</div>
+                            </li>
+                        }
+                    }
+                </ul>
+            </div>
+        </div>
+    </section>   
+
+    <section class="services" id="services">
+        <div class="container">
+            <div class="services-tabs wow zoomIn">
+                <ul id="myTab" class="nav nav-tabs" role="tablist">
+                    <li role="presentation" class="active"><a class="s1" href="#social-media" aria-controls="social-media" role="tab" data-toggle="tab"><i></i>Design business</a></li>
+                    <li role="presentation"><a class="s2" href="#digital-marketing" aria-controls="digital-marketing" role="tab" data-toggle="tab"><i></i>Marketing strategies</a></li>
+                    <li role="presentation"><a class="s3" href="#seo" aria-controls="seo" role="tab" data-toggle="tab"><i></i>Web design</a></li>
+                    <li role="presentation"><a class="s4" href="#digital-copywriting" aria-controls="digital-copywriting" role="tab" data-toggle="tab"><i></i>Branding</a></li>
+                    <li role="presentation"><a class="s5" href="#analysis-reporting" aria-controls="analysis-reporting" role="tab" data-toggle="tab"><i></i>Email</a></li>
+                </ul>
+                <div id="myTabContent" class="tab-content">
+                    <div role="tabpanel" class="tab-pane fade in active" id="social-media">
+                        <div class="content-serv">
+                            <div class="col-md-6">
+                                <p> Everyone knows about Social Media. But how do you use them to your advantage? It's not enough to set up a channel and forget. Depending on your target market, there could be</p>
+                            </div>
+                            <div class="col-md-6">
+                                <p>other networks to consider. Our experts will help you find the right strategy for you. And if nothing fits, we can build you a brand new network of your own.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div role="tabpanel" class="tab-pane fade in" id="digital-marketing">
+                        <div class="content-serv">
+                            <div class="col-md-6">
+                                <p>Our team is determined to deliver compelling digital marketing solutions. Our strategic</p>
+                            </div>
+                            <div class="col-md-6">
+                                <p>consultancy approach guarantees we build engaging relationships between brands and their audiences.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div role="tabpanel" class="tab-pane fade in" id="seo">
+                        <div class="content-serv">
+                            <div class="col-md-6">
+                                <p>We believe in our clients, and we also believe that our highly skilled team, span essential disciplines</p>
+                            </div>
+                            <div class="col-md-6">
+                                <p>and deliver a compelling combination of services to take your brand to the next level organically.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div role="tabpanel" class="tab-pane fade in" id="digital-copywriting">
+                        <div class="content-serv">
+                            <div class="col-md-6">
+                                <p>Our copywriters are experts in delivering Arabic and English Content</p>
+                            </div>
+                            <div class="col-md-6">
+                                <p>that is personalized to match your brand's tone of voice and needs.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div role="tabpanel" class="tab-pane fade in" id="analysis-reporting">
+                        <div class="content-serv">
+                            <div class="col-md-6">
+                                <p>This branch consists of analysts whom are punctual, detail oriented with high observation </p>
+                            </div>
+                            <div class="col-md-6">
+                                <p>and deduction skills, to provide reports that comply with our clients’ and our standards.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICE -->
+    <section id="partners" class="same-head grey-border blue-heading grey-bg">
+        <div class="container">
+            <div class="row">
+                <h1 class="wow zoomIn"><span>Our</span> Partner...</h1>
+            </div>
+        </div>
+    </section>
+
+    <!-- OUR PARTNER -->
+    <section class="our-partner-block grey-bg">
+        <div class="container">
+            <div class="row">
+                <div class="partner-slide wow fadeInUp">
+                    <div class="partner"><img src="~/ArWebResources/images/partner1.jpg" alt=""></div>
+                    <div class="partner"><img src="~/ArWebResourcessources/images/partner2.jpg" alt=""></div>
+                    <div class="partner"><img src="~/ArWebResources/images/partner3.jpg" alt=""></div>
+                    <div class="partner"><img src="~/ArWebResources/images/partner4.jpg" alt=""></div>
+                    <div class="partner"><img src="~/ArWebResources/images/partner5.jpg" alt=""></div>
+                    <div class="partner"><img src="~/ArWebResources/images/partner6.jpg" alt=""></div>
+                    <div class="partner"><img src="~/ArWebResources/images/partner7.jpg" alt=""></div>
+                    <div class="partner"><img src="~/ArWebResources/images/partner1.jpg" alt=""></div>
+                    <div class="partner"><img src="~/ArWebResources/images/partner2.jpg" alt=""></div>
+                    <div class="partner"><img src="~/ArWebResources/images/partner3.jpg" alt=""></div>
+                    <div class="partner"><img src="~/ArWebResources/images/partner4.jpg" alt=""></div>
+                    <div class="partner"><img src="~/ArWebResources/images/partner5.jpg" alt=""></div>
+                    <div class="partner"><img src="~/ArWebResources/images/partner6.jpg" alt=""></div>
+                    <div class="partner"><img src="~/ArWebResources/images/partner7.jpg" alt=""></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EVENT -->
+    <section class="event-calender-main ">
+        <div class="container">
+            <div class="page-header">
+                <h2 class="hfont"> <em>Event</em> Calander <span class="head-blk" style="color:#656565;">Check our upcoming big events</span></h2>
+            </div>
+            <ul class="timeline">
+                @{
+                    int c = 0;
+                    foreach (var item in ViewData["Events"] as List<Event>)
+                    {
+                        c++;
+                        if (c % 2 == 0)
+                        {
+                            <li class="timeline-inverted wow fadeInUp">
+                                <div class="timeline-badge"></div>
+                                <div class="timeline-panel">
+                                    <div class="timeline-heading">
+                                        <h4 class="timeline-title">@item.Arabic_Title</h4>
+                                        <p><small class="text-muted"> @item._Date.ToString("dd/MM/yyyy")</small></p>
+                                    </div>
+                                    <div class="timeline-body">
+                                        <p>@item.Arabic_Description</p>
+                                        <a target="_blank" href="@Html.Raw(Html.AttributeEncode(@item.Location_URL))"><span><b>عنوان</b>&nbsp;&nbsp;</span> <small>@item.Arabic_Location</small></a>
+                                    </div>
+                                </div>
+                            </li>
+                        }
+                        else
+                        {
+                            <li class=" wow fadeInUp">
+                                <div class="timeline-badge"></div>
+                                <div class="timeline-panel">
+                                    <div class="timeline-heading">
+                                        <h4 class="timeline-title">@item.Arabic_Title</h4>
+                                        <p><small class="text-muted"> @item._Date.ToString("dd/MM/yyyy")</small></p>
+                                    </div>
+                                    <div class="timeline-body">
+                                        <p>@item.Arabic_Description</p>
+                                        <a target="_blank" href="@Html.Raw(Html.AttributeEncode(@item.Location_URL))"><span><b>عنوان</b>&nbsp;&nbsp;</span> <small>@item.Arabic_Location</small></a>
+                                    </div>
+                                </div>
+                            </li>
+                        }
+                    }
+                }                
+            </ul>
+        </div>
+    </section>
+
+    <!-- CAREER -->
+    <div id="carers">
+        <section class="careers wow fadeIn same-head blue-heading" id="careers">
+            <div class="container">
+                <form method="post" class="form-ajax">
+                    <h1>Talented?</h1>
+                    <div class="col-md-4 col-sm-4">
+                        <div class="select-tal">
+                            <p>Select one of the below</p>
+                            <label>
+                                <input type="radio" name="talente[]" value="Analyst">
+                                Analyst
+                            </label>
+                            <label>
+                                <input type="radio" name="talente[]" value="Copywriter">
+                                Copywriter
+                            </label>
+                            <label>
+                                <input type="radio" name="talente[]" value="Designer">
+                                Designer
+                            </label>
+                            <label>
+                                <input type="radio" name="talente[]" value="Social Media Officer">
+                                Social Media Officer
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4">
+                        <div class="form-et">
+                            <input type="text" placeholder="Your Full Name" name="full_name">
+                            <input type="text" placeholder="Mobile Number" name="phone">
+                            <input type="text" placeholder="Your Email" name="email">
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4">
+                        <div class="send-cv">
+                            <label class="up-cv">
+                                <span class="file_name"> Upload your CV </span> <i class="fa fa-arrow-up" aria-hidden="true"></i>
+                                <input type="file" name="filecv" id="filecv">
+                            </label>
+                            <label class="no-robot">
+                                <input type="checkbox" name="cabtcha" value="121212">
+                                I'm not a robot
+                            </label>
+                            <button type="submit" class="submit-ajax">Send, Good Luck!</button>
+                            <div class="loading"></div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </div>
+
+    <!-- SOCAIL and REACH US block -->
+    <section id="middle02" class="same-head social-reach-block">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-6 wow fadeInDown">
+                    <h1><span>Social</span> <small>media</small></h1>
+                    <ul id="tabs">
+                        <li class="active">Twitter</li>
+                        <li>Linkedin</li>
+                        <li>News</li>
+                        <li>Youtube</li>
+                    </ul>
+                    <ul id="tab">
+                        <li class="active">
+                            <!--<h2>Twitter</h2>-->
+                            <a class="twitter-timeline" href="https://twitter.com/pbs_ksa" data-widget-id="666527666976112642">Tweets by @@pbs_ksa</a>
+                            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+                        </li>
+                        <li>
+                            <span class="IN-widget" style="line-height: 1; vertical-align: baseline; display: inline-block;"><span style="padding: 0px !important; margin: 0px !important; text-indent: 0px !important; display: inline-block !important; vertical-align: baseline !important; font-size: 1px !important;"><iframe name="easyXDM_IN_Lib_li_gen_1486657043046_0_provider" id="easyXDM_IN_Lib_li_gen_1486657043046_0_provider" src="https://platform.linkedin.com/js/xdrpc.html?v=0.0.2000-RC8.59130-1429#xdm_e=http%3A%2F%2Fpbsksa.com&amp;xdm_c=li_gen_1486657043046_0&amp;xdm_p=1#target=li_gen_1486657043046_0&amp;width=600&amp;height=400&amp;mode=wrapper" frameborder="0" style="width: 364px; height: 348px; display: inline-block;"></iframe></span></span>
+                        </li>
+                        <li>
+                            <h2>News</h2>
+                            <p> AtlleqMashrouaq 2 NOW in Riyadh! There will be an important event for Startups and Entrepreneurs, in 19-20th of December 2015 at Four Seasons Hotel Riyadh.</p>
+                            <p> Two days of networking and exchanging experiences with experts on their field. This event aims to train &amp; motivate youth to launch a successful business that will have an economic value.</p>
+                            <p> Also, it&#39;s focus on raising the efficiency of SMEs and Entrepreneurs via professional workshops, discussion session, and variety activities.</p>
+                            <p><a href="http://www.atlleq.com" target="_blank" style="font-weight:bold;font-size: 24px;">"Be part of it"</a></p>
+                        </li>
+                        <li>
+                            <!--<h2>Youtube</h2>-->
+                            <iframe width="100%" height="250" frameborder="0" allowfullscreen="" src="https://www.youtube.com/embed/ye9uyVkbqbg?list=PLC7mGnv5XnDLnFvBTsNPmt0udInXe80Ia"></iframe>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-xs-12 col-sm-5 wow fadeInDown reachus">
+                    <h1><span>Reach</span> <small>to us</small> </h1>
+                   
+                    @*<div class="form-et">
+                        <input placeholder="Your  Name" name="full_name" class="inpsetynn" type="text">
+                        <input placeholder="Mobile Number" name="phone" class="inpsetynn" type="text">
+                        <input placeholder="Email" name="email" class="inpsetynn" type="text">
+                        <input placeholder="Subject" name="email" class="inpsetynn" type="text">
+                        <textarea placeholder="Your Massage" name="email" class="inpsetynn" type="text"></textarea>
+                        <div class="captcha-btn">
+                            <label class="no-robot">
+                                <input name="cabtcha" value="121212" type="checkbox">
+                                I'm not a robot
+                            </label>
+                            <button type="submit" class="submit-ajax bton">Send</button>
+                        </div>
+                    </div>*@
+                
+                                    
+        <div class="form-et">
+            <input placeholder="Your  Name" name="full_name" id="cName" class="inpsetynn" type="text">
+            <input placeholder="Mobile Number" name="phone" id="cPhone" class="inpsetynn" type="text">
+            <input placeholder="Email" name="email" id="cEmail" class="inpsetynn" type="text">
+            <input placeholder="Subject" name="Subject" id="cSubject" class="inpsetynn" type="text">
+            <textarea placeholder="Your Massage" name="email" id="cMessage" class="inpsetynn" type="text"></textarea>
+            <div class="captcha-btn">
+                <label class="no-robot">
+                    <input name="cabtcha" value="121212" type="checkbox">
+                    I'm not a robot
+                </label>
+                <button type="submit" id="contactForm" class="submit-ajax bton">Send</button>
+            </div>
+        </div>
+                                    
+
+                </div>
+            </div>
+            <!--/.row-->
+        </div>
+        <!--/.container-->
+
+    </section>
+
+    <section id="recent-works">
+        @foreach (var item in ViewData["Portfolio"] as List<Portfolio>)
+        {
+            <div class="col-xs-12 col-sm-4 col-md-3 works-part wow zoomIn">
+                <div class="recent-work-wrap">
+                    <img class="img-responsive" src="~/imagesMVC/Portfolio/@item.Image_Path" alt="">
+                    <div class="overlay">
+                        <div class="recent-work-inner">
+                            <h3><a href="javascript:;">@item.AR_Title </a> </h3>
+                            <p>@item._Date</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }        
+    </section>
+    <!--/#recent-works-->
+
+    <section id="work-with">
+        <!-- Expert Group -->
+        <section class="expert-group-block people-thought">
+            <div class="heading same-head">
+                <div class="container">
+                    <div class="row">
+                        <h1><span>Expert</span> Group</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="people-bg">
+                <div class="container">
+                    <div class="row">
+
+                        <div class="people-slider-part wow fadeInDown">
+                            <div class="people-slider">
+                                <div class="people">
+                                    <img src="~/ArWebResources/images/team.png" align="">
+                                    <div class="ppl-name"><span class="name">RJJEA School</span><span class="address">NAWDA,<br>BIHAR,INDIA</span></div>
+                                </div>
+                                <div class="people-text"><p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled.</p></div>
+                            </div>
+                            <div class="people-slider">
+                                <div class="people">
+                                    <img src="~/ArWebResources/images/team.png" align="">
+                                    <div class="ppl-name"><span class="name">RJJEA School</span><span class="address">NAWDA,<br>BIHAR,INDIA</span></div>
+                                </div>
+                                <div class="people-text"><p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled.</p></div>
+                            </div>
+                            <div class="people-slider">
+                                <div class="people">
+                                    <img src="~/ArWebResources/images/team.png" align="">
+                                    <div class="ppl-name"><span class="name">RJJEA School</span><span class="address">NAWDA,<br>BIHAR,INDIA</span></div>
+                                </div>
+                                <div class="people-text"><p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled.</p></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Expert Group -->
+        <!-- people work Group -->
+        <section class="people-work-block people-thought">
+            <div class="heading same-head">
+                <div class="container">
+                    <div class="row">
+                        <h1><span>People</span> who work with them</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="people-bg">
+                <div class="container">
+                    <div class="row">
+
+                        <div class="people-work-slider wow zoomIn">
+                            <div class="people-slider">
+
+                                <div class="people-text"><p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled.`</p></div><div class="people">
+                                                                                                                                                                                                                                                                                                <img src="~/ArWebResources/images/team.png" align="">
+                                    <div class="ppl-name"><span class="name">AY Solutions</span><span class="address">BHUBANESWAR, <br>INDIA</span></div>
+                                </div>
+                            </div>
+                            <div class="people-slider">
+
+                                <div class="people-text"><p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled.`</p></div><div class="people">
+                                                                                                                                                                                                                                                                                                <img src="~/ArWebResources/images/team.png" align="">
+                                    <div class="ppl-name"><span class="name">AY Solutions</span><span class="address">BHUBANESWAR, <br>INDIA</span></div>
+                                </div>
+                            </div>
+                            <div class="people-slider">
+
+                                <div class="people-text"><p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled.`</p></div><div class="people">
+                                                                                                                                                                                                                                                                                                <img src="~/ArWebResources/images/team.png" align="">
+                                    <div class="ppl-name"><span class="name">AY Solutions</span><span class="address">BHUBANESWAR, <br>INDIA</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- people work Group -->
+    </section>
+
+    <!-- Testimonial Group -->
+    <section class="testimonial-block">
+        <div class="container">
+            <div class="row">
+                <h1>Testimonails</h1>
+                <div class="testimonial-part wow fadeInUp">
+                    @foreach (var item in ViewData["Testimonial"] as List<Testimonial>)
+                    {
+                        <div class="testimonial">
+
+                            <div class="testimonial-text">
+                                <div class="title"><span>@item.Ar_Author</span> on<small> @item.Author_Date.ToString("dd-MM-yyyy")</small></div>
+                                <p>@item.Ar_Description</p>
+                            </div><div class="testi-ppl"><img src="~/imagesMVC/TestimonialThumbnail/@item.thumbnailPath" style="border-radius: 50%;" alt=""></div>
+
+                        </div>                        
+                    }   
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- Testimonial Group -->
+    <!--Happy-Clients-->
+    <section id="clients" class="happy-client-block">
+        <div class="title-bg same-head">
+            <div class="container">
+                <div class="row">
+                    <h1><span>Happy</span> Cleints</h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="happy-client-part">
+            <div class="container">
+                <div class="row">
+
+                    <div class="happyclients">
+                        <div class="client wow zoomIn"><img src="~/ArWebResources/images/client1.jpg" align=""></div>
+                        <div class="client wow zoomIn"><img src="~/ArWebResources/images/client2.jpg" align=""></div>
+                        <div class="client wow zoomIn"><img src="~/ArWebResources/images/client3.jpg" align=""></div>
+                        <div class="client wow zoomIn"><img src="~/ArWebResources/images/client4.jpg" align=""></div>
+                        <div class="client wow zoomIn"><img src="~/ArWebResources/images/client5.jpg" align=""></div>
+                        <div class="client wow zoomIn"><img src="~/ArWebResources/images/client6.jpg" align=""></div>
+                        <div class="client wow zoomIn"><img src="~/ArWebResources/images/client7.jpg" align=""></div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <!--Happy-Clients-->
+    <div id="contactus">
+
+        <div id="totop"><img alt="" src="~/ArWebResources/images/top_arrow.png"></div>
+
+        <section id="bottom" class="footer-block">
+            <div class="container wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
+                <div class="row">
+                    <div class="col-md-3 col-sm-4">
+                        <div class="footer-menu widget">
+                            <h3>Contact us</h3>
+                            <ul>
+                                <li><a href="#about">Introduction</a></li>
+                                <li><a href="#middle">Profile</a></li>
+                                <li><a href="#ourteam">Team work</a></li>
+                                <li><a href="#clients">Customers</a></li>
+                                <li><a href="#partners">Partners</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!--/.col-md-3-->
+
+                    <div class="col-md-5 col-sm-4 address-office">
+                        <div class="widget">
+                            <p style="color: #c6c6c8;">
+                                4340, Anas bin Malik, Almalg, Riyadh<br />
+                                Tel: +966 231 125046
+                            </p>
+                        </div>
+                        <div class="social">
+                            <ul class="social-share">
+                                <li><a href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="https://twitter.com/pbs_ksa" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="https://plus.google.com/112990751145684390821" target="_blank"><i class="fa fa-google-plus"></i></a></li>
+                                <li><a href="javascript:;"><i class="fa fa-skype"></i></a></li>
+                            </ul>
+                        </div>
+
+                        <div class="develop-site">Developed by: <a href="#">Webphonix</a></div>
+                    </div>
+                    <!--/.col-md-3-->
+
+                    <div class="col-md-4 col-sm-4 location">
+                        <div class="widget">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3621.9062691321815!2d46.59318371500162!3d24.798662884083054!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2ee40eefcb6a9d%3A0xbc4308498520f827!2sAnas+Ibn+Malik+Rd%2C+Al+Malqa%2C+Riyadh+Saudi+Arabia!5e0!3m2!1sen!2sin!4v1487400669187" width="319" height="200" frameborder="0" style="border:0" allowfullscreen></iframe>
+                        </div>
+                    </div>
+
+                    <!--/.col-md-3-->
+                </div>
+            </div>
+        </section>
+    </div>
+    <!--/#bottom-->
+    <!--/#footer-->   
+    
+</body>
+</html>
+
+<script>
+    $(document).ready(function () {
+        $('#contactForm').click(function () {
+            cntctBtn_validation();
+        });
+    });
+
+    function cntctBtn_validation() {
+        var err = 0;
+        if ($('#cName').val() == 0) {
+            alert("Insert Name");
+            err++;
+        }
+        if ($('#cPhone').val() == 0) {
+            alert("Insert Phone");
+            err++;
+        }
+        if ($('#cEmail').val() == 0) {
+            alert("Insert Email");
+            err++;
+        }
+        if ($('#cSubject').val() == 0) {
+            alert("Insert Subject");
+            err++;
+        }
+        if ($('#cMessage').val() == 0) {
+            alert("Enter your message");
+            err++;
+        }
+
+        if (err == 0) {
+            SubmitContactForm();
+        }
+        else {
+            //alert("Problem in adding the comments");
+            swal("Problem in adding the comments...........", "We'll recover it very soon!");            
+        }
+    }
+
+    function SubmitContactForm() {
+        debugger;
+        var Contact = {
+            FullName: $('#cName').val(),
+            PhoneNo: $('#cPhone').val(),
+            EmailID: $('#cEmail').val(),
+            Subject: $('#cSubject').val(),
+            Message: $('#cMessage').val(),
+        };
+
+        $.ajax({
+            url: '@Url.Action("ContactForm", "Home")',
+            type: "POST",
+            dataType: 'json',
+            data: JSON.stringify(Contact),
+            //async: false,
+            cache: false,
+            traditional: true,
+            contentType: 'application/json',
+            success: function (data) {
+                $('#cName').val("");
+                $('#cPhone').val(""),
+                $('#cEmail').val(""),
+                $('#cSubject').val(""),
+                $('#cMessage').val(""),
+                swal("Your Message sent succesfully........", "We'll get back to you very soon!");
+            },
+            error: function () {
+                swal("Unable to send message", "Please try again later!");
+            }
+        });
+    };
+</script>
