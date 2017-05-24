@@ -93,7 +93,7 @@ desired effect
         <!-- Main Header -->
         <header class="main-header">
             <!-- Logo -->
-            <a href="index2.html" class="logo">
+            <a href="Home/EnIndex" class="logo">
                 <!-- mini logo for sidebar mini 50x50 pixels -->
                 <span class="logo-mini"><b>P</b>BS</span>
                 <!-- logo for regular state and mobile devices -->
@@ -200,12 +200,13 @@ desired effect
                 <ul class="sidebar-menu">
                     <li class="header">HEADER</li>
                     <!-- Optionally, you can add icons to the links -->
-                    <li class="active"><a href="@Url.Action("Index", "Event")"><i class="fa fa-cog"></i> <span>Manage Events</span></a></li>
-                    <li><a href="@Url.Action("Index", "Quotes")"><i class="fa fa-quote-left"></i> <span>Manage Quotes</span></a></li>
-                    <li><a href="@Url.Action("Index", "Portfolio")"><i class="fa fa-cogs"></i> <span>Manage Portfolio</span></a></li>
-                    <li><a href="@Url.Action("Index", "Testimonial")"><i class="fa fa-facebook"></i> <span>Manage Testimonial</span></a></li>
-                    <li><a href="@Url.Action("Index", "Team")"><i class="fa fa-users" aria-hidden="true"></i> <span>Manage Team</span></a></li>
-                    @*<li class="treeview">
+                    <li class="@(ViewContext.RouteData.Values["controller"].ToString() == "Event" ? "active" : "")"><a href="@Url.Action("Index", "Event")"><i class="fa fa-cog"></i> <span>Manage Events</span></a></li>
+                    <li class="@(ViewContext.RouteData.Values["controller"].ToString() == "Quotes" ? "active" : "")"><a href="@Url.Action("Index", "Quotes")"><i class="fa fa-quote-left"></i> <span>Manage Quotes</span></a></li>
+                    <li class="@(ViewContext.RouteData.Values["controller"].ToString() == "Portfolio" ? "active" : "")"><a href="@Url.Action("Index", "Portfolio")"><i class="fa fa-cogs"></i> <span>Manage Portfolio</span></a></li>
+                    <li class="@(ViewContext.RouteData.Values["controller"].ToString() == "Testimonial" ? "active" : "")"><a href="@Url.Action("Index", "Testimonial")"><i class="fa fa-facebook"></i> <span>Manage Testimonial</span></a></li>
+                    <li class="@(ViewContext.RouteData.Values["controller"].ToString() == "Team" ? "active" : "")"><a href="@Url.Action("Index", "Team")"><i class="fa fa-users" aria-hidden="true"></i> <span>Manage Team</span></a></li>
+                    
+    @*<li class="treeview">
                         <a href="#"><i class="fa fa-link"></i> <span>Multilevel</span> <i class="fa fa-angle-left pull-right"></i></a>
                         <ul class="treeview-menu">
                             <li><a href="#">Link in level 2</a></li>
@@ -221,7 +222,7 @@ desired effect
             <!-- Content Header (Page header) -->
             <section class="content-header">
                 <h1>
-                    Page Header
+                    @ViewBag.Title
                     <small>Optional description</small>
                 </h1>
                 <ol class="breadcrumb">

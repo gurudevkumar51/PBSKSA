@@ -310,7 +310,7 @@ p {font-size:14px;}
 .team-member-responsive ul li .tooltip {font-size:13px;padding:5px 0;}
 .careers .select-tal p {font-size: 18px;margin:0 0 10px 0;}
 .boximgg {background-size: contain;font-size: 26px;height: 70px;padding: 19px 0 0 25px;margin: 10px 0 0 0;}
-.tvbg {width: 277px;margin: 0 auto;background-size: contain;height:195px;margin-top:10px;}
+.tvbg {width: 307px;margin: 0 auto;background-size: contain;height:195px;margin-top:10px;}
 .peoplesay .tcspat {font-size:10px;line-height:normal;}
 .careers .select-tal label {font-size: 14px;}
 .header .brand .etree-logo img {width: 120px;}
@@ -404,7 +404,7 @@ input[type=checkbox]:checked, input[type=radio]:checked {width: 17px;height: 17p
 .testimonial-text {width:95%;}
 .testimonial-text .title {margin: 0 0 12px 0;font-size: 15px;}
 .testimonial-text p {font-size:13px;line-height:normall;}
-.our-intro-block {padding: 20px 0 25px 0 !important;}
+.our-intro-block {padding: 20px 0 25px 0}
 .intoduction-text {padding: 15px 0 0 0;}
 .bars, .res-slider-team {display: block;}
 nav.nav-bar-main {display:none !important;}
@@ -729,7 +729,6 @@ ul#tabs li{padding:9px 43px;}
 .slick-slide img {display: inline-block;}
 }
 @media (max-width: 480px) {
-.services .services-tabs .nav-tabs>li {width: 50%;}
 .services .services-tabs .nav-tabs>li>a {font-size:13px;}
 .partner-slide .slick-next.slick-arrow {right: 40%;}
 .partner-slide .slick-prev.slick-arrow {left: 40%;}

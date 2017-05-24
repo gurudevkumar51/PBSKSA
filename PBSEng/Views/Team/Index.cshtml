@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<PBSDAL.Entity.Team>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Team management";
 }
 <section class="content">
     <div class="row">
@@ -22,26 +22,16 @@
                                 </th>
                                 <th>
                                     @Html.DisplayNameFor(model => model.Ar_Name)
-                                </th>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.Designation)
-                                </th>
+                                </th>                                
                                 
                                 <th>
                                     @Html.DisplayNameFor(model => model.ImagePath)
                                 </th>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.facts)
-                                </th>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.Secret)
-                                </th>
+                                
                                 <th>
                                     @Html.DisplayNameFor(model => model.MyJob)
                                 </th>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.AnotherLife)
-                                </th>
+                                
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -54,25 +44,13 @@
                                     </td>
                                     <td>
                                         @Html.DisplayFor(modelItem => item.Ar_Name)
-                                    </td>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.Designation)
-                                    </td>                                    
+                                    </td>                                                                     
                                     <td>
                                         <img src="~/imagesMVC/TeamImages/@item.ImagePath" width="50" height="50" />
                                     </td>
                                     <td>
-                                        @Html.DisplayFor(modelItem => item.facts)
-                                    </td>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.Secret)
-                                    </td>
-                                    <td>
                                         @Html.DisplayFor(modelItem => item.MyJob)
-                                    </td>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.AnotherLife)
-                                    </td>
+                                    </td>                                    
                                     <td>
                                         <a href="@Url.Action("EditTeam", "Team", new { id = item.ID })" class="btn btn-info"><i class="fa fa-pencil" aria-hidden="true"></i> Edit</a>
                                         <a href="@Url.Action("DeleteTeam", "Team", new { id = item.ID })" class="btn btn-danger"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</a>

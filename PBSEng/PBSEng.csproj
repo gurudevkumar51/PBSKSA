@@ -90,6 +90,8 @@
     <Content Include="ArWebResources\css\animate.min.css" />
     <Content Include="ArWebResources\css\bootstrap.min.css" />
     <Content Include="ArWebResources\css\carousel.css" />
+    <Content Include="ArWebResources\css\style.css" />
+    <Content Include="Content\close.png" />
     <Content Include="ArWebResources\css\font-awesome.css" />
     <Content Include="ArWebResources\css\font-awesome.min.css" />
     <Content Include="ArWebResources\css\images\pat1.png" />
@@ -101,17 +103,13 @@
     <Content Include="ArWebResources\css\images\pat7.png" />
     <Content Include="ArWebResources\css\images\pat8.png" />
     <Content Include="ArWebResources\css\main.css" />
+    <Content Include="ArWebResources\css\mainPort.css" />
     <Content Include="ArWebResources\css\owl.carousel.min.css" />
     <Content Include="ArWebResources\css\prettyPhoto.css" />
     <Content Include="ArWebResources\css\responsive.css" />
     <Content Include="ArWebResources\css\slick.css" />
     <Content Include="ArWebResources\fonts\fontawesome-webfont.svg" />
     <Content Include="ArWebResources\fonts\glyphicons-halflings-regular.svg" />
-    <Content Include="ArWebResources\images\1.png" />
-    <Content Include="ArWebResources\images\2.png" />
-    <Content Include="ArWebResources\images\3.png" />
-    <Content Include="ArWebResources\images\4.png" />
-    <Content Include="ArWebResources\images\5.png" />
     <Content Include="ArWebResources\images\accordion1.png" />
     <Content Include="ArWebResources\images\arab.png" />
     <Content Include="ArWebResources\images\aus.png" />
@@ -230,8 +228,6 @@
     <Content Include="ArWebResources\images\tab-3.png" />
     <Content Include="ArWebResources\images\tab-4-h.png" />
     <Content Include="ArWebResources\images\tab-4.png" />
-    <Content Include="ArWebResources\images\tab-5-h.png" />
-    <Content Include="ArWebResources\images\tab-5.png" />
     <Content Include="ArWebResources\images\team.png" />
     <Content Include="ArWebResources\images\testimonial-bg.jpg" />
     <Content Include="ArWebResources\images\testimonials1.png" />
@@ -253,6 +249,7 @@
     <Content Include="ArWebResources\js\jquery.mousewheel.js" />
     <Content Include="ArWebResources\js\jquery.prettyPhoto.js" />
     <Content Include="ArWebResources\js\main.js" />
+    <Content Include="ArWebResources\js\mainPort.js" />
     <Content Include="ArWebResources\js\owl.carousel.min.js" />
     <Content Include="ArWebResources\js\respond.min.js" />
     <Content Include="ArWebResources\js\slick.js" />
@@ -270,6 +267,7 @@
     <Content Include="Content\font-awesome.min.css" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Content\jquery.dataTables.css" />
+    <Content Include="Content\jquery.fancybox.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Content\skins\skin-black-light.css" />
     <Content Include="Content\skins\skin-black-light.min.css" />
@@ -322,6 +320,14 @@
     <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Content\bootstrap-datetimepicker-build.less" />
     <Content Include="Content\_bootstrap-datetimepicker.less" />
+    <Content Include="imagesMVC\1.png" />
+    <Content Include="imagesMVC\2.png" />
+    <Content Include="imagesMVC\3.png" />
+    <Content Include="imagesMVC\4.png" />
+    <Content Include="imagesMVC\6.png" />
+    <Content Include="imagesMVC\7.png" />
+    <Content Include="imagesMVC\8.png" />
+    <Content Include="imagesMVC\9.png" />
     <Content Include="Scripts\icheck.min.js" />
     <Content Include="ArWebResources\fonts\fontawesome-webfont.eot" />
     <Content Include="ArWebResources\fonts\fontawesome-webfont.ttf" />
@@ -330,9 +336,6 @@
     <Content Include="ArWebResources\fonts\glyphicons-halflings-regular.eot" />
     <Content Include="ArWebResources\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="ArWebResources\fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="ArWebResources\images\404.xcf" />
-    <Content Include="ArWebResources\images\portfolio\full\Thumbs.db" />
-    <Content Include="ArWebResources\images\portfolio\recent\Thumbs.db" />
     <None Include="Properties\PublishProfiles\PBSKSA.pubxml" />
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
     <Content Include="imagesMVC\pat15.png" />
@@ -346,6 +349,7 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\dataTables.bootstrap.min.js" />
+    <Content Include="Scripts\isotope.pkgd.min.js" />
     <Content Include="Scripts\jquery-3.1.1.js" />
     <Content Include="Scripts\jquery-3.1.1.min.js" />
     <Content Include="Scripts\jquery-3.1.1.slim.js" />
@@ -353,6 +357,8 @@
     <Content Include="Scripts\jquery.dataTables.js" />
     <Content Include="Scripts\jquery.dataTables.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.fancybox.pack.js" />
+    <Content Include="Scripts\jquery.stellar.min.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
@@ -360,6 +366,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\jqueryg.js" />
+    <Content Include="Scripts\killercarousel.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\moment-with-locales.js" />
     <Content Include="Scripts\moment-with-locales.min.js" />
@@ -367,7 +374,10 @@
     <Content Include="Scripts\moment.min.js" />
     <Content Include="Scripts\sweetalert-dev.min.js" />
     <Content Include="Scripts\sweetalert.min.js" />
-    <Content Include="Web.config" />
+    <Content Include="Scripts\wow.min.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
@@ -403,15 +413,13 @@
     <Content Include="Views\Event\CreateEvent.cshtml" />
     <Content Include="Views\Event\EditEvent.cshtml" />
     <Content Include="Views\Event\Index.cshtml" />
-    <Content Include="Views\Event\Team.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\EnIndex.cshtml" />
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Home\ArIndex.cshtml" />
     <Content Include="Views\Home\Team.cshtml" />
     <Content Include="Views\Team\Index.cshtml" />
     <Content Include="Views\Team\AddTeam.cshtml" />
     <Content Include="Views\Team\EditTeam.cshtml" />
-    <Content Include="Views\Home\ArTeam.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

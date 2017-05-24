@@ -9,35 +9,39 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="description" content="webphonix">
+    <meta name="author" content="https://www.webphonix.com">
     <title>PBSKSA</title>
-
     <!-- core CSS -->
-
     <link href="~/ArWebResources/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/ArWebResources/css/style.css" rel="stylesheet" />
     <link href="~/ArWebResources/css/font-awesome.css" rel="stylesheet" />
+    <link href="~/Content/jquery.fancybox.css" rel="stylesheet" />
     <link href="~/ArWebResources/css/animate.min.css" rel="stylesheet" />
     <link href="~/ArWebResources/css/prettyPhoto.css" rel="stylesheet" />
-    
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,500i,700,900" rel="stylesheet">
     <link href="~/ArWebResources/css/slick.css" rel="stylesheet" />
     <link href="~/ArWebResources/css/carousel.css" rel="stylesheet" />
+    <link href="~/ArWebResources/css/owl.carousel.min.css" rel="stylesheet" />
     <link href="~/ArWebResources/css/responsive.css" rel="stylesheet" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css" rel="stylesheet" /> 
     <link href="~/ArWebResources/css/main.css" rel="stylesheet" />
+    <link href="~/ArWebResources/css/mainPort.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css" rel="stylesheet" />
     <link rel="shortcut icon" href="~/ArWebResources/images/favicon.ico">
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="~/ArWebResources/images/ico/apple-touch-icon-144-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="~/ArWebResources/images/ico/apple-touch-icon-114-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="~/ArWebResources/images/ico/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="~/ArWebResources/images/ico/apple-touch-icon-57-precomposed.png">
-
     <script src="~/ArWebResources/js/jquery.js"></script>
-    @*<script src="~/WebResources/js/jquery.js"></script>*@
     <script src="~/ArWebResources/js/bootstrap.min.js"></script>
+    <script src="~/Scripts/jquery.stellar.min.js"></script>
+    <script src="~/Scripts/isotope.pkgd.min.js"></script>
+    <script src="~/Scripts/jquery.fancybox.pack.js"></script>
     <script src="~/ArWebResources/js/jquery.prettyPhoto.js"></script>
     <script src="~/ArWebResources/js/jquery.isotope.min.js"></script>
     <script src="~/ArWebResources/js/main.js"></script>
     <script src="~/ArWebResources/js/wow.min.js"></script>
+    <script src="~/ArWebResources/js/mainPort.js"></script>
     <script src="~/ArWebResources/js/owl.carousel.min.js"></script>
     <script>
         $('.carousel').carousel({ interval: 9000 });
@@ -48,44 +52,162 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert-dev.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
-</head>
-<!--/head-->
+    <script type="text/javascript">
+        jQuery(document).ready(function ($) {
+            $('#carousel').carousel(
+                {
+                    width: 900,
+                    height: 300,
+                    itemWidth: 400,
+                    horizontalRadius: 450,
+                    verticalRadius: 120,
+                    resize: false,
+                    mouseScroll: false,
+                    mouseDrag: true,
+                    scaleRatio: 0.4,
+                    scrollbar: true,
+                    tooltip: true,
+                    mouseWheel: true,
+                    mouseWheelReverse: true
+                });
+        });
+    </script>
+    <script>
+        $(window).load(function () {
+            $(".loading-area").fadeOut();
+        });
 
+        $(document).ready(function () {
+
+            $(".barsmob").click(function () {
+                var checkAttr = $(".responsive-menu").attr('data-check');
+                if (checkAttr == 'open') {
+                    $(".responsive-menu").attr('data-check', 'close');
+                    $(".responsive-menu").css("height", "50px");
+                }
+                else {
+                    $(".responsive-menu").attr('data-check', 'open');
+                    $(".responsive-menu").css("height", "350px");
+                }
+
+            });
+
+            $(window).scroll(function () {
+                if ($(this).scrollTop() > 100) {
+                    $('.brand').fadeOut(250, function () {
+                        $('.nav-bar-main').fadeIn(250);
+                    });
+                } else {
+                    $('.nav-bar-main').fadeOut(250, function () {
+                        $('.brand').fadeIn(250);
+                    });
+                }
+            });
+
+            $('.scroll-top').click(function () {
+                $('html, body').animate({ scrollTop: 0 }, 800);
+                return false;
+            });
+
+            $(".nav-bar-main ul li a , .brand .nav-bar-slide ul li a , .tog li a").click(function () {
+                var h = $(this).attr('href');
+                $('html, body').animate({ scrollTop: ($(h).offset().top) - 50 }, '800');
+                return false;
+            });
+
+
+            $('#myTab').tabCollapse();
+
+            $('.bars,.overlay').click(function () {
+                $("body").toggleClass("sh");
+            });
+
+            new WOW().init();
+
+        });
+
+    </script>
+    
+    <style>
+        .fa-calendar {
+            color: #0090c5;
+        }
+
+        @@media only screen and (min-width :320px) {
+            .header .main-slide .text-slide {
+                position: absolute;
+                z-index: 999;
+                right: -753px;
+                top: 12%;
+                width: 70%;
+                color: #fff;
+                background: 0 0;
+            }
+
+            .header .owl-carousel .owl-dots {
+                position: absolute;
+                right: 345px;
+                top: 60%;
+            }
+        }
+
+        @@media only screen and (min-width :1200px) {
+            .header .main-slide .text-slide {
+                position: absolute;
+                z-index: 999;
+                right: -750px;
+                top: 40%;
+                width: 50%;
+                color: #fff;
+                background: 0 0;
+            }
+
+            .header .owl-carousel .owl-dots {
+                position: absolute;
+                right: 1285px;
+                top: 70%;
+            }
+        }
+    </style>
+</head>
 <body class="homepage arab-laguage">
-    <header class="header">
-        <button class="bars"><i class="fa fa-bars" aria-hidden="true"></i></button>
+    <!--1><-->
+    <header class="header" id="home">
+        <button class="barsmob bars"><i class="fa fa-bars" aria-hidden="true"></i></button>
         <nav class="nav-bar-main">
             <a class="brand-main" href="index.html"><img src="~/ArWebResources/images/logo-2.png" alt="PBSKSA logo"></a>
             <ul class="pull-left">
                 <li><a class="active" href="#home">Home</a></li>
                 <li><a href="#about">About PBS</a></li>
                 <li><a href="#services">Services</a></li>
-                <li><a class="m-careers" href="#team">Team</a></li>
+                <li><a class="m-careers" href="#portfolio">Team</a></li>
                 <li><a href="#clients">Clients</a></li>
                 <li><a href="#carers">Careers</a></li>
                 <li><a class="m-contact" href="#contactus">Contact Us</a></li>
             </ul>
             <div class="langauge">
                 <ul>
-                    <li><a href="@Url.Action("Index", "Home")">En</a></li>
+                    <li><a href="@Url.Action("EnIndex", "Home")">En</a></li>
                     <li><a href="@Url.Action("ArIndex", "Home")">Sa</a></li>
                 </ul>
             </div>
         </nav>
-        <div class="responsive-menu">
+        <div class="responsive-menu" data-check="close">
             <ul class="tog">
                 <li class="resp-logo"><a href="index.html"><img src="~/ArWebResources/images/logo-2.png" alt="PBSKSA logo"></a></li>
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About PBS</a></li>
                 <li><a href="#services">Services</a></li>
-                <li><a class="m-careers" href="#team">Team</a></li>
+                <li><a class="m-careers" href="#portfolio">Team</a></li>
                 <li><a href="#clients">Clients</a></li>
                 <li><a href="#carers">Careers</a></li>
-                <li><a class="m-contact" href="#contactus">Contact Us</a></li>
+                <li><a href="#contactus">Contact Us</a></li>
+                <li><a href="@Url.Action("EnIndex", "Home")">En</a></li>
+                <li><a href="@Url.Action("ArIndex", "Home")">Sa</a></li>
             </ul>
             <div class="langauge">
                 <ul>
-                    <li><a href="@Url.Action("Index", "Home")">En</a></li>
+                    <li><a href="@Url.Action("EnIndex", "Home")">En</a></li>
                     <li><a href="@Url.Action("ArIndex", "Home")">Sa</a></li>
                 </ul>
             </div>
@@ -97,295 +219,264 @@
                     <li><a href="#home">Home</a></li>
                     <li><a href="#about">About PBS</a></li>
                     <li><a href="#services">Services</a></li>
-                    <li><a class="m-careers" href="#team">Team</a></li>
+                    <li><a class="m-careers" href="#portfolio">Team</a></li>
                     <li><a href="#clients">Clients</a></li>
                     <li><a href="#carers">Careers</a></li>
-                    <li><a class="m-contact" href="#contactus">Contact Us</a></li>
+                    <li><a href="#contactus">Contact Us</a></li>
                 </ul>
             </nav>
         </div>
-    </header>
-    <!--/header-->
-    <div id="home">
-        <section id="main-slider" class="no-margin">
-            <div class="carousel slide">
-                @*<ol class="carousel-indicators">
-                    <li data-target="#main-slider" data-slide-to="0" class="active"></li>
-                    <li data-target="#main-slider" data-slide-to="1"></li>
-                    <li data-target="#main-slider" data-slide-to="2"></li>
-                </ol>*@
-                <div class="carousel-inner">
-                    <div class="carousel-item item active" style="background-image: url(../ArWebResources/images/slider/bg1.jpg)">
+        <div class="main-slide owl-carousel" id="slider-main">
+            @{
+                var p = 0;
 
-                    </div>
-                    <!--/.item-->
-
-                    <div class="carousel-item item" style="background-image: url(../ArWebResources/images/slider/bg2.jpg)">
-                        <div class="container">
-
-                        </div>
-                    </div>
-                    <!--/.item-->
-
-                    <div class="carousel-item item" style="background-image: url(../ArWebResources/images/slider/bg3.jpg)">
-                        <div class="container">
-
-                        </div>
-                    </div>
-                    <!--/.item-->
-                </div>
-                <!--/.carousel-inner-->
-            </div>
-            <!--/.carousel-->
-
-        </section>
-        <section id="main-slider1" class="no-margin">
-            <div class="carousel slide">
-
-                <div class="carousel-inner">
-                    @{
-                        var p = 0;
-                        foreach (var item in ViewData["Quotes"] as List<Quotes>)
-                        {
-                            p++;
-                            if (p <= 1)
-                            {
-                                <div class="item active">
-                                    <div class="container">
-                                        <div class="row slide-margin">
-                                            <div class="col-sm-12">
-                                                <div class="carousel-content">
-                                                    <h1 class="animation animated-item-1 right">
-                                                        "@item.AR_Quote"
-                                                    </h1>
-                                                    <h2 class="animation animated-item-2 right"><strong><em>@item.AR_Author</em></strong></h2>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            }
-                            else
-                            {
-                                <div class="item">
-                                    <div class="container">
-                                        <div class="row slide-margin">
-                                            <div class="col-sm-12">
-                                                <div class="carousel-content">
-                                                    <h1 class="animation animated-item-1 right">
-                                                        "@item.AR_Quote"
-                                                    </h1>
-                                                    <h2 class="animation animated-item-2 right"><strong><em>@item.AR_Author</em></strong></h2>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-6 hidden-xs animation animated-item-4"> </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            }
-                        }
-                    }      
-                </div>
-                <!--/.carousel-inner-->
-            </div>
-            <!--/.carousel-->
-
-        </section>
-    </div>
-    <!--/#main-slider-->
-    <div id="about">
-        <section id="feature" class="our-intro-block">
-            <div class="wow fadeInDown intoduction-img">
-                <div class="accordion">
-                    <div class="panel-group tvbgfis"> <img src="~/ArWebResources/images/firtimg.jpg" width="642" height="385"> </div>
-                    <!--/#accordion1-->
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-6 wow fadeInDown intoduction-text">
-                        <div class="skill">
-                            <h2 class="boximgg"><span>Our</span> Introduction? </h2>
-                            <p>We are consulting and marketing company which provides strategic solutions to organizations, we work with a network of local and international experts in management, marketing and strategic partners, and offer our services to diverse clients private, public and non-profit organization. </p>
-                            <br />
-                            <p>@*<a class="view-btn" href="#" role="button">View Detail</a>*@</p>
-                        </div>
-                    </div>
-                    <!--/.col-sm-6-->
-
-                </div>
-                <!--/.row-->
-            </div>
-            <!--/.container-->
-        </section>
-        <!--/#feature-->
-
-        <section id="middle" class="pbs-profile-block">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6 col-sm-12 wow fadeInDown pbs-profile-text">
-                        <div class="skill">
-                            <h2 class="hfont"><span>PBS</span> Profile...</h2>
-                            <p>
-                                Professional business solution is With Limited Liability W.L.L, was established in 2012.
-                                The company strategy is focusing on providing management & marketing solutions with certain activities PBS its work with experts networks and global strategic partners to provide the company services for SMEs in GCC countries
-                            </p>
-                            <p> We are highly professional & experts in increasing productivity - volume - profitability for moderate and small businesses. We design programs specific to each institution according to their need, and employ all our energies and expertise to improve the productivity of our customers, and our work will not end, but our service includes providing. </p>
-                        </div>
-                    </div>
-                    <!--/.col-sm-6-->
-
-                    <div class="col-md-6 col-sm-12">
-                        <div class="accordion">
-                            <!-- <h2 class="hfont">Why People like us?</h2>-->
-                            <div class="panel-group tvbg wow fadeInRight">
-                                <div class="peoplesay">
-                                    <div class="tcspat">
-                                        We are uniquely positioned in
-                                        Saudi Arabia with success stories and
-                                        recognitions vouching for us, both nationally
-                                        and internationally.
-                                    </div>
-                                    <div class="tcspat">
-                                        We are uniquely positioned in
-                                        Saudi Arabia with success stories and
-                                        recognitions vouching for us, both nationally
-                                        and internationally.
-                                    </div>
-                                    <div class="tcspat">
-                                        We are uniquely positioned in
-                                        Saudi Arabia with success stories and
-                                        recognitions vouching for us, both nationally
-                                        and internationally.
-                                    </div>
-                                </div>
+                DirectoryInfo directory = new DirectoryInfo(Server.MapPath(@"~\ArWebResources\images\slider"));
+                var files = directory.GetFiles("*.jpg").ToList();
+                Random rnd = new Random();
+                foreach (var item in ViewData["Quotes"] as List<Quotes>)
+                {
+                    if (p == 0)
+                    {
+                        var img = @files[rnd.Next(files.Count)].Name;
+                        <div class="item" id="home">
+                            <img width="1600" height="900" src="~/ArWebResources/images/slider/@img" class="attachment-full size-full wp-post-image img-responsive" alt="img-s1 " srcset="~/ArWebResources/images/slider/@img 1600w, ~/ArWebResources/images/slider/@img 300w, ~/ArWebResources/images/slider/@img 768w, ~/ArWebResources/images/slider/@img 1024w" sizes="(max-width: 1600px) 100vw, 1600px" />
+                            <div class="text-slide hidden-xs">
+                                <p style="color:#fff;">"@item.AR_Quote"</p>
+                                <strong><em>@item.AR_Author</em></strong>
                             </div>
-                            <!--/#accordion1-->
                         </div>
-                    </div>
-                </div>
-                <!--/.row-->
-            </div>
-            <!--/.container-->
-        </section>
-    </div>
-
-    <section id="team" class="our-team">
-        <div class="container">
-            <div class="center wow fadeInDown">
-                <h2 class="hfont"><span>Directors</span> and team work...</h2>
-            </div>
-            <div class="content-se team-member wow fadeInUp" id="wide-wrapper">
-                <ul id="carousel" class="carousel">
-                    @{
-                        foreach (var item in ViewData["Team"] as List<Team>)
-                        {
-                            <li>
-                                <img src="~/imagesMVC/TeamImages/@item.ImagePath?id=@item.ID" alt="@item.Ar_Name" />
-                                <div class="tooltip">@item.Ar_Name</div>
-                            </li>
-                        }
+                        p++;
                     }
-                </ul>
-            </div>
-            <div class="Team-modal">
-                <div class="modal fade bs-example-modal-lg" id="team-modal" tabindex="-1" role="dialog">
-                    <div class="modal-dialog modal-lg">
-                        <div class="modal-content">
-                            <div class="Team-modal-loading"></div>
+                    else
+                    {
+                        var img2 = @files[rnd.Next(files.Count)].Name;
+                        <div class="item">
+                            <img width="1600" height="900" src="~/ArWebResources/images/slider/@img2" class="attachment-full size-full wp-post-image img-responsive" alt="img-s1 " srcset="~/ArWebResources/images/slider/@img2 1600w, ~/ArWebResources/images/slider/@img2 300w, ~/ArWebResources/images/slider/@img2 768w, ~/ArWebResources/images/slider/@img2 1024w" sizes="(max-width: 1600px) 100vw, 1600px" />
+                            <div class="text-slide hidden-xs">
+                                <p style="color:#fff;">"@item.AR_Quote"</p>
+                                <strong><em>@item.AR_Author</em></strong>
+                            </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-            <script type="text/javascript">
-                $(document).on('click', '.carousel-item', function () {
-                    var id = $(this).attr('src');
-                    id = id.split("=");
-                    $('#team-modal').modal('show');
-                    $(".Team-modal-loading").html('<div class="cssload-container"><div class="cssload-whirlpool"></div></div>');
-                    $(".Team-modal-loading").load('@Url.Action("ArTeam", "Home")' + "?id=" + id[1]);
-
-                    return false;
-                });
-
-                $('#team-modal').on('hidden.bs.modal', function () {
-                    $(".Team-modal-loading").html('');
-                });
-            </script>
-            <div class="team-member-responsive">
-                <ul class="teammembers">
-                    @{
-                        foreach (var item in ViewData["Team"] as List<Team>)
-                        {
-                            <li>
-                                <img src="~/imagesMVC/TeamImages/@item.ImagePath?id=@item.ID" alt="@item.Ar_Name" />
-                                <div class="tooltip">@item.Ar_Name</div>
-                            </li>
-                        }
                     }
-                </ul>
+                p++;
+                }
+            }
+
+        </div>
+    </header>
+    <!--2><-->
+    <div class="container-fluid abc" id="about">
+        <div class="row">
+            <div class="col-md-6">
+                <img src="~/ArWebResources/images/firtimg.jpg" class="img-responsive laft">
+            </div>
+            <div class="col-md-6 dosra">
+                <img src="~/ArWebResources/images/box-flip.jpg">
+                <h1 class="into">Introduction? <span style="font-weight:900">Our</span></h1>
+                <p class="desc">We are consulting and marketing company which provides strategic solutions to organizations, we work with a network of local and international experts in management, marketing and strategic partners, and offer our services to diverse clients private, public and non-profit organization.</p>
             </div>
         </div>
-    </section>   
+    </div>
+    <!--3><-->
+    <section id="middle" class="pbs-profile-block">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-sm-12 wow fadeInDown pbs-profile-text">
+                    <div class="skill">
+                        <h2 class="hfont"><span>PBS</span> Profile...</h2>
+                        <p>
+                            Professional business solution is With Limited Liability W.L.L, was established in 2012.
+                            The company strategy is focusing on providing management & marketing solutions with certain activities PBS its work with experts networks and global strategic partners to provide the company services for SMEs in GCC countries
+                        </p>
+                        <p> We are highly professional & experts in increasing productivity - volume - profitability for moderate and small businesses. We design programs specific to each institution according to their need, and employ all our energies and expertise to improve the productivity of our customers, and our work will not end, but our service includes providing. </p>
+                    </div>
+                </div>
+                <!--/.col-sm-6-->
+                <div class="col-md-6 col-sm-12">
+                    <div class="accordion">
+                        <!-- <h2 class="hfont">Why People like us?</h2>-->
+                        <div class="panel-group tvbg wow fadeInRight">
+                            <div class="peoplesay">
+                                <div class="tcspat">
+                                    We are uniquely positioned in
+                                    Saudi Arabia with success stories and
+                                    recognitions vouching for us, both nationally
+                                    and internationally.
+                                </div>
+                                <div class="tcspat">
+                                    We are uniquely positioned in
+                                    Saudi Arabia with success stories and
+                                    recognitions vouching for us, both nationally
+                                    and internationally.
+                                </div>
+                                <div class="tcspat">
+                                    We are uniquely positioned in
+                                    Saudi Arabia with success stories and
+                                    recognitions vouching for us, both nationally
+                                    and internationally.
+                                </div>
+                            </div>
+                        </div>
+                        <!--/#accordion1-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--4><-->
+    <section id="portfolio">
+        <div class="container" style="direction:rtl">
+            <h2 class="section_title wow fadeIn" style="margin-top:35px;">
+                <span>PBS work group</span>
+                TEAM
+            </h2>
+            <!-- buttons for filtering items -->
+            <div class="button-group filter-button-group wow fadeIn">
+                <button class="button is-checked" data-filter="*">All</button>
+                <button class="button" data-filter=".a1">PBS’ Team</button>
+                <button class="button" data-filter=".a2">Expert Team</button>
+                <button class="button" data-filter=".a3">Creativity Committee</button>
 
-    <section class="services" id="services">
+            </div>
+            <div class="grid row">                                
+                @{
+                    foreach (var item in ViewData["Team"] as List<Team>)
+                    {
+                        @*<li>
+                                <img src="~/imagesMVC/TeamImages/@item.ImagePath?id=@item.ID" alt="@item.Ar_Name" />
+                                <div class="tooltip">@item.Ar_Name</div>
+                            </li>*@
+                        <div class="@item.TeamCategory grid-item wow fadeIn">
+                            <div class="img_container">
+                                <img src="~/imagesMVC/TeamImages/@item.ImagePath" alt="@item.Ar_Name">
+                                <div class="overlay">
+                                    <div class="content">
+                                        <h4><a class="fancybox" href="~/imagesMVC/TeamImages/@item.ImagePath"><i class="fa fa-arrows-alt" aria-hidden="true"></i></a>Myself  <span>@item.Name</span></h4>
+                                    </div>
+                                    <!-- End of .content -->
+                                </div>
+                                <!-- End of .overlay -->
+                            </div>
+                            <!-- End of .img_container -->
+                        </div>
+                <!-- End of .grid-item -->
+                    }
+                }
+
+            </div>
+
+        </div>
+        <!-- End of .container-fluid -->
+    </section>
+    <!--5><-->
+    <section class="services hidden-xs" id="services">
         <div class="container">
             <div class="services-tabs wow zoomIn">
                 <ul id="myTab" class="nav nav-tabs" role="tablist">
-                    <li role="presentation" class="active"><a class="s1" href="#social-media" aria-controls="social-media" role="tab" data-toggle="tab"><i></i>Design business</a></li>
-                    <li role="presentation"><a class="s2" href="#digital-marketing" aria-controls="digital-marketing" role="tab" data-toggle="tab"><i></i>Marketing strategies</a></li>
-                    <li role="presentation"><a class="s3" href="#seo" aria-controls="seo" role="tab" data-toggle="tab"><i></i>Web design</a></li>
-                    <li role="presentation"><a class="s4" href="#digital-copywriting" aria-controls="digital-copywriting" role="tab" data-toggle="tab"><i></i>Branding</a></li>
-                    <li role="presentation"><a class="s5" href="#analysis-reporting" aria-controls="analysis-reporting" role="tab" data-toggle="tab"><i></i>Email</a></li>
+                    <li role="presentation" class="active"><a class="s1" href="#social-media" aria-controls="social-media" role="tab" data-toggle="tab"><i></i>Initiatives making</a></li>
+                    <li role="presentation"><a class="s5" href="#analysis-reporting" aria-controls="analysis-reporting" role="tab" data-toggle="tab"><i></i>Marketing solution</a></li>
+                    <li role="presentation"><a class="s3" href="#seo" aria-controls="seo" role="tab" data-toggle="tab"><i></i>Entrepreneurship Solutions</a></li>
                 </ul>
                 <div id="myTabContent" class="tab-content">
                     <div role="tabpanel" class="tab-pane fade in active" id="social-media">
                         <div class="content-serv">
-                            <div class="col-md-6">
-                                <p> Everyone knows about Social Media. But how do you use them to your advantage? It's not enough to set up a channel and forget. Depending on your target market, there could be</p>
+                            <div class="col-md-12">
+                                <p>We are working with our customers passionately to make initiatives (awareness - marketing - development) that serve private and public organizations’ goals.</p>
+                                <p>Our Initiatives:</p><br>
+                                <strong>• Business Roundtable (BRT)</strong><br><br>
+                                <p>A meeting prompt for entrepreneurs and CEO for specific groups on specialized topics aims to exchange experiences and discuss contemporary issues in the business sector The first meeting has been held in Riyadh about innovation in business, in January 2014.</p>
+                                <strong><span> Raedah</span><img src="~/imagesMVC/1.png" width="15%"></strong>
+                                <p>motivational and training meeting prompt for women-leaders and businesswomen aims to develop leadership and managerial skills, also to open opportunities to networking, and exchange experiences among the</p>
                             </div>
-                            <div class="col-md-6">
-                                <p>other networks to consider. Our experts will help you find the right strategy for you. And if nothing fits, we can build you a brand new network of your own.</p>
+                            <div class="col-md-4" style="text-align:center;">
+                                <br>
+                                <img src="~/imagesMVC/2.png" width="20%">
+                                <p>Attendees</p>
+                                <p>400 Ladies</p>
                             </div>
-                        </div>
-                    </div>
-                    <div role="tabpanel" class="tab-pane fade in" id="digital-marketing">
-                        <div class="content-serv">
-                            <div class="col-md-6">
-                                <p>Our team is determined to deliver compelling digital marketing solutions. Our strategic</p>
+                            <div class="col-md-4" style="text-align:center;">
+                                <br>
+                                <img src="~/imagesMVC/3.png" width="20%">
+                                <p>Time</p>
+                                <p>Nov. 2014</p>
                             </div>
-                            <div class="col-md-6">
-                                <p>consultancy approach guarantees we build engaging relationships between brands and their audiences.</p>
+                            <div class="col-md-4" style="text-align:center;">
+                                <br>
+                                <img src="~/imagesMVC/4.png" width="20%">
+                                <p>Place</p>
+                                <p>Hayyara</p>
                             </div>
-                        </div>
-                    </div>
-                    <div role="tabpanel" class="tab-pane fade in" id="seo">
-                        <div class="content-serv">
-                            <div class="col-md-6">
-                                <p>We believe in our clients, and we also believe that our highly skilled team, span essential disciplines</p>
+                            <div class="col-md-12" style="margin-bottom:30px;margin-top:30px;">
+                                <strong>1<span> Launch Your Business</span> &nbsp; <img src="~/imagesMVC/6.png" width="15%"></strong>
+                                <p>An inspirational & experiential event for small business owners, entrepreneurs, investors who want to connect, network, learn, grow, and develop both personally and professionally.</p>
                             </div>
-                            <div class="col-md-6">
-                                <p>and deliver a compelling combination of services to take your brand to the next level organically.</p>
+                            <div class="col-md-6" style="text-align:center;">
+                                <br>
+                                <i class="fa fa-calendar fa-5x"></i>
+                                <p>2015</p>
                             </div>
-                        </div>
-                    </div>
-                    <div role="tabpanel" class="tab-pane fade in" id="digital-copywriting">
-                        <div class="content-serv">
-                            <div class="col-md-6">
-                                <p>Our copywriters are experts in delivering Arabic and English Content</p>
+                            <div class="col-md-6" style="text-align:center;">
+                                <br>
+                                <i class="fa fa-calendar fa-5x"></i>
+                                <p>2016</p>
                             </div>
-                            <div class="col-md-6">
-                                <p>that is personalized to match your brand's tone of voice and needs.</p>
+                            <div class="col-md-2" style="text-align:center;">
+                                <br>
+                                <img src="~/imagesMVC/7.png" width="20%">
+                                <p>Beneficiaries</p>
+                                <p>1,300</p>
+                            </div>
+                            <div class="col-md-2" style="text-align:center;">
+                                <br>
+                                <img src="~/imagesMVC/8.png" width="20%">
+                                <p>Onliine Reach</p>
+                                <p>100M</p>
+                            </div>
+                            <div class="col-md-2" style="text-align:center;">
+                                <br>
+                                <img src="~/imagesMVC/9.png" width="20%">
+                                <p>Launch New Business</p>
+                                <p>+3</p>
+                            </div>
+                            <div class="col-md-2" style="text-align:center;">
+                                <br>
+                                <img src="~/imagesMVC/7.png" width="20%">
+                                <p>Beneficiaries</p>
+                                <p>1,300</p>
+                            </div>
+                            <div class="col-md-2" style="text-align:center;">
+                                <br>
+                                <img src="~/imagesMVC/8.png" width="20%">
+                                <p>Onliine Reach</p>
+                                <p>100M</p>
+                            </div>
+                            <div class="col-md-2" style="text-align:center;">
+                                <br>
+                                <img src="~/imagesMVC/9.png" width="20%">
+                                <p>Launch New Business</p>
+                                <p>+3</p>
                             </div>
                         </div>
                     </div>
                     <div role="tabpanel" class="tab-pane fade in" id="analysis-reporting">
                         <div class="content-serv">
                             <div class="col-md-6">
-                                <p>This branch consists of analysts whom are punctual, detail oriented with high observation </p>
+                                <strong>• Marketing Strategies</strong><br><br>
+                                <strong>• Marketing Campaigns Planning & Execution</strong><br><br>
                             </div>
                             <div class="col-md-6">
-                                <p>and deduction skills, to provide reports that comply with our clients’ and our standards.</p>
+                                <strong>• Branding</strong><br><br>
+                                <strong>• Strategic Consultations</strong><br><br>
+                            </div>
+                        </div>
+                    </div>
+                    <div role="tabpanel" class="tab-pane fade in" id="seo">
+                        <div class="content-serv">
+                            <div class="col-md-12">
+                                <strong>• Development Programs:</strong>
+                                <p>- Training Beneficiaries: 1232 , Workshops & Programs: 45 , Trainers: 20</p>
+                                <p>- Mentoring Beneficiaries: 60+ , Sessions: 6 , Mentors: 6</p>
+                                <strong>• Accelerator & Incubator Solutions</strong>
                             </div>
                         </div>
                     </div>
@@ -393,8 +484,147 @@
             </div>
         </div>
     </section>
-
-    <!-- SERVICE -->
+    <div class="container-fluid hidden-lg hidden-md hidden-sm" style="background: #f3f3f3;padding: 10px 0px 40px 0px;">
+        <div class="row">
+            <div class="col-xs-12">
+                <h2 style="font-size: 48px;color: #0090c5;font-weight: 100;text-align:right;">Services</h2><br>
+                <div class="panel-group" id="accordion">
+                    <div class="panel panel-default">
+                        <div class="panel-heading" data-toggle="collapse" data-parent="#accordion" href="#collapse1">
+                            <h4 class="panel-title" style="text-align:right;">
+                                <a>
+                                    Initiatives making
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapse1" class="panel-collapse collapse in">
+                            <div class="panel-body" style="text-align:right;float:right;">
+                                <div class="content-serv">
+                                    <div class="col-md-12">
+                                        <p>We are working with our customers passionately to make initiatives (awareness - marketing - development) that serve private and public organizations’ goals.</p>
+                                        <p>Our Initiatives:</p><br>
+                                        <strong>• Business Roundtable (BRT)</strong><br><br>
+                                        <p>A meeting prompt for entrepreneurs and CEO for specific groups on specialized topics aims to exchange experiences and discuss contemporary issues in the business sector The first meeting has been held in Riyadh about innovation in business, in January 2014.</p>
+                                        <strong><span>Raedah</span><img src="~/imagesMVC/1.png" width="15%"></strong>
+                                        <p>motivational and training meeting prompt for women-leaders and businesswomen aims to develop leadership and managerial skills, also to open opportunities to networking, and exchange experiences among the</p>
+                                    </div>
+                                    <div class="col-md-4" style="text-align:center;">
+                                        <br>
+                                        <img src="~/imagesMVC/2.png" width="20%">
+                                        <p>Attendees</p>
+                                        <p>400 Ladies</p>
+                                    </div>
+                                    <div class="col-md-4" style="text-align:center;">
+                                        <br>
+                                        <img src="~/imagesMVC/3.png" width="20%">
+                                        <p>Time</p>
+                                        <p>Nov. 2014</p>
+                                    </div>
+                                    <div class="col-md-4" style="text-align:center;">
+                                        <br>
+                                        <img src="~/imagesMVC/4.png" width="20%">
+                                        <p>Place</p>
+                                        <p>Hayyara</p>
+                                    </div>
+                                    <div class="col-md-12" style="margin-bottom:30px;margin-top:30px;">
+                                        <strong><span> Launch Your Business  &nbsp; </span><img src="~/imagesMVC/6.png" width="15%"></strong>
+                                        <p>An inspirational & experiential event for small business owners, entrepreneurs, investors who want to connect, network, learn, grow, and develop both personally and professionally.</p>
+                                    </div>
+                                   
+                                    <div class="col-md-2" style="text-align:center;">
+                                        <br>
+                                        <i class="fa fa-calendar fa-5x" aria-hidden="true"></i>
+                                        <p>2015</p>                                        
+                                        <img src="~/imagesMVC/7.png" width="20%">
+                                        <p>Beneficiaries</p>
+                                        <p>1,300</p>
+                                    </div>
+                                    <div class="col-md-2" style="text-align:center;">
+                                        <br>
+                                        <img src="~/imagesMVC/8.png" width="20%">
+                                        <p>Onliine Reach</p>
+                                        <p>100M</p>
+                                    </div>
+                                    <div class="col-md-2" style="text-align:center;">
+                                        <br>
+                                        <img src="~/imagesMVC/9.png" width="20%">
+                                        <p>Launch New Business</p>
+                                        <p>+3</p>
+                                    </div>
+                                                                        
+                                    <div class="col-md-2" style="text-align:center;">
+                                        <br>
+                                        <i class="fa fa-calendar fa-5x" aria-hidden="true"></i>
+                                        <p>2016</p>                                       
+                                        <img src="~/imagesMVC/7.png" width="20%">
+                                        <p>Beneficiaries</p>
+                                        <p>1,300</p>
+                                    </div>
+                                    <div class="col-md-2" style="text-align:center;">
+                                        <br>
+                                        <img src="~/imagesMVC/8.png" width="20%">
+                                        <p>Onliine Reach</p>
+                                        <p>100M</p>
+                                    </div>
+                                    <div class="col-md-2" style="text-align:center;">
+                                        <br>
+                                        <img src="~/imagesMVC/9.png" width="20%">
+                                        <p>Launch New Business</p>
+                                        <p>+3</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading" data-toggle="collapse" data-parent="#accordion" href="#collapse2">
+                            <h4 class="panel-title" style="text-align:right;">
+                                <a>
+                                    Marketing solution
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapse2" class="panel-collapse collapse">
+                            <div class="panel-body" style="text-align:right;float:right;">
+                                <div class="content-serv">
+                                    <div class="col-md-6">
+                                        <strong>• Marketing Strategies</strong><br><br>
+                                        <strong>• Marketing Campaigns Planning & Execution</strong><br><br>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <strong>• Branding</strong><br><br>
+                                        <strong>• Strategic Consultations</strong><br><br>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading" data-toggle="collapse" data-parent="#accordion" href="#collapse3">
+                            <h4 class="panel-title" style="text-align:right;">
+                                <a>
+                                    Entrepreneurship Solutions
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapse3" class="panel-collapse collapse">
+                            <div class="panel-body" style="text-align:right;float:right;">
+                                <div class="content-serv">
+                                    <div class="col-md-12">
+                                        <strong>• Development Programs:</strong>
+                                        <p>- Training Beneficiaries: 1232 , Workshops & Programs: 45 , Trainers: 20</p>
+                                        <p>- Mentoring Beneficiaries: 60+ , Sessions: 6 , Mentors: 6</p>
+                                        <strong>• Accelerator & Incubator Solutions</strong>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--6><-->
     <section id="partners" class="same-head grey-border blue-heading grey-bg">
         <div class="container">
             <div class="row">
@@ -402,14 +632,13 @@
             </div>
         </div>
     </section>
-
-    <!-- OUR PARTNER -->
+    <!--7><-->
     <section class="our-partner-block grey-bg">
         <div class="container">
             <div class="row">
                 <div class="partner-slide wow fadeInUp">
                     <div class="partner"><img src="~/ArWebResources/images/partner1.jpg" alt=""></div>
-                    <div class="partner"><img src="~/ArWebResourcessources/images/partner2.jpg" alt=""></div>
+                    <div class="partner"><img src="~/ArWebResources/images/partner2.jpg" alt=""></div>
                     <div class="partner"><img src="~/ArWebResources/images/partner3.jpg" alt=""></div>
                     <div class="partner"><img src="~/ArWebResources/images/partner4.jpg" alt=""></div>
                     <div class="partner"><img src="~/ArWebResources/images/partner5.jpg" alt=""></div>
@@ -426,8 +655,7 @@
             </div>
         </div>
     </section>
-
-    <!-- EVENT -->
+    <!--8><-->
     <section class="event-calender-main ">
         <div class="container">
             <div class="page-header">
@@ -472,12 +700,11 @@
                             </li>
                         }
                     }
-                }                
+                }
             </ul>
         </div>
     </section>
-
-    <!-- CAREER -->
+    <!--9><-->
     <div id="carers">
         <section class="careers wow fadeIn same-head blue-heading" id="careers">
             <div class="container">
@@ -529,8 +756,7 @@
             </div>
         </section>
     </div>
-
-    <!-- SOCAIL and REACH US block -->
+    <!--10><-->
     <section id="middle02" class="same-head social-reach-block">
         <div class="container">
             <div class="row">
@@ -546,7 +772,7 @@
                         <li class="active">
                             <!--<h2>Twitter</h2>-->
                             <a class="twitter-timeline" href="https://twitter.com/pbs_ksa" data-widget-id="666527666976112642">Tweets by @@pbs_ksa</a>
-                            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+                            <script>!function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https'; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = p + "://platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs); } }(document, "script", "twitter-wjs");</script>
                         </li>
                         <li>
                             <span class="IN-widget" style="line-height: 1; vertical-align: baseline; display: inline-block;"><span style="padding: 0px !important; margin: 0px !important; text-indent: 0px !important; display: inline-block !important; vertical-align: baseline !important; font-size: 1px !important;"><iframe name="easyXDM_IN_Lib_li_gen_1486657043046_0_provider" id="easyXDM_IN_Lib_li_gen_1486657043046_0_provider" src="https://platform.linkedin.com/js/xdrpc.html?v=0.0.2000-RC8.59130-1429#xdm_e=http%3A%2F%2Fpbsksa.com&amp;xdm_c=li_gen_1486657043046_0&amp;xdm_p=1#target=li_gen_1486657043046_0&amp;width=600&amp;height=400&amp;mode=wrapper" frameborder="0" style="width: 364px; height: 348px; display: inline-block;"></iframe></span></span>
@@ -566,69 +792,72 @@
                 </div>
                 <div class="col-xs-12 col-sm-5 wow fadeInDown reachus">
                     <h1><span>Reach</span> <small>to us</small> </h1>
-                   
-                    @*<div class="form-et">
-                        <input placeholder="Your  Name" name="full_name" class="inpsetynn" type="text">
-                        <input placeholder="Mobile Number" name="phone" class="inpsetynn" type="text">
-                        <input placeholder="Email" name="email" class="inpsetynn" type="text">
-                        <input placeholder="Subject" name="email" class="inpsetynn" type="text">
-                        <textarea placeholder="Your Massage" name="email" class="inpsetynn" type="text"></textarea>
+
+                    <div class="form-et">
+                        <input placeholder="Your  Name" name="full_name" id="cName" class="inpsetynn" type="text">
+                        <input placeholder="Mobile Number" name="phone" id="cPhone" class="inpsetynn" type="text">
+                        <input placeholder="Email" name="email" id="cEmail" class="inpsetynn" type="text">
+                        <input placeholder="Subject" name="Subject" id="cSubject" class="inpsetynn" type="text">
+                        <textarea placeholder="Your Massage" name="email" id="cMessage" class="inpsetynn" type="text"></textarea>
                         <div class="captcha-btn">
                             <label class="no-robot">
                                 <input name="cabtcha" value="121212" type="checkbox">
                                 I'm not a robot
                             </label>
-                            <button type="submit" class="submit-ajax bton">Send</button>
+                            <button type="submit" id="contactForm" class="submit-ajax bton">Send</button>
                         </div>
-                    </div>*@
-                
-                                    
-        <div class="form-et">
-            <input placeholder="Your  Name" name="full_name" id="cName" class="inpsetynn" type="text">
-            <input placeholder="Mobile Number" name="phone" id="cPhone" class="inpsetynn" type="text">
-            <input placeholder="Email" name="email" id="cEmail" class="inpsetynn" type="text">
-            <input placeholder="Subject" name="Subject" id="cSubject" class="inpsetynn" type="text">
-            <textarea placeholder="Your Massage" name="email" id="cMessage" class="inpsetynn" type="text"></textarea>
-            <div class="captcha-btn">
-                <label class="no-robot">
-                    <input name="cabtcha" value="121212" type="checkbox">
-                    I'm not a robot
-                </label>
-                <button type="submit" id="contactForm" class="submit-ajax bton">Send</button>
-            </div>
-        </div>
-                                    
+                    </div>
 
                 </div>
             </div>
             <!--/.row-->
         </div>
         <!--/.container-->
-
     </section>
-
-    <section id="recent-works">
-        @foreach (var item in ViewData["Portfolio"] as List<Portfolio>)
-        {
-            <div class="col-xs-12 col-sm-4 col-md-3 works-part wow zoomIn">
-                <div class="recent-work-wrap">
-                    <img class="img-responsive" src="~/imagesMVC/Portfolio/@item.Image_Path" alt="">
-                    <div class="overlay">
-                        <div class="recent-work-inner">
-                            <h3><a href="javascript:;">@item.AR_Title </a> </h3>
-                            <p>@item._Date</p>
-                        </div>
-                    </div>
-                </div>
+    <!--11><-->
+    <section id="portfolio">
+        <div class="container" style="direction:rtl">
+            <h2 class="section_title wow fadeIn" style="margin-top:35px;">
+                <span>PBS Portfolio</span>
+            </h2>
+            <!-- buttons for filtering items -->
+            <div class="button-group filter-button-group wow fadeIn">
+                <button class="button is-checked" data-filter="*">All</button>
+                <button class="button" data-filter=".g1">Current year</button>
+                <button class="button" data-filter=".g2">Previous year</button>
             </div>
-        }        
-    </section>
-    <!--/#recent-works-->
+            <!-- button-group ends -->
+            <div class="grid row">
+                <!-- Items for portfolio -->
+                @{
+                    foreach (var item in ViewData["Portfolio"] as List<Portfolio>)
+                    {
+                        <div class="g1 grid-item wow fadeIn">
+                            <div class="img_container">
+                                <img src="~/imagesMVC/Portfolio/@item.Image_Path" alt="@item.Title">
+                                <div class="overlay">
+                                    <div class="content">
+                                        <h4><a class="fancybox" href="~/imagesMVC/Portfolio/@item.Image_Path"><i class="fa fa-arrows-alt" aria-hidden="true"></i></a>@item._Date  <span>@item.Location_Name</span></h4>
+                                    </div>
+                                    <!-- End of .content -->
+                                </div>
+                                <!-- End of .overlay -->
+                            </div>
+                            <!-- End of .img_container -->
+                        </div>
+                <!-- End of .grid-item -->
+                    }
+                }
+                <!-- End of .grid-item -->
+            </div>
 
+        </div>
+        <!-- End of .container-fluid -->
+    </section>
+    <!--12><-->
     <section id="work-with">
-        <!-- Expert Group -->
         <section class="expert-group-block people-thought">
-            <div class="heading same-head">
+            <div class="heading same-head" style="background:#f8f8f8;">
                 <div class="container">
                     <div class="row">
                         <h1><span>Expert</span> Group</h1>
@@ -638,7 +867,6 @@
             <div class="people-bg">
                 <div class="container">
                     <div class="row">
-
                         <div class="people-slider-part wow fadeInDown">
                             <div class="people-slider">
                                 <div class="people">
@@ -666,51 +894,48 @@
                 </div>
             </div>
         </section>
-        <!-- Expert Group -->
-        <!-- people work Group -->
-        <section class="people-work-block people-thought">
-            <div class="heading same-head">
+    </section>
+    <section id="work-with">
+        <section class="expert-group-block people-thought">
+            <div class="heading same-head" style="background:#f8f8f8;">
                 <div class="container">
                     <div class="row">
-                        <h1><span>People</span> who work with them</h1>
+                        <h1 class="workd"><span>People</span>People who work with them</h1>
                     </div>
                 </div>
             </div>
             <div class="people-bg">
                 <div class="container">
                     <div class="row">
-
-                        <div class="people-work-slider wow zoomIn">
+                        <div class="people-slider-part wow zoomIn">
                             <div class="people-slider">
-
-                                <div class="people-text"><p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled.`</p></div><div class="people">
-                                                                                                                                                                                                                                                                                                <img src="~/ArWebResources/images/team.png" align="">
+                                <div class="people">
+                                    <img src="~/ArWebResources/images/team.png" align="">
                                     <div class="ppl-name"><span class="name">AY Solutions</span><span class="address">BHUBANESWAR, <br>INDIA</span></div>
                                 </div>
+                                <div class="people-text"><p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled.</p></div>
                             </div>
                             <div class="people-slider">
-
-                                <div class="people-text"><p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled.`</p></div><div class="people">
-                                                                                                                                                                                                                                                                                                <img src="~/ArWebResources/images/team.png" align="">
+                                <div class="people">
+                                    <img src="~/ArWebResources/images/team.png" align="">
                                     <div class="ppl-name"><span class="name">AY Solutions</span><span class="address">BHUBANESWAR, <br>INDIA</span></div>
                                 </div>
+                                <div class="people-text"><p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled.</p></div>
                             </div>
                             <div class="people-slider">
-
-                                <div class="people-text"><p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled.`</p></div><div class="people">
-                                                                                                                                                                                                                                                                                                <img src="~/ArWebResources/images/team.png" align="">
+                                <div class="people">
+                                    <img src="~/ArWebResources/images/team.png" align="">
                                     <div class="ppl-name"><span class="name">AY Solutions</span><span class="address">BHUBANESWAR, <br>INDIA</span></div>
                                 </div>
+                                <div class="people-text"><p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled.</p></div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-        <!-- people work Group -->
     </section>
-
-    <!-- Testimonial Group -->
+    <!--13><-->
     <section class="testimonial-block">
         <div class="container">
             <div class="row">
@@ -725,15 +950,14 @@
                                 <p>@item.Ar_Description</p>
                             </div><div class="testi-ppl"><img src="~/imagesMVC/TestimonialThumbnail/@item.thumbnailPath" style="border-radius: 50%;" alt=""></div>
 
-                        </div>                        
-                    }   
+                        </div>
+                    }
                 </div>
 
             </div>
         </div>
     </section>
-    <!-- Testimonial Group -->
-    <!--Happy-Clients-->
+    <!--14><-->
     <section id="clients" class="happy-client-block">
         <div class="title-bg same-head">
             <div class="container">
@@ -742,11 +966,9 @@
                 </div>
             </div>
         </div>
-
         <div class="happy-client-part">
             <div class="container">
                 <div class="row">
-
                     <div class="happyclients">
                         <div class="client wow zoomIn"><img src="~/ArWebResources/images/client1.jpg" align=""></div>
                         <div class="client wow zoomIn"><img src="~/ArWebResources/images/client2.jpg" align=""></div>
@@ -756,17 +978,13 @@
                         <div class="client wow zoomIn"><img src="~/ArWebResources/images/client6.jpg" align=""></div>
                         <div class="client wow zoomIn"><img src="~/ArWebResources/images/client7.jpg" align=""></div>
                     </div>
-
                 </div>
             </div>
         </div>
-
     </section>
     <!--Happy-Clients-->
     <div id="contactus">
-
-        <div id="totop"><img alt="" src="~/ArWebResources/images/top_arrow.png"></div>
-
+        <div id="totop"><a href="#home"><img alt="" src="~/ArWebResources/images/top_arrow.png"></a></div>
         <section id="bottom" class="footer-block">
             <div class="container wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
                 <div class="row">
@@ -783,7 +1001,6 @@
                         </div>
                     </div>
                     <!--/.col-md-3-->
-
                     <div class="col-md-5 col-sm-4 address-office">
                         <div class="widget">
                             <p style="color: #c6c6c8;">
@@ -799,17 +1016,14 @@
                                 <li><a href="javascript:;"><i class="fa fa-skype"></i></a></li>
                             </ul>
                         </div>
-
                         <div class="develop-site">Developed by: <a href="#">Webphonix</a></div>
                     </div>
                     <!--/.col-md-3-->
-
                     <div class="col-md-4 col-sm-4 location">
                         <div class="widget">
                             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3621.9062691321815!2d46.59318371500162!3d24.798662884083054!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2ee40eefcb6a9d%3A0xbc4308498520f827!2sAnas+Ibn+Malik+Rd%2C+Al+Malqa%2C+Riyadh+Saudi+Arabia!5e0!3m2!1sen!2sin!4v1487400669187" width="319" height="200" frameborder="0" style="border:0" allowfullscreen></iframe>
                         </div>
                     </div>
-
                     <!--/.col-md-3-->
                 </div>
             </div>
@@ -817,10 +1031,9 @@
     </div>
     <!--/#bottom-->
     <!--/#footer-->   
-    
+
 </body>
 </html>
-
 <script>
     $(document).ready(function () {
         $('#contactForm').click(function () {
@@ -856,7 +1069,7 @@
         }
         else {
             //alert("Problem in adding the comments");
-            swal("Problem in adding the comments...........", "We'll recover it very soon!");            
+            swal("Problem in adding the comments...........", "We'll recover it very soon!");
         }
     }
 
@@ -871,7 +1084,7 @@
         };
 
         $.ajax({
-            url: '@Url.Action("ContactForm", "Home")',
+            url: '/Home/ContactForm',
             type: "POST",
             dataType: 'json',
             data: JSON.stringify(Contact),
@@ -882,10 +1095,10 @@
             success: function (data) {
                 $('#cName').val("");
                 $('#cPhone').val(""),
-                $('#cEmail').val(""),
-                $('#cSubject').val(""),
-                $('#cMessage').val(""),
-                swal("Your Message sent succesfully........", "We'll get back to you very soon!");
+                    $('#cEmail').val(""),
+                    $('#cSubject').val(""),
+                    $('#cMessage').val(""),
+                    swal("Your Message sent succesfully........", "We'll get back to you very soon!");
             },
             error: function () {
                 swal("Unable to send message", "Please try again later!");

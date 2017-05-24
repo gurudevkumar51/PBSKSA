@@ -1,4 +1,7 @@
-jQuery(function($) {'use strict',
+
+jQuery(function ($) {
+    'use strict',  
+
 
 	//#main-slider
 	$(function(){
@@ -75,7 +78,7 @@ jQuery(function($) {'use strict',
 ------------------------------------------------------------------------------*/	
 $(document).ready(function(){
 	
-	
+   
 
 	
 	

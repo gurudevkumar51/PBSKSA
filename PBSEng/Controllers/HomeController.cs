@@ -17,7 +17,7 @@ namespace PBSEng.Controllers
         private PBSManager mng = new PBSManager();
 
         [AllowAnonymous]
-        public ActionResult Index()
+        public ActionResult EnIndex()
         {
             ViewData["Portfolio"] = mng.AllPortfolio();
             var pp = mng.AllEvents().Where(p => p._Date > DateTime.Now).OrderByDescending(c => c._Date).ThenBy(c => c._Date.TimeOfDay).ToList();
@@ -69,16 +69,16 @@ namespace PBSEng.Controllers
             }
         }
 
-        public ActionResult Team(int id)
-        {
-            var pp = mng.AllTeamMembers().Where(p => p.ID == id).FirstOrDefault();
-            return PartialView(pp);
-        }
+        //public ActionResult Team(int id)
+        //{
+        //    var pp = mng.AllTeamMembers().Where(p => p.ID == id).FirstOrDefault();
+        //    return PartialView(pp);
+        //}
 
-        public ActionResult ArTeam(int id)
-        {
-            var pp = mng.AllTeamMembers().Where(p => p.ID == id).FirstOrDefault();
-            return PartialView(pp);
-        }
+        //public ActionResult ArTeam(int id)
+        //{
+        //    var pp = mng.AllTeamMembers().Where(p => p.ID == id).FirstOrDefault();
+        //    return PartialView(pp);
+        //}
     }
 }

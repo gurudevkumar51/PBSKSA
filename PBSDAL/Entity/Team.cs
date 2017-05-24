@@ -13,12 +13,14 @@ namespace PBSDAL.Entity
     {
         public int ID { get; set; }
         public string Name { get; set; }
-        public string Ar_Name  { get; set; }
-        public string Designation { get; set; }
-        public string Ar_Designation { get; set; }
+        public string Ar_Name  { get; set; }        
+
+        [DisplayName("Category")]
+        public string TeamCategory { get; set; }
 
         [DataType(DataType.Upload)]
         public HttpPostedFileBase File { get; set; }
+
         public string ImagePath { get; set; }
 
         [DisplayName("What I do! (My job)")]
@@ -26,29 +28,5 @@ namespace PBSDAL.Entity
 
         [DisplayName(".. ماذا اعمل ؟")]
         public string ArMyJob { get; set; }
-        
-        [DisplayName("One Secret About me")]
-        public string Secret { get; set; }
-
-        [DisplayName(".. احد اسراري")]
-        public string ArSecret { get; set; }
-        
-        [DisplayName("Facts about me")]
-        public string facts { get; set; }
-
-        [DisplayName(".. احد الحقائق عني")]
-        public string Arfacts { get; set; }
-        
-        [DisplayName("In another life I would be")]
-        public string AnotherLife { get; set; }
-
-        [DisplayName(".. في الحياة الاخرى سأكون")]
-        public string ArAnotherLife { get; set; }
-        
-        [DisplayName("Quote")]
-        public string Quote { get; set; }
-
-        [DisplayName(".. إقتباس")]
-        public string ArQuote { get; set; }
     }
 }
